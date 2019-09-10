@@ -6,13 +6,13 @@
 
 ## Battle images
 
-[![Promo](/images/gif/0.gif)]
+![Promo](/images/gif/0.gif)
 
-[![Promo](/images/gif/1.gif)]
+![Promo](/images/gif/1.gif)
 
-[![Promo](/images/gif/2.gif)]
+![Promo](/images/gif/2.gif)
 
-[![Promo](/images/gif/3.gif)]
+![Promo](/images/gif/3.gif)
 
 
 ## Client
