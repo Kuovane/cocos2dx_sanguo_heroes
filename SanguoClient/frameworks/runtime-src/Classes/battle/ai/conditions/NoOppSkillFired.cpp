@@ -27,4 +27,3 @@ void NoOppSkillFired::receive(const BattleEvent::CompleteSkill& e)
         m_ok = false;
     }
 }
-

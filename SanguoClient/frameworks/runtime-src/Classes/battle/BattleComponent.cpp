@@ -10,10 +10,11 @@
 #include "AudioManager.h"
 #include "AudioSystem.h"
 #include "SkillObject.h"
+#include "BattleWorld.h"
 
 BattleComponent::Property::Property(const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& data,
-                                    const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& dataMin,
-                                    const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& dataMax) : m_min(dataMin), m_max(dataMax)
+									const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& dataMin,
+									const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& dataMax) : m_min(dataMin), m_max(dataMax)
 {
     m_lock.fill(false);
     m_current.fill(0);

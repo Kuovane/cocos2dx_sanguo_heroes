@@ -23,7 +23,7 @@ void PlayAnimation::fireAction(entityx::EntityManager &es)
             duration = m_skillActionData->config["duration"]->d;
         }
         
-        const string& animationName = *(m_skillActionData->config["animation"]->s);
+        const std::string& animationName = *(m_skillActionData->config["animation"]->s);
         
         _ENTITY_EVENT.emit<BattleEvent::StrategyHeroPlayAnimation>(*pTargetEntity, animationName, duration);
     }

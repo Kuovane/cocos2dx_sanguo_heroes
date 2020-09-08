@@ -7,15 +7,10 @@
 
 #include "CCAssetDefine.h"
 #include "CCBufferReader.h"
-#include "CCDirector.h"
-#include "platform/CCFileUtils.h"
-#include "renderer/CCTexture2D.h"
-#include "renderer/CCTextureCache.h"
-#include "base/ccTypes.h"
-#include "cocos2d.h"
+
 #include <zlib.h>
 
-NS_CC_BEGIN
+
 
 AssetDefine* AssetDefine::create(const std::string &image, const std::string &define)
 {
@@ -38,7 +33,7 @@ AssetDefine::AssetDefine()
 bool AssetDefine::initWithFile(const std::string &image, const std::string &define)
 {
     ssize_t size;
-    auto buff = FileUtils::getInstance()->getFileData(define, "r", &size);
+    auto buff = cocos2d::FileUtils::getInstance()->getFileData(define, "r", &size);
     
     Byte* uncompressed = new Byte[size * 10];
     uLongf destLen = size * 10;
@@ -58,7 +53,7 @@ bool AssetDefine::initWithFile(const std::string &image, const std::string &defi
         this->m_fps = reader->readByte();
         
         //read tilesheet
-        this->m_texture = Director::getInstance()->getTextureCache()->addImage(image);
+        this->m_texture = cocos2d::Director::getInstance()->getTextureCache()->addImage(image);
         //this->m_texture->generateMipmap();
         this->m_width = reader->readShort();
         this->m_height = reader->readShort();
@@ -125,7 +120,7 @@ bool AssetDefine::initWithFile(const std::string &image, const std::string &defi
             animation->frameCount = frameNum;
             animation->assetTotal = reader->readInt();
 
-            animation->atlas = TextureAtlas::createWithTexture(this->m_texture, animation->assetTotal);
+            animation->atlas = cocos2d::TextureAtlas::createWithTexture(this->m_texture, animation->assetTotal);
             animation->atlas->retain();
             //animation->atlas->initWithTexture(this->m_texture, animation->assetTotal);
             animation->atlas->increaseTotalQuadsWith(animation->assetTotal);
@@ -185,7 +180,7 @@ bool AssetDefine::initWithFile(const std::string &image, const std::string &defi
                     d = data->d;
                     
                     //CCLOG("quads from: %d", animation->addedFrames[j] + k);
-                    V3F_C4B_T2F_Quad* quad = &(animation->atlas->getQuads()[animation->addedFrames[j] + k]);
+					cocos2d::V3F_C4B_T2F_Quad* quad = &(animation->atlas->getQuads()[animation->addedFrames[j] + k]);
                     
                     tile = (TilesheetData*)this->m_tilesheet->at(data->index);
                     
@@ -260,7 +255,7 @@ AssetDefine::~AssetDefine()
 {
     printf("release asset define\n");
     
-    Director::getInstance()->getTextureCache()->removeTexture(m_texture);
+	cocos2d::Director::getInstance()->getTextureCache()->removeTexture(m_texture);
     //CC_SAFE_RELEASE(m_texture);
     
     for (std::vector<std::string*>::iterator it = m_assets->begin(); it != m_assets->end(); it++)
@@ -341,9 +336,9 @@ cocos2d::Sprite* AssetDefine::createSpriteFrame(const std::string& name)
     {
         TilesheetData *quad = this->m_tilesheet->at(index);
 
-        Rect rect = quad->isRotated ? Rect(quad->x, quad->y, quad->height, quad->width) : Rect(quad->x, quad->y, quad->width, quad->height);
-        Size size = Size(quad->width, quad->height);
-        Vec2 center = quad->isRotated ? Vec2(quad->centerY / quad->height, quad->centerX / quad->width) : Vec2(quad->centerX / quad->width, quad->centerY / quad->height);
+		cocos2d::Rect rect = quad->isRotated ? cocos2d::Rect(quad->x, quad->y, quad->height, quad->width) : cocos2d::Rect(quad->x, quad->y, quad->width, quad->height);
+		cocos2d::Size size = cocos2d::Size(quad->width, quad->height);
+		cocos2d::Vec2 center = quad->isRotated ? cocos2d::Vec2(quad->centerY / quad->height, quad->centerX / quad->width) : cocos2d::Vec2(quad->centerX / quad->width, quad->centerY / quad->height);
 
         cocos2d::Sprite* s = cocos2d::Sprite::createWithTexture(m_texture);
         s->setTextureRect(rect, quad->isRotated, size);
@@ -354,4 +349,4 @@ cocos2d::Sprite* AssetDefine::createSpriteFrame(const std::string& name)
     return nullptr;
 }
 
-NS_CC_END
+

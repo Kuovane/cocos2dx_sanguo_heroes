@@ -17,7 +17,7 @@ BattleAnimationCreator::~BattleAnimationCreator()
 {
 }
 
-BattleConfig::EffectGroup* BattleAnimationCreator::convertAnimationToEffectGroup(const string& assetName, const string& animationName, cocos2d::AdvancedAnimation::BlendMode blendMode , int zOrder)
+BattleConfig::EffectGroup* BattleAnimationCreator::convertAnimationToEffectGroup(const std::string& assetName, const std::string& animationName, AdvancedAnimation::BlendMode blendMode , int zOrder)
 {
     auto* pGroup = new BattleConfig::EffectGroup();
     pGroup->asset = assetName;
@@ -33,13 +33,13 @@ BattleConfig::EffectGroup* BattleAnimationCreator::convertAnimationToEffectGroup
 
 std::vector<BattleAnimation*>* BattleAnimationCreator::create(BattleConfig::EffectGroup* effectGroup, float x, float y, float z, bool reverse, bool rotate)
 {
-    auto define = cocos2d::AssetDefineCache::getInstance()->getAsset(effectGroup->asset);
+    auto define = AssetDefineCache::getInstance()->getAsset(effectGroup->asset);
     auto animations = new std::vector<BattleAnimation*>();
     auto& layers = effectGroup->effect;
     
     for(int i = 0; i < effectGroup->effect.size(); i++)
     {
-        auto animation = cocos2d::AdvancedAnimation::create(define, layers[i]->layerName.c_str());
+        auto animation = AdvancedAnimation::create(define, layers[i]->layerName.c_str());
         animation->setPositionX(x);
         animation->setPositionY(y);
         animation->setPositionZ(-z);
@@ -59,12 +59,12 @@ std::vector<BattleAnimation*>* BattleAnimationCreator::create(BattleConfig::Effe
     return animations;
 }
 
-std::vector<BattleAnimation*>* BattleAnimationCreator::create(const string& assetName, const string& animationName, float x, float y, float z, bool reverse, const cocos2d::Vec3 &rotation, cocos2d::AdvancedAnimation::BlendMode blendMode)
+std::vector<BattleAnimation*>* BattleAnimationCreator::create(const std::string& assetName, const std::string& animationName, float x, float y, float z, bool reverse, const cocos2d::Vec3 &rotation, AdvancedAnimation::BlendMode blendMode)
 {
-    auto pDefine = cocos2d::AssetDefineCache::getInstance()->getAsset(assetName);
+    auto pDefine = AssetDefineCache::getInstance()->getAsset(assetName);
     auto pAnimations = new std::vector<BattleAnimation*>();
     
-    auto pAni = cocos2d::AdvancedAnimation::create(pDefine, animationName);
+    auto pAni = AdvancedAnimation::create(pDefine, animationName);
     pAni->setPositionX(x);
     pAni->setPositionY(y);
     pAni->setPositionZ(-z);
@@ -81,12 +81,12 @@ std::vector<BattleAnimation*>* BattleAnimationCreator::create(const string& asse
     return pAnimations;
 }
 
-std::vector<BattleAnimation*>* BattleAnimationCreator::create(const string& assetName, const string& animationName, map<string, cocos2d::Node*> replaces, float x, float y, float z, bool reverse, const cocos2d::Vec3 &rotation, cocos2d::AdvancedAnimation::BlendMode blendMode)
+std::vector<BattleAnimation*>* BattleAnimationCreator::create(const std::string& assetName, const std::string& animationName, std::map<std::string, cocos2d::Node*> replaces, float x, float y, float z, bool reverse, const cocos2d::Vec3 &rotation, AdvancedAnimation::BlendMode blendMode)
 {
-    auto pDefine = cocos2d::AssetDefineCache::getInstance()->getAsset(assetName);
+    auto pDefine = AssetDefineCache::getInstance()->getAsset(assetName);
     auto pAnimations = new std::vector<BattleAnimation*>();
     
-    auto pAni = cocos2d::AdvancedAnimation::create(pDefine, animationName);
+    auto pAni = AdvancedAnimation::create(pDefine, animationName);
     pAni->setPositionX(x);
     pAni->setPositionY(y);
     pAni->setPositionZ(-z);
@@ -112,11 +112,11 @@ std::vector<BattleAnimation*>* BattleAnimationCreator::create(const string& asse
     return pAnimations;
 }
 
-cocos2d::AdvancedAnimation* BattleAnimationCreator::createSingle(const string& assetName, const string& animationName, float x, float y, float z, bool reverse, float delayShow)
+AdvancedAnimation* BattleAnimationCreator::createSingle(const std::string& assetName, const std::string& animationName, float x, float y, float z, bool reverse, float delayShow)
 {
-    auto pDefine = cocos2d::AssetDefineCache::getInstance()->getAsset(assetName);
+    auto pDefine = AssetDefineCache::getInstance()->getAsset(assetName);
     
-    auto pAni = cocos2d::AdvancedAnimation::create(pDefine, animationName, delayShow);
+    auto pAni = AdvancedAnimation::create(pDefine, animationName, delayShow);
     pAni->setPositionX(x);
     pAni->setPositionY(y);
     pAni->setPositionZ(-z);

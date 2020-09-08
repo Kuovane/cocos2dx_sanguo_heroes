@@ -34,8 +34,8 @@ void ShowHeroEffect::fire()
     
     int targetId = 0;
     
-    BattleConfig::DamageSide side = (BattleConfig::DamageSide)m_skillActionData->config["side"]->d;
-    switch (side)
+    int side = m_skillActionData->config["side"]->d;
+    switch ((BattleConfig::DamageSide)side)
     {
         case BattleConfig::DamageSide::SELF:
             targetId = m_fromId;

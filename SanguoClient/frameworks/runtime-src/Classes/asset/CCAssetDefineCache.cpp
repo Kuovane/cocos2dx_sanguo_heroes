@@ -8,9 +8,8 @@
 #include "CCAssetDefineCache.h"
 #include "CCAdvancedAnimation.h"
 
-using namespace std;
+//using namespace std;
 
-NS_CC_BEGIN
 
 AssetDefineCache* AssetDefineCache::s_sharedAssetDefineCache = nullptr;
 
@@ -112,4 +111,3 @@ void AssetDefineCache::addAssetWithFile(const std::string& image, const std::str
 }
 
 
-NS_CC_END

@@ -9,7 +9,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-NS_CC_BEGIN
 
 BufferReader::BufferReader(unsigned char* buffer, int size, Endian endian):
     m_buffer(buffer),
@@ -105,7 +104,5 @@ std::string* BufferReader::readString()
         return NULL;
     }    
 }
-
-NS_CC_END
 
 

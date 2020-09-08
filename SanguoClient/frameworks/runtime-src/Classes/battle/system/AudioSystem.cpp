@@ -21,6 +21,7 @@ void AudioSystem::configure(entityx::EventManager& events)
     events.subscribe<BattleEvent::BattleSound>(*this);
 }
 
+
 void AudioSystem::receive(const BattleEvent::BattleSound& e)
 {
     if(BattleWorld::getInstance()->isAutoQuickBattleMode())
@@ -75,6 +76,7 @@ void AudioSystem::receive(const BattleEvent::BattleSound& e)
 //        CCLOG("miss audio config, name = %s, trigger = %s", e.name.c_str(), e.triggerName.c_str());
     }
 }
+
 
 void AudioSystem::update(entityx::EntityManager &es, entityx::EventManager &events, double dt)
 {

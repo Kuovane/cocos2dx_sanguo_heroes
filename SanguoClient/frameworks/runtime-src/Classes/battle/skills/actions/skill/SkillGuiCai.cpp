@@ -76,7 +76,7 @@ void SkillGuiCai::receive(const BattleEvent::HurtByAttack& e)
     {
         deltaX = abs(pTile->tileX - centerX);
         deltaZ = abs(pTile->tileZ - centerZ);
-        distance = max(deltaX, deltaZ) - 1;
+        distance = std::max(deltaX, deltaZ) - 1;
         
         BattleConfig::AttackData attackData(m_fromId, 0.4);
         attackData.setTargetPos(pTile->tileZ, pTile->tileX);

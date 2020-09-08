@@ -96,7 +96,7 @@ SkillManager::SkillManager(void)
     registerBuilder<ShowBackground>("show_background");
     registerBuilder<PauseBattle>("pause_battle");
     registerBuilder<PlayAnimation>("play_animation");
-    registerBuilder<PlaySound>("play_sound");
+    registerBuilder<SLGPlaySound>("play_sound");
     registerBuilder<ShowHeroEffect>("show_hero_effect");
     registerBuilder<SkillFenShenNuZhan>("skill_fen_shen_nu_zhan");
     registerBuilder<SkillLieKongFengRen>("skill_lie_kong_feng_ren");

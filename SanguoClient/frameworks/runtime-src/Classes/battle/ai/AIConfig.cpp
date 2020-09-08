@@ -7,6 +7,8 @@
 //
 
 #include "AIConfig.h"
+#include "cocos2d.h"
+#include "cocostudio/CocoStudio.h"
 
 AIConfig::AIConfig()
 {

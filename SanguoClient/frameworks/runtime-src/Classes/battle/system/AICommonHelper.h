@@ -41,22 +41,30 @@ static int getActorStateCode(entityx::Entity& e)
     BattleComponent::ObjectStateMachine::Handle objectStateMachine = e.component<BattleComponent::ObjectStateMachine>();
     return objectStateMachine->getCurrentStateCode();
 }
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
-extern "C" void ensureAnimation(BattleAnimation* animation, int id, bool loop = true);
+ void ensureAnimation(BattleAnimation* animation, int id, bool loop = true);
 
-extern "C" bool isFreeToSendSkill(entityx::Entity& e);
+ bool isFreeToSendSkill(entityx::Entity& e);
 
-extern "C" bool canEnterDizzyMode(entityx::Entity& e);
+ bool canEnterDizzyMode(entityx::Entity& e);
 
-extern "C" void updateMiniMapIcon(BattleStage* m_stage, entityx::Entity& entity, int m_currentTileX, int m_currentTileZ);
+ void updateMiniMapIcon(BattleStage* m_stage, entityx::Entity& entity, int m_currentTileX, int m_currentTileZ);
 
-extern "C" bool shouldEnterBowManAttack(entityx::Entity& e);
+ bool shouldEnterBowManAttack(entityx::Entity& e);
 
 
-extern "C" bool isTimeToBowManResearchTarget(entityx::Entity& e);
-extern "C" bool isTimeToResearchTarget(entityx::Entity& e);
+ bool isTimeToBowManResearchTarget(entityx::Entity& e);
+ bool isTimeToResearchTarget(entityx::Entity& e);
 
-extern "C" bool isTimeToFire(entityx::Entity& e, float durationScale = 1, bool rewriteTimeMark = true);
+ bool isTimeToFire(entityx::Entity& e, float durationScale = 1, bool rewriteTimeMark = true);
+
+#ifdef __cplusplus
+}
+#endif
 
 
 #endif /* defined(__SYSTEM_COMMON_HELPER__) */

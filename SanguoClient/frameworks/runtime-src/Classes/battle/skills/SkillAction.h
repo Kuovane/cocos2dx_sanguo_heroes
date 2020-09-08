@@ -10,7 +10,7 @@
 #define __SKILL_ACTION_H__
 
 #include "../common/ActiveObject.h"
-#include "../../entityx/entityx.h"
+#include "entityx.h"
 #include "../BattleConfig.h"
 
 class SkillAction : public ActiveObject

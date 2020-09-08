@@ -18,7 +18,7 @@ void AttackOnFindTarget::fireAction(entityx::EntityManager &es)
     if (pFromEntity != nullptr)
     {
         TargetFinder::TargetResults targetResults;
-        vector<int>& targets = targetResults.targets;
+		std::vector<int>& targets = targetResults.targets;
         
         if (m_skillActionData->hasMember("SkillTarget"))
         {

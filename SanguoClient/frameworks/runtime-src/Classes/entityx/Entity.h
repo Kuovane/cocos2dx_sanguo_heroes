@@ -224,11 +224,19 @@ struct BaseComponent {
 
   // NOTE: Component memory is *always* managed by the EntityManager.
   // Use Entity::destroy() instead.
-  void operator delete(void *p) { throw std::bad_alloc(); }
-  void operator delete[](void *p) { throw std::bad_alloc(); }
+  void operator delete(void *p) { fail(); }
+  void operator delete[](void *p) { fail(); }
 
 
  protected:
+  static void fail() {
+#if defined(_HAS_EXCEPTIONS) || defined(__EXCEPTIONS)
+    throw std::bad_alloc();
+#else
+    std::abort();
+#endif
+  }
+
   static Family family_counter_;
 };
 

@@ -6,11 +6,10 @@
 //
 //
 
-#ifndef __CC_ASSET_H__
-#define __CC_ASSET_H__
+#pragma once
 
 #include "CCAdvancedAnimation.h"
 #include "CCAssetDefine.h"
 #include "CCAssetDefineCache.h"
 
-#endif
+

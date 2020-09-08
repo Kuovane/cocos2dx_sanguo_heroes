@@ -6,24 +6,20 @@
 //
 
 
-#ifndef __BATTLE_COMPONENT_H__
-#define __BATTLE_COMPONENT_H__
+#pragma once
 
-#include <vector>
+#include "cocos2d.h"
+//#include <vector>
 
-#include "../entityx/entityx.h"
-#include "../asset/CCAsset.h"
-#include "math.h"
-#include "BattleConfig.h"
+#include "entityx.h"
+#include "CCAsset.h"
+//#include "BattleConfig.h"
 #include "animation/BattleAnimation.h"
 #include "animation/BattleAnimationGroup.h"
 #include "ModeGroup.h"
 #include "StrategyControl.h"
 #include "StateMachine.h"
 #include "TweenQueue.h"
-#include "cocos2d.h"
-
-#define _COMPONENT(COMPONENT) struct COMPONENT : entityx::Component<COMPONENT>
 
 class SkillObject;
 
@@ -35,7 +31,7 @@ public:
     {
         float totalTime;
         
-        Battle(float totalTime) : totalTime(totalTime) {}
+		explicit Battle(float totalTime) : totalTime(totalTime) {}
     };
     
     struct Animation : entityx::Component<Animation>
@@ -44,7 +40,7 @@ public:
         TweenQueue m_tweenQueue;
         std::string assetName;
         
-        Animation(cocos2d::AdvancedAnimation *animation)
+		explicit Animation(AdvancedAnimation *animation)
         {
             battleAnimation = new BattleAnimation(animation);
         }
@@ -61,7 +57,7 @@ public:
         TweenQueue m_tweenQueue;
         bool randomStart;
         
-        AnimationGroup(std::vector<BattleAnimation*> *animations, bool randomStart = true) : randomStart(randomStart)
+		explicit AnimationGroup(std::vector<BattleAnimation*> *animations, bool randomStart = true) : randomStart(randomStart)
         {
             battleAnimation = new BattleAnimationGroup(animations);
         }
@@ -78,9 +74,9 @@ public:
         TweenQueue m_tweenQueue;
         bool loop;
         float lifeTime;
-        string tag;
+        std::string tag;
         
-        EntityAnimation(std::vector<BattleAnimation*> *animations, bool loop = true, float lifeTime = -1, string* pTag = nullptr) : loop(loop), lifeTime(lifeTime)
+		explicit EntityAnimation(std::vector<BattleAnimation*> *animations, bool loop = true, float lifeTime = -1, std::string* pTag = nullptr) : loop(loop), lifeTime(lifeTime)
         {
             battleAnimation = new BattleAnimationGroup(animations);
             battleAnimation->playCurrent(loop);
@@ -99,7 +95,7 @@ public:
         bool loop;
         float lifeTime;
         
-        BuffAnimation(std::vector<BattleAnimation*> *animations, bool loop = true, float lifeTime = -1) : loop(loop), lifeTime(lifeTime)
+		explicit  BuffAnimation(std::vector<BattleAnimation*> *animations, bool loop = true, float lifeTime = -1) : loop(loop), lifeTime(lifeTime)
         {
             battleAnimation = new BattleAnimationGroup(animations);
             battleAnimation->playCurrent(loop);
@@ -117,7 +113,7 @@ public:
     
 	struct Position : entityx::Component<Position>
 	{
-	    Position(float x = 0.0f, float y = 0.0f, float z = 0.0f) : x(x), y(y), z(z) {}
+		explicit Position(float x = 0.0f, float y = 0.0f, float z = 0.0f) : x(x), y(y), z(z) {}
 	    float x, y, z;
         
         void set(float x, float y, float z) { this->x = x; this->y = y; this->z = z; }
@@ -127,7 +123,7 @@ public:
 
 	struct Direction : entityx::Component<Direction>
 	{
-	    Direction(float x = 0.0f, float y = 0.0f, float z = 0.0f) : x(x), y(y), z(z) {}
+		explicit Direction(float x = 0.0f, float y = 0.0f, float z = 0.0f) : x(x), y(y), z(z) {}
 	    float x, y, z;
         
         void set(float x, float y, float z) { this->x = x; this->y = y; this->z = z; }
@@ -135,7 +131,7 @@ public:
     
     struct Target : entityx::Component<Target>
 	{
-	    Target(float x = 0.0f, float y = 0.0f, float z = 0.0f) : x(x), y(y), z(z) {}
+		explicit  Target(float x = 0.0f, float y = 0.0f, float z = 0.0f) : x(x), y(y), z(z) {}
 	    float x, y, z;
         
         void set(float x, float y, float z) { this->x = x; this->y = y; this->z = z; }
@@ -143,7 +139,7 @@ public:
     
     struct TargetEntity : entityx::Component<TargetEntity>
     {
-        TargetEntity(const entityx::Entity& targetEntity) : targetEntity(targetEntity) {}
+		explicit TargetEntity(const entityx::Entity& targetEntity) : targetEntity(targetEntity) {}
         entityx::Entity targetEntity;
     };
     
@@ -154,7 +150,7 @@ public:
         BattleConfig::Side side;
         BattleConfig::FaceTo faceTo;
         
-        Identify(int id, BattleConfig::EntityType type, BattleConfig::Side side, BattleConfig::FaceTo faceTo) : id(id), type(type), side(side), faceTo(faceTo) {}
+		explicit Identify(int id, BattleConfig::EntityType type, BattleConfig::Side side, BattleConfig::FaceTo faceTo) : id(id), type(type), side(side), faceTo(faceTo) {}
     };
     
     struct Property : entityx::Component<Property>
@@ -163,13 +159,14 @@ public:
         std::array<bool, BattleConfig::SIZE_OF_PROPERTY_NAME> m_lock;
         std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME> m_current;
         std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME> m_original;
-        const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& m_min;
-        const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& m_max;
+        std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME> m_min;
+        std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME> m_max;
         
     public:
-        Property(const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& data,
-                 const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& dataMin,
-                 const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& dataMax);
+		explicit Property(const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& data,
+                  const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& dataMin,
+				  const std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& dataMax);
+		void setDataMin(std::array<float, BattleConfig::SIZE_OF_PROPERTY_NAME>& dataMin) { m_min = dataMin; }
         float get(BattleConfig::Property name);
         void set(BattleConfig::Property name, float value);
         float getOriginal(BattleConfig::Property name);
@@ -178,32 +175,28 @@ public:
 
     };
 
-#pragma mark -
-#pragma mark Attack
     
     struct Attack : entityx::Component<Attack>
     {
-        Attack(const BattleConfig::AttackData& attackData) : attackData(attackData) {}
+		explicit Attack(const BattleConfig::AttackData& attackData) : attackData(attackData) {}
         
         BattleConfig::AttackData attackData;
     };
     
-#pragma mark -
-#pragma mark Gas
     
     struct GasGather:entityx::Component<GasGather>
     {
         std::vector<BattleConfig::SkillData*>& skills;
         bool lock = false;
         
-        GasGather(std::vector<BattleConfig::SkillData*>& skills) : skills(skills) {}
+		explicit GasGather(std::vector<BattleConfig::SkillData*>& skills) : skills(skills) {}
     };
     
     struct Buff : entityx::Component<Buff>
     {
         std::vector<BattleConfig::BuffData*> buffList;
     
-        Buff() {}
+		explicit Buff() {}
         
         ~Buff()
         {
@@ -220,7 +213,7 @@ public:
         int target;
         BattleConfig::HeroConfigData config;
 
-        General(const BattleConfig::HeroConfigData& config) : config(config), target(0) {}
+		explicit General(const BattleConfig::HeroConfigData& config) : config(config), target(0) {}
         ~General() { CCLOG("general clear"); }
     };
     
@@ -229,11 +222,12 @@ public:
         int target;
         BattleConfig::SoldierConfigData config;
         
-        Soldier(const BattleConfig::SoldierConfigData& config) : config(config), target(0) {}
+		explicit Soldier(const BattleConfig::SoldierConfigData& config) : config(config), target(0) {}
         void cleanTarget() { target = 0; }
 	};
 
-    _COMPONENT(AnchorArrowData)
+
+	struct AnchorArrowData : entityx::Component<AnchorArrowData>
     {
         enum STATE
         {
@@ -244,13 +238,13 @@ public:
         entityx::Entity m_firer;
         STATE state = WORK;
         
-        AnchorArrowData(entityx::Entity firer): m_firer(firer) {}
+		explicit AnchorArrowData(entityx::Entity firer): m_firer(firer) {}
     };
     
-    _COMPONENT(MiniIcon)
+	struct MiniIcon : entityx::Component<MiniIcon>
     {
         cocos2d::Node* m_pIcon;
-        MiniIcon(cocos2d::Node* m_pIcon): m_pIcon(m_pIcon) {}
+		explicit MiniIcon(cocos2d::Node* m_pIcon): m_pIcon(m_pIcon) {}
     };
     
     struct AI : entityx::Component<AI>
@@ -287,7 +281,7 @@ public:
         bool isDead = false;
         StateMachine stateMachine;
 
-        ObjectStateMachine(entityx::Entity& entity):
+		explicit ObjectStateMachine(entityx::Entity& entity):
         stateMachine(entity)
         {
         }
@@ -301,8 +295,7 @@ public:
         int update(float dt) { return stateMachine.update(dt); }
     };
     
-#pragma mark -
-#pragma mark Effect
+
     
     //TO-DO check play current
     struct Effect : entityx::Component<Effect>
@@ -316,7 +309,7 @@ public:
         
         entityx::Entity followTarget; //follow mode
         
-        Effect(float delay = 0, float duration = 0, bool follow = false, int fromId = 0) :
+		explicit Effect(float delay = 0, float duration = 0, bool follow = false, int fromId = 0) :
                delay(delay), duration(duration), follow(follow), fromId(fromId) {}
     };
     
@@ -340,32 +333,29 @@ public:
         
         int m_audioId;
         
-        SkillArrow(const BattleConfig::SkillArrowData& arrowData, int startX, int startZ, bool destroyAfterHitHero = true);
+		explicit SkillArrow(const BattleConfig::SkillArrowData& arrowData, int startX, int startZ, bool destroyAfterHitHero = true);
         ~SkillArrow();
     };
     
-    _COMPONENT(FlyTextEffect)
+	struct FlyTextEffect : entityx::Component<FlyTextEffect>
     {
         std::vector<std::vector<BattleAnimation*>*> animations;
         float delay;
         float interval;
         
-        FlyTextEffect(float interval, float delay = 0) : interval(interval), delay(delay) {}
+		explicit FlyTextEffect(float interval, float delay = 0) : interval(interval), delay(delay) {}
         
         ~FlyTextEffect();
     };
     
-#pragma mark -
-#pragma mark Camera
-    
-    _COMPONENT(ShakeCom)
+	struct ShakeCom : entityx::Component<ShakeCom>
     {
         float delay, duration, elapse, amplitude;
         int mode, direction, interval, index;
         //float orgX, orgY, orgZ;
         bool damping;
         
-        ShakeCom(float duration = 0.0f, float amplitude = 10.0f, int mode = 0, int interval = 2, float delay = 0.0f, bool damping = true) :
+		explicit ShakeCom(float duration = 0.0f, float amplitude = 10.0f, int mode = 0, int interval = 2, float delay = 0.0f, bool damping = true) :
                  duration(duration), amplitude(amplitude), mode(mode), interval(interval), delay(delay)
         {
             elapse = 0.0f;
@@ -388,7 +378,7 @@ public:
         entityx::Entity followTarget; //follow mode
     };
 
-    _COMPONENT(Camera)
+	struct Camera : entityx::Component<Camera>
 	{
 //        int cameraMode;
         int cameraLastMode;
@@ -423,22 +413,22 @@ public:
         int fromId;
         std::vector<int> m_playingSoundPool;
 	    
-        Skill(SkillObject* skill, int fromId) : skill(skill), elapse(0), fromId(fromId) {}
+		explicit Skill(SkillObject* skill, int fromId) : skill(skill), elapse(0), fromId(fromId) {}
         ~Skill();
 	};
     
-    _COMPONENT(HeroStrategy)
-    {
+	struct HeroStrategy : entityx::Component<HeroStrategy>
+	{
         StrategyControl::HERO_CONTROL_TYPE type;
         
-        HeroStrategy(StrategyControl::HERO_CONTROL_TYPE type = StrategyControl::HERO_STOP) : type(type) {}
+		explicit HeroStrategy(StrategyControl::HERO_CONTROL_TYPE type = StrategyControl::HERO_STOP) : type(type) {}
     };
 
-    _COMPONENT(ActorMode)
+	struct ActorMode : entityx::Component<ActorMode>
     {
         ModeGroup m_modeGroup;
         
-        ActorMode(entityx::Entity& entity):
+		explicit ActorMode(entityx::Entity& entity):
         m_modeGroup(entity)
         {
 
@@ -449,7 +439,7 @@ public:
         }
     };
     
-    _COMPONENT(Combo)
+	struct Combo : entityx::Component<Combo>
     {
         int m_comboTimes;
         float m_lastComboTime;
@@ -463,28 +453,25 @@ public:
         
     };
     
-#pragma mark -
-#pragma mark Skill Component
-    
-    _COMPONENT(SkillTileCenter)
+	struct SkillTileCenter : entityx::Component<SkillTileCenter>
     {
         int tileZ, tileX;
         
-        SkillTileCenter(int tileX, int tileZ) : tileX(tileX), tileZ(tileZ) {}
+		explicit SkillTileCenter(int tileX, int tileZ) : tileX(tileX), tileZ(tileZ) {}
     };
     
-    _COMPONENT(SkillTileTarget)
+	struct SkillTileTarget : entityx::Component<SkillTileTarget>
     {
         int tileZ, tileX;
         
-        SkillTileTarget(int tileX, int tileZ) : tileX(tileX), tileZ(tileZ) {}
+		explicit SkillTileTarget(int tileX, int tileZ) : tileX(tileX), tileZ(tileZ) {}
     };
     
-    _COMPONENT(SkillTileResults)
+	struct SkillTileResults : entityx::Component<SkillTileResults>
     {
         BattleConfig::TileResults results;
         
-        SkillTileResults(const BattleConfig::TileResults& fromResults)
+		explicit SkillTileResults(const BattleConfig::TileResults& fromResults)
         {
             for (auto* pTile : fromResults.tiles)
             {
@@ -493,26 +480,24 @@ public:
         }
     };
     
-    _COMPONENT(SkillTargetResults)
+	struct SkillTargetResults : entityx::Component<SkillTargetResults>
     {
         std::vector<int> targets;
         
-        SkillTargetResults(const std::vector<int>& targets) : targets(targets) {}
+		explicit SkillTargetResults(const std::vector<int>& targets) : targets(targets) {}
     };
     
-    _COMPONENT(SkillDuration)
+	struct SkillDuration : entityx::Component<SkillDuration>
     {
         float duration;
         
-        SkillDuration(float duration) : duration(duration) {}
+		explicit SkillDuration(float duration) : duration(duration) {}
     };
     
-    _COMPONENT(SkillReduceEnemyMp)
+	struct SkillReduceEnemyMp : entityx::Component<SkillReduceEnemyMp>
     {
         float actualReduceValue;
         
-        SkillReduceEnemyMp(float actualReduceValue) : actualReduceValue(actualReduceValue) {}
+		explicit SkillReduceEnemyMp(float actualReduceValue) : actualReduceValue(actualReduceValue) {}
     };
 };
-
-#endif

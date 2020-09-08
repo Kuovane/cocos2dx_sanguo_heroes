@@ -12,6 +12,15 @@
 #include "json/writer.h"
 #include "json/stringbuffer.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+#include "tolua++.h"
+
+#ifdef __cplusplus
+}
+#endif
+
 extern "C"
 {
     
@@ -33,7 +42,8 @@ int convertJsonContent(lua_State *L)
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     doc.Accept(writer);
-    std::string strJson(buffer.GetString(), buffer.Size());
+	
+    std::string strJson(buffer.GetString(),  buffer.GetSize());
     
     //
     lua_pushstring(L, strJson.c_str());

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -13,6 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4E6A7A0E-DDD8-4BAA-8B22-C964069364ED}</ProjectGuid>
     <ProjectName>sanguoGame</ProjectName>
+    <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -23,6 +24,7 @@
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0'">v120</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110_xp</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120_xp</PlatformToolset>
+    <PlatformToolset>v141_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -32,19 +34,20 @@
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0'">v120</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110_xp</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120_xp</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
-    <Import Project="$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\\cocos\2d\cocos2dx.props" />
-    <Import Project="$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\\cocos\2d\cocos2d_headers.props" />
+    <Import Project="$(ProjectDir)..\..\cocos2d-x\cocos\2d\cocos2dx.props" />
+    <Import Project="$(ProjectDir)..\..\cocos2d-x\cocos\2d\cocos2d_headers.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
-    <Import Project="$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\\cocos\2d\cocos2dx.props" />
-    <Import Project="$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\\cocos\2d\cocos2d_headers.props" />
+    <Import Project="$(ProjectDir)..\..\cocos2d-x\cocos\2d\cocos2dx.props" />
+    <Import Project="$(ProjectDir)..\..\cocos2d-x\cocos\2d\cocos2d_headers.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -68,13 +71,13 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\Classes\runtime;$(ProjectDir)..\Classes\protobuf-lite;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external\win32-specific\zlib\include;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\cocos\scripting\lua-bindings\auto;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\cocos\scripting\lua-bindings\manual;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\cocos\audio\include;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external\lua\luajit\include;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external\lua\tolua;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external\chipmunk\include\chipmunk;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external\curl\include\win32;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\extensions;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\tools\simulator\libsimulator\lib;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\tools\simulator\libsimulator\lib\protobuf-lite;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\Classes\pbc;$(ProjectDir)..\Classes\entityx;$(ProjectDir)..\Classes\SGCommon;$(ProjectDir)..\Classes\update;$(ProjectDir)..\Classes\network;$(ProjectDir)..\Classes\asset;$(ProjectDir)..\Classes\asset\shader;$(ProjectDir)..\Classes\battle;$(ProjectDir)..\Classes\battle\system\hero\dizzy\conditions;$(ProjectDir)..\Classes\battle\system\battle\states;$(ProjectDir)..\Classes\battle\system\hero\dizzy;$(ProjectDir)..\Classes\battle\system\hero\dizzy\actions;$(ProjectDir)..\Classes\battle\system\hero\States;$(ProjectDir)..\Classes\battle\control\enterShow;$(ProjectDir)..\Classes\battle\system\soldier\states;$(ProjectDir)..\Classes\battle\system\stateMachine;$(ProjectDir)..\Classes\battle\actorMode;$(ProjectDir)..\Classes\battle\skills\actions\attack;$(ProjectDir)..\Classes\battle\skills\actions\buff;$(ProjectDir)..\Classes\battle\skills\actions\state;$(ProjectDir)..\Classes\battle\skills\actions\effect;$(ProjectDir)..\Classes\battle\skills\actions\tween;$(ProjectDir)..\Classes\battle\skills\actions\arrow;$(ProjectDir)..\Classes\battle\ai;$(ProjectDir)..\Classes\battle\animation;$(ProjectDir)..\Classes\battle\audio;$(ProjectDir)..\Classes\battle\common;$(ProjectDir)..\Classes\battle\control;$(ProjectDir)..\Classes\battle\control\map;$(ProjectDir)..\Classes\battle\control\Camera;$(ProjectDir)..\Classes\battle\control\creator;$(ProjectDir)..\Classes\battle\skills;$(ProjectDir)..\Classes\battle\skills\actions;$(ProjectDir)..\Classes\battle\skills\actions\skill;$(ProjectDir)..\Classes\battle\skills\actions\camera;$(ProjectDir)..\Classes\battle\skills\actions\share;$(ProjectDir)..\Classes\battle\system;$(ProjectDir)..\Classes\battle\system\hero;$(ProjectDir)..\Classes\battle\system\soldier;$(ProjectDir)..\Classes\battle\system\battle;$(ProjectDir)..\Classes\battle\tools;$(ProjectDir)..\Classes\battle\tween;$(ProjectDir)..\Classes\battle\ui;$(ProjectDir)..\Classes\battle\;$(ProjectDir)..\Classes\lua;$(ProjectDir)..\Classes\runtime;$(ProjectDir)..\Classes\protobuf-lite;$(ProjectDir)..\..\cocos2d-x\external\win32-specific\zlib\include;$(ProjectDir)..\..\cocos2d-x\cocos\scripting\lua-bindings\auto;$(ProjectDir)..\..\cocos2d-x\cocos\scripting\lua-bindings\manual;$(ProjectDir)..\..\cocos2d-x\cocos\audio\include;$(ProjectDir)..\..\cocos2d-x\cocos;$(ProjectDir)..\..\cocos2d-x\cocos\network;$(ProjectDir)..\..\cocos2d-x\cocos\base;$(ProjectDir)..\..\cocos2d-x\cocos\editor-support;$(ProjectDir)..\..\cocos2d-x\external;$(ProjectDir)..\..\cocos2d-x\external\lua\luajit\include;$(ProjectDir)..\..\cocos2d-x\external\lua;$(ProjectDir)..\..\cocos2d-x\external\lua\tolua;$(ProjectDir)..\..\cocos2d-x\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\cocos2d-x\external\curl\include\win32;$(ProjectDir)..\..\cocos2d-x\extensions;$(ProjectDir)..\..\cocos2d-x\tools\simulator\libsimulator\lib;$(ProjectDir)..\..\cocos2d-x\tools\simulator\libsimulator\lib\protobuf-lite;$(ProjectDir)..\..\cocos2d-x\;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <MinimalRebuild>false</MinimalRebuild>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS_DEBUG;COCOS2D_DEBUG=1;GLFW_EXPOSE_NATIVE_WIN32;GLFW_EXPOSE_NATIVE_WGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -89,7 +92,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcurl_imp.lib;lua51.lib;websockets.lib;%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
+      <AdditionalDependencies>libcurl.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
       <ProgramDatabaseFile>$(ProjectDir)../../../runtime/win32/$(TargetName).pdb</ProgramDatabaseFile>
       <OutputFile>$(ProjectDir)../../../runtime/win32/$(TargetName)$(TargetExt)</OutputFile>
       <IgnoreSpecificDefaultLibraries>LIBCMT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -112,24 +115,26 @@
       </DllDataFileName>
     </Midl>
     <PreBuildEvent>
-      <Command>if not exist "$(LocalDebuggerWorkingDirectory)" mkdir "$(LocalDebuggerWorkingDirectory)"</Command>
+      <Command>
+      </Command>
       <Message>copy files</Message>
     </PreBuildEvent>
     <PreLinkEvent>
-      <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
-xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\prebuilt\win32\*.*" "$(OutDir)"
-</Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
     <PostBuildEvent>
-      <Command>xcopy /Y /Q "$(OutDir)*.dll" "$(ProjectDir)..\..\..\runtime\win32\"
-xcopy /Y /Q "$(ProjectDir)..\Classes\ide-support\lang" "$(ProjectDir)..\..\..\runtime\win32\"
-xcopy "$(ProjectDir)..\..\..\res" "$(ProjectDir)..\..\..\runtime\win32\res" /D /E /I /F /Y
-xcopy "$(ProjectDir)..\..\..\src" "$(ProjectDir)..\..\..\runtime\win32\src" /D /E /I /F /Y</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>if not exist "$(LocalDebuggerWorkingDirectory)" mkdir "$(LocalDebuggerWorkingDirectory)"
+xcopy /Y /Q "$(OutDir)*.dll" "$(LocalDebuggerWorkingDirectory)"</Command>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external\win32-specific\zlib\include;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\cocos\scripting\lua-bindings\auto;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\cocos\scripting\lua-bindings\manual;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\cocos\audio\include;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external\lua\luajit\include;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external\lua\tolua;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external\chipmunk\include\chipmunk;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\extensions;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\external\curl\include\win32;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\tools\simulator\libsimulator\lib;$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\tools\simulator\libsimulator\lib\protobuf-lite;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\cocos2d-x\external\win32-specific\zlib\include;$(ProjectDir)..\cocos2d-x\cocos\scripting\lua-bindings\auto;$(ProjectDir)..\cocos2d-x\cocos\scripting\lua-bindings\manual;$(ProjectDir)..\cocos2d-x\cocos\audio\include;$(ProjectDir)..\cocos2d-x\external;$(ProjectDir)..\cocos2d-x\external\lua\luajit\include;$(ProjectDir)..\cocos2d-x\external\lua\tolua;$(ProjectDir)..\cocos2d-x\external\chipmunk\include\chipmunk;$(ProjectDir)..\cocos2d-x\extensions;$(ProjectDir)..\cocos2d-x\external\curl\include\win32;$(ProjectDir)..\cocos2d-x\;$(ProjectDir)..\cocos2d-x\tools\simulator\libsimulator\lib;$(ProjectDir)..\cocos2d-x\tools\simulator\libsimulator\lib\protobuf-lite;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
@@ -171,12 +176,12 @@ xcopy "$(ProjectDir)..\..\..\src" "$(ProjectDir)..\..\..\runtime\win32\src" /D /
       </DllDataFileName>
     </Midl>
     <PreBuildEvent>
-     <Command>if not exist "$(LocalDebuggerWorkingDirectory)" mkdir "$(LocalDebuggerWorkingDirectory)"</Command>
+      <Command>if not exist "$(LocalDebuggerWorkingDirectory)" mkdir "$(LocalDebuggerWorkingDirectory)"</Command>
       <Message>copy files</Message>
     </PreBuildEvent>
     <PreLinkEvent>
       <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
-xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.6\prebuilt\win32\*.*" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\cocos2d-x\prebuilt\win32\*.*" "$(OutDir)"
 </Command>
     </PreLinkEvent>
     <PostBuildEvent>
@@ -188,9 +193,277 @@ xcopy "$(ProjectDir)..\..\..\src" "$(ProjectDir)..\..\..\runtime\win32\src" /D /
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\asset\CCAdvancedAnimation.h" />
+    <ClInclude Include="..\Classes\asset\CCAsset.h" />
+    <ClInclude Include="..\Classes\asset\CCAssetDefine.h" />
+    <ClInclude Include="..\Classes\asset\CCAssetDefineCache.h" />
+    <ClInclude Include="..\Classes\asset\CCBufferReader.h" />
+    <ClInclude Include="..\Classes\asset\shader\CCMyShader.h" />
+    <ClInclude Include="..\Classes\BattleScene.h" />
+    <ClInclude Include="..\Classes\battle\actorMode\ActorMode.h" />
+    <ClInclude Include="..\Classes\battle\actorMode\ModeGroup.h" />
+    <ClInclude Include="..\Classes\battle\ai\actions\EntityCommand.h" />
+    <ClInclude Include="..\Classes\battle\ai\actions\FireSkillAction.h" />
+    <ClInclude Include="..\Classes\battle\ai\AIAction.h" />
+    <ClInclude Include="..\Classes\battle\ai\AICondition.h" />
+    <ClInclude Include="..\Classes\battle\ai\AIConfig.h" />
+    <ClInclude Include="..\Classes\battle\ai\AIManager.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\AfterAnySkillRelease.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\BattleStart.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\EnemyIsClose.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\FirstSoldierKilledInMelee.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroAndHeroDistanceLessThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroAndSoldierDistanceLessThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroHpLessThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroHpPercentLessThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroHpPercentMoreThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroRush.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\NoHeroMove.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\NoHeroRush.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\NoOppSkillFired.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\NoSelfSkillFired.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\OppHeroAroundOppSoldiersMoreThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\OppHeroAroundSelfSoldiersLessThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\OppHeroAroundSelfSoldiersMoreThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\OppSoldiersMoreThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\SelfHeroAroundOppSoldiersMoreThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\SelfMainHeroBeAttacked.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\SkillOk.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\SkillRelease.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\SoldierAndHeroDistanceLessThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\SoldierAndSoldierDistanceLessThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\SoldiersLessThan.h" />
+    <ClInclude Include="..\Classes\battle\ai\conditions\SoldiersMoreThan.h" />
+    <ClInclude Include="..\Classes\battle\animation\BattleAnimation.h" />
+    <ClInclude Include="..\Classes\battle\animation\BattleAnimationGroup.h" />
+    <ClInclude Include="..\Classes\battle\audio\AudioManager.h" />
+    <ClInclude Include="..\Classes\battle\BattleAudioConfig.h" />
+    <ClInclude Include="..\Classes\battle\BattleCocosEvent.h" />
+    <ClInclude Include="..\Classes\battle\BattleComponent.h" />
+    <ClInclude Include="..\Classes\battle\BattleConfig.h" />
+    <ClInclude Include="..\Classes\battle\BattleEvent.h" />
+    <ClInclude Include="..\Classes\battle\BattleResult.h" />
+    <ClInclude Include="..\Classes\battle\BattleStage.h" />
+    <ClInclude Include="..\Classes\battle\BattleWorld.h" />
+    <ClInclude Include="..\Classes\battle\common\ActiveObject.h" />
+    <ClInclude Include="..\Classes\battle\common\EnumParser.h" />
+    <ClInclude Include="..\Classes\battle\common\StrategyControl.h" />
+    <ClInclude Include="..\Classes\battle\common\TicketRequest.h" />
+    <ClInclude Include="..\Classes\battle\control\Camera\CameraEventSystem.h" />
+    <ClInclude Include="..\Classes\battle\control\Camera\CameraManager.h" />
+    <ClInclude Include="..\Classes\battle\control\Camera\CameraSystem.h" />
+    <ClInclude Include="..\Classes\battle\control\Camera\CameraTwins.h" />
+    <ClInclude Include="..\Classes\battle\control\Camera\ShakeSystem.h" />
+    <ClInclude Include="..\Classes\battle\control\creator\AnchorArrowCreator.h" />
+    <ClInclude Include="..\Classes\battle\control\creator\BackgroundCreator.h" />
+    <ClInclude Include="..\Classes\battle\control\creator\BattleAnimationCreator.h" />
+    <ClInclude Include="..\Classes\battle\control\creator\EffectCreator.h" />
+    <ClInclude Include="..\Classes\battle\control\creator\HeroCreator.h" />
+    <ClInclude Include="..\Classes\battle\control\creator\SoldierCreator.h" />
+    <ClInclude Include="..\Classes\battle\control\enterShow\EnterShowControl.h" />
+    <ClInclude Include="..\Classes\battle\control\map\ArrowMovement.h" />
+    <ClInclude Include="..\Classes\battle\control\map\BattleEntity.h" />
+    <ClInclude Include="..\Classes\battle\control\map\FormationManager.h" />
+    <ClInclude Include="..\Classes\battle\control\map\HeroMovement.h" />
+    <ClInclude Include="..\Classes\battle\control\map\MapHelper.h" />
+    <ClInclude Include="..\Classes\battle\control\map\PathFinding.h" />
+    <ClInclude Include="..\Classes\battle\control\map\SimpleMovement.h" />
+    <ClInclude Include="..\Classes\battle\control\map\SoldierMovement.h" />
+    <ClInclude Include="..\Classes\battle\control\map\TargetFinder.h" />
+    <ClInclude Include="..\Classes\battle\control\PrepairBattle.h" />
+    <ClInclude Include="..\Classes\battle\DebugHelper.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\arrow\SkillArrow.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AddHpOnReduceEnemyHp.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AddMpOnReduceEnemyMp.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackDiamondAreaCenterOnHero.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackDiamondAreaCenterOnTile.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackOnFindTarget.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackOnTile.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackRectAreaOnHero.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackRectArroundHero.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackRectArroundTile.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\ReduceEnemyMp.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\AddBuff.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\AddBuffBase.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\AddBuffOnSkillAttack.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\BuffEffect.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\LockOppSkill.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\RemoveShieldAnimationOnUseUp.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\camera\MoveCameraToHero.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\camera\MoveCameraToTile.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\camera\ShakeCamera.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\camera\TriggerCameraActions.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\CancelSkill.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\DisableBreak.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\AddEffectOnAddNormalAttack.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\AddEffectOnSkillAttack.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\AddEntityAnimation.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\AddEntityEffect.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\AddTileEffect.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\RemoveEntityAnimation.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\ShowHeroEffect.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\IntervalTrigger.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\LockFireSkill.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\LockUserControl.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\MultiAttack.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\PauseBattle.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\PlayAnimation.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\PlaySound.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\AssignEnemyHeroCenter.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\DelayTrigger.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindRandomTargetAroundHero.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindRandomTargetAroundTile.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindTarget.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindTargetByFormation.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindTileCenterOnMostPeople.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindTileOnEnemyHero.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\SkillDuration.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\TriggerOnSkillAttack.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\share\TriStageTrigger.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\ShowBackground.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\CallSoldiers.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\EmptyArrow.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillBaJiaoShan.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillChiTianBaFangYan.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillChuanSuo.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillFenShenNuZhan.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillGuiCai.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillGuiJiShiHun.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillHongLianYeHuo.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillLianHuan.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillLieKongFengRen.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillMuLunQiangXi.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillNiePan.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillNuJi.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillShanXian.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillShunXiQianLi.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillTianDiWuYong.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillTiaoJi.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillWuYueHuaZhan.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillZhanHun.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\state\SetStateDizzyBase.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnFindTarget.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnNormalAttack.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnSkillAttack.h" />
+    <ClInclude Include="..\Classes\battle\skills\actions\tween\ColorTween.h" />
+    <ClInclude Include="..\Classes\battle\skills\SkillAction.h" />
+    <ClInclude Include="..\Classes\battle\skills\SkillConfig.h" />
+    <ClInclude Include="..\Classes\battle\skills\SkillManager.h" />
+    <ClInclude Include="..\Classes\battle\skills\SkillObject.h" />
+    <ClInclude Include="..\Classes\battle\system\ActorModeSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\AICommonHelper.h" />
+    <ClInclude Include="..\Classes\battle\system\AISystem.h" />
+    <ClInclude Include="..\Classes\battle\system\AnchorArrowSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\AnimationSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\ArrowSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\AttackSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\AudioSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\battle\BattleSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\battle\states\StateBattleBeforeStart.h" />
+    <ClInclude Include="..\Classes\battle\system\battle\states\StateBattleChangeBackupHero.h" />
+    <ClInclude Include="..\Classes\battle\system\battle\states\StateBattleEnd.h" />
+    <ClInclude Include="..\Classes\battle\system\battle\states\StateBattleStartFight.h" />
+    <ClInclude Include="..\Classes\battle\system\BuffSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\ComboSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\EffectSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\GasSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionChangeColor.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionKnockBack.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionPlayHitAnimation.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionPlayXuanyunEffect.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillChiTianBaFangYan.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillChuanSuo.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillGuiJiShiHun.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillTiaoJi.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionStopAnimation.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionByActionComplete.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionBySkillEnd.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionByTime.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\DizzyAction.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\DizzyCondition.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\HeroEventSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\HeroSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroAttack.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroBattleEnd.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroChangeLine.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroDash.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroDead.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroDizzy.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroIdle.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroMoveToHeroBack.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroMoveToTargetTile.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroPlayAnimation.h" />
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroRun.h" />
+    <ClInclude Include="..\Classes\battle\system\SkillSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\SoldierEventSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\SoldierSystem.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierArchorAttack.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierAttackEnemy.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierBattleEnd.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierChangeToBlock.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierChangeToGhost.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierDead.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierDepart.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierDizzy.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierFadeIn.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierHitBack.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierIdle.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierLost.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierMoveBack.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToEnemy.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToEnemyHero.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToTargetTile.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierPlayAnimation.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierProtectHero.h" />
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierRecenter.h" />
+    <ClInclude Include="..\Classes\battle\system\stateMachine\IState.h" />
+    <ClInclude Include="..\Classes\battle\system\stateMachine\StateMachine.h" />
+    <ClInclude Include="..\Classes\battle\system\TickerSystem.h" />
+    <ClInclude Include="..\Classes\battle\tools\TestBattle.h" />
+    <ClInclude Include="..\Classes\battle\tools\TestBattleConfigReader.h" />
+    <ClInclude Include="..\Classes\battle\tween\SimpleTween.h" />
+    <ClInclude Include="..\Classes\battle\tween\TweenQueue.h" />
+    <ClInclude Include="..\Classes\battle\ui\BattleDialogueUI.h" />
+    <ClInclude Include="..\Classes\battle\ui\BattleLoadingUI.h" />
+    <ClInclude Include="..\Classes\battle\ui\BattleSceneUI.h" />
+    <ClInclude Include="..\Classes\entityx\3rdparty\catch.hpp" />
+    <ClInclude Include="..\Classes\entityx\3rdparty\simplesignal.h" />
+    <ClInclude Include="..\Classes\entityx\config.h" />
+    <ClInclude Include="..\Classes\entityx\deps\Dependencies.h" />
+    <ClInclude Include="..\Classes\entityx\Entity.h" />
+    <ClInclude Include="..\Classes\entityx\entityx.h" />
+    <ClInclude Include="..\Classes\entityx\Event.h" />
+    <ClInclude Include="..\Classes\entityx\help\NonCopyable.h" />
+    <ClInclude Include="..\Classes\entityx\help\Pool.h" />
+    <ClInclude Include="..\Classes\entityx\help\Timer.h" />
+    <ClInclude Include="..\Classes\entityx\quick.h" />
+    <ClInclude Include="..\Classes\entityx\System.h" />
+    <ClInclude Include="..\Classes\entityx\tags\TagsComponent.h" />
     <ClInclude Include="..\Classes\ide-support\CodeIDESupport.h" />
     <ClInclude Include="..\Classes\ide-support\lua_debugger.h" />
     <ClInclude Include="..\Classes\ide-support\RuntimeLuaImpl.h" />
+    <ClInclude Include="..\Classes\ide-support\SimpleConfigParser.h" />
+    <ClInclude Include="..\Classes\lua\convertJsonContent.h" />
+    <ClInclude Include="..\Classes\lua\luaBinding.h" />
+    <ClInclude Include="..\Classes\network\HttpAgent.h" />
+    <ClInclude Include="..\Classes\network\TestHttpClient.h" />
+    <ClInclude Include="..\Classes\pbc\alloc.h" />
+    <ClInclude Include="..\Classes\pbc\array.h" />
+    <ClInclude Include="..\Classes\pbc\bootstrap.h" />
+    <ClInclude Include="..\Classes\pbc\context.h" />
+    <ClInclude Include="..\Classes\pbc\descriptor.pbc.h" />
+    <ClInclude Include="..\Classes\pbc\map.h" />
+    <ClInclude Include="..\Classes\pbc\pattern.h" />
+    <ClInclude Include="..\Classes\pbc\pbc-lua.h" />
+    <ClInclude Include="..\Classes\pbc\pbc.h" />
+    <ClInclude Include="..\Classes\pbc\proto.h" />
+    <ClInclude Include="..\Classes\pbc\stringpool.h" />
+    <ClInclude Include="..\Classes\pbc\varint.h" />
+    <ClInclude Include="..\Classes\ProjectConfig.h" />
+    <ClInclude Include="..\Classes\SGCommon\SGCamera.h" />
+    <ClInclude Include="..\Classes\SGCommon\SGNode.h" />
+    <ClInclude Include="..\Classes\update\UpdateEngine.h" />
+    <ClInclude Include="..\Classes\VisibleRect.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SimulatorWin.h" />
@@ -199,8 +472,263 @@ xcopy "$(ProjectDir)..\..\..\src" "$(ProjectDir)..\..\..\runtime\win32\src" /D /
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\asset\CCAdvancedAnimation.cpp" />
+    <ClCompile Include="..\Classes\asset\CCAssetDefine.cpp" />
+    <ClCompile Include="..\Classes\asset\CCAssetDefineCache.cpp" />
+    <ClCompile Include="..\Classes\asset\CCBufferReader.cpp" />
+    <ClCompile Include="..\Classes\asset\shader\CCMyShader.cpp" />
+    <ClCompile Include="..\Classes\BattleScene.cpp" />
+    <ClCompile Include="..\Classes\battle\actorMode\ActorMode.cpp" />
+    <ClCompile Include="..\Classes\battle\actorMode\ModeGroup.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\actions\EntityCommand.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\actions\FireSkillAction.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\AIAction.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\AICondition.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\AIConfig.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\AIManager.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\AfterAnySkillRelease.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\BattleStart.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\EnemyIsClose.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\FirstSoldierKilledInMelee.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroAndHeroDistanceLessThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroAndSoldierDistanceLessThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroHpLessThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroHpPercentLessThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroHpPercentMoreThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroRush.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\NoHeroMove.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\NoHeroRush.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\NoOppSkillFired.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\NoSelfSkillFired.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\OppHeroAroundOppSoldiersMoreThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\OppHeroAroundSelfSoldiersLessThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\OppHeroAroundSelfSoldiersMoreThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\OppSoldiersMoreThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\SelfHeroAroundOppSoldiersMoreThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\SelfMainHeroBeAttacked.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\SkillOk.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\SkillRelease.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\SoldierAndHeroDistanceLessThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\SoldierAndSoldierDistanceLessThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\SoldiersLessThan.cpp" />
+    <ClCompile Include="..\Classes\battle\ai\conditions\SoldiersMoreThan.cpp" />
+    <ClCompile Include="..\Classes\battle\animation\BattleAnimation.cpp" />
+    <ClCompile Include="..\Classes\battle\animation\BattleAnimationGroup.cpp" />
+    <ClCompile Include="..\Classes\battle\audio\AudioManager.cpp" />
+    <ClCompile Include="..\Classes\battle\BattleAudioConfig.cpp" />
+    <ClCompile Include="..\Classes\battle\BattleComponent.cpp" />
+    <ClCompile Include="..\Classes\battle\BattleConfig.cpp" />
+    <ClCompile Include="..\Classes\battle\BattleResult.cpp" />
+    <ClCompile Include="..\Classes\battle\BattleStage.cpp" />
+    <ClCompile Include="..\Classes\battle\BattleWorld.cpp" />
+    <ClCompile Include="..\Classes\battle\common\ActiveObject.cpp" />
+    <ClCompile Include="..\Classes\battle\common\StrategyControl.cpp" />
+    <ClCompile Include="..\Classes\battle\common\TicketRequest.cpp" />
+    <ClCompile Include="..\Classes\battle\control\Camera\CameraEventSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\control\Camera\CameraManager.cpp" />
+    <ClCompile Include="..\Classes\battle\control\Camera\CameraSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\control\Camera\CameraTwins.cpp" />
+    <ClCompile Include="..\Classes\battle\control\Camera\ShakeSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\control\creator\AnchorArrowCreator.cpp" />
+    <ClCompile Include="..\Classes\battle\control\creator\BackgroundCreator.cpp" />
+    <ClCompile Include="..\Classes\battle\control\creator\BattleAnimationCreator.cpp" />
+    <ClCompile Include="..\Classes\battle\control\creator\EffectCreator.cpp" />
+    <ClCompile Include="..\Classes\battle\control\creator\HeroCreator.cpp" />
+    <ClCompile Include="..\Classes\battle\control\creator\SoldierCreator.cpp" />
+    <ClCompile Include="..\Classes\battle\control\enterShow\EnterShowControl.cpp" />
+    <ClCompile Include="..\Classes\battle\control\map\ArrowMovement.cpp" />
+    <ClCompile Include="..\Classes\battle\control\map\BattleEntity.cpp" />
+    <ClCompile Include="..\Classes\battle\control\map\FormationManager.cpp" />
+    <ClCompile Include="..\Classes\battle\control\map\HeroMovement.cpp" />
+    <ClCompile Include="..\Classes\battle\control\map\MapHelper.cpp" />
+    <ClCompile Include="..\Classes\battle\control\map\PathFinding.cpp" />
+    <ClCompile Include="..\Classes\battle\control\map\SimpleMovement.cpp" />
+    <ClCompile Include="..\Classes\battle\control\map\SoldierMovement.cpp" />
+    <ClCompile Include="..\Classes\battle\control\map\TargetFinder.cpp" />
+    <ClCompile Include="..\Classes\battle\control\PrepairBattle.cpp" />
+    <ClCompile Include="..\Classes\battle\DebugHelper.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\arrow\SkillArrow.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AddHpOnReduceEnemyHp.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AddMpOnReduceEnemyMp.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackDiamondAreaCenterOnHero.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackDiamondAreaCenterOnTile.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackOnFindTarget.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackOnTile.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackRectAreaOnHero.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackRectArroundHero.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackRectArroundTile.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\ReduceEnemyMp.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\AddBuff.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\AddBuffBase.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\AddBuffOnSkillAttack.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\BuffEffect.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\LockOppSkill.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\RemoveShieldAnimationOnUseUp.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\camera\MoveCameraToHero.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\camera\MoveCameraToTile.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\camera\ShakeCamera.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\camera\TriggerCameraActions.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\CancelSkill.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\DisableBreak.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\AddEffectOnAddNormalAttack.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\AddEffectOnSkillAttack.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\AddEntityAnimation.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\AddEntityEffect.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\AddTileEffect.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\RemoveEntityAnimation.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\ShowHeroEffect.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\IntervalTrigger.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\LockFireSkill.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\LockUserControl.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\MultiAttack.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\PauseBattle.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\PlayAnimation.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\PlaySound.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\AssignEnemyHeroCenter.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\DelayTrigger.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindRandomTargetAroundHero.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindRandomTargetAroundTile.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindTarget.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindTargetByFormation.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindTileCenterOnMostPeople.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindTileOnEnemyHero.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\SkillDuration.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\TriggerOnSkillAttack.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\share\TriStageTrigger.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\ShowBackground.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\CallSoldiers.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\EmptyArrow.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillBaJiaoShan.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillChiTianBaFangYan.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillChuanSuo.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillFenShenNuZhan.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillGuiCai.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillGuiJiShiHun.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillHongLianYeHuo.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillLianHuan.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillLieKongFengRen.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillMuLunQiangXi.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillNiePan.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillNuJi.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillShanXian.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillShunXiQianLi.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillTianDiWuYong.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillTiaoJi.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillWuYueHuaZhan.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillZhanHun.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\state\SetStateDizzyBase.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnFindTarget.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnNormalAttack.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnSkillAttack.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\actions\tween\ColorTween.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\SkillAction.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\SkillConfig.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\SkillManager.cpp" />
+    <ClCompile Include="..\Classes\battle\skills\SkillObject.cpp" />
+    <ClCompile Include="..\Classes\battle\system\ActorModeSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\AICommonHelper.cpp" />
+    <ClCompile Include="..\Classes\battle\system\AISystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\AnchorArrowSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\AnimationSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\ArrowSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\AttackSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\AudioSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\battle\BattleSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\battle\states\StateBattleBeforeStart.cpp" />
+    <ClCompile Include="..\Classes\battle\system\battle\states\StateBattleChangeBackupHero.cpp" />
+    <ClCompile Include="..\Classes\battle\system\battle\states\StateBattleEnd.cpp" />
+    <ClCompile Include="..\Classes\battle\system\battle\states\StateBattleStartFight.cpp" />
+    <ClCompile Include="..\Classes\battle\system\BuffSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\ComboSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\EffectSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\GasSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionChangeColor.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionKnockBack.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionPlayHitAnimation.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionPlayXuanyunEffect.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillChiTianBaFangYan.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillChuanSuo.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillGuiJiShiHun.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillTiaoJi.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionStopAnimation.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionByActionComplete.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionBySkillEnd.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionByTime.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\DizzyAction.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\DizzyCondition.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\HeroEventSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\HeroSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroAttack.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroBattleEnd.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroChangeLine.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroDash.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroDead.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroDizzy.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroIdle.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroMoveToHeroBack.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroMoveToTargetTile.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroPlayAnimation.cpp" />
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroRun.cpp" />
+    <ClCompile Include="..\Classes\battle\system\SkillSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\SoldierEventSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\SoldierSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierArchorAttack.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierAttackEnemy.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierBattleEnd.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierChangeToBlock.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierChangeToGhost.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierDead.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierDepart.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierDizzy.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierFadeIn.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierHitBack.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierIdle.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierLost.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierMoveBack.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToEnemy.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToEnemyHero.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToTargetTile.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierPlayAnimation.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierProtectHero.cpp" />
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierRecenter.cpp" />
+    <ClCompile Include="..\Classes\battle\system\stateMachine\StateMachine.cpp" />
+    <ClCompile Include="..\Classes\battle\system\TickerSystem.cpp" />
+    <ClCompile Include="..\Classes\battle\tools\TestBattle.cpp" />
+    <ClCompile Include="..\Classes\battle\tools\TestBattleConfigReader.cpp" />
+    <ClCompile Include="..\Classes\battle\tween\SimpleTween.cpp" />
+    <ClCompile Include="..\Classes\battle\tween\TweenQueue.cpp" />
+    <ClCompile Include="..\Classes\battle\ui\BattleDialogueUI.cpp" />
+    <ClCompile Include="..\Classes\battle\ui\BattleLoadingUI.cpp" />
+    <ClCompile Include="..\Classes\battle\ui\BattleSceneUI.cpp" />
+    <ClCompile Include="..\Classes\entityx\Entity.cc" />
+    <ClCompile Include="..\Classes\entityx\Event.cc" />
+    <ClCompile Include="..\Classes\entityx\help\Pool.cc" />
+    <ClCompile Include="..\Classes\entityx\help\Timer.cc" />
+    <ClCompile Include="..\Classes\entityx\System.cc" />
     <ClCompile Include="..\Classes\ide-support\lua_debugger.c" />
     <ClCompile Include="..\Classes\ide-support\RuntimeLuaImpl.cpp" />
+    <ClCompile Include="..\Classes\ide-support\SimpleConfigParser.cpp" />
+    <ClCompile Include="..\Classes\lua\convertJsonContent.cpp" />
+    <ClCompile Include="..\Classes\lua\luaBinding.cpp" />
+    <ClCompile Include="..\Classes\network\HttpAgent.cpp" />
+    <ClCompile Include="..\Classes\pbc\alloc.c" />
+    <ClCompile Include="..\Classes\pbc\array.c" />
+    <ClCompile Include="..\Classes\pbc\bootstrap.c" />
+    <ClCompile Include="..\Classes\pbc\context.c" />
+    <ClCompile Include="..\Classes\pbc\decode.c" />
+    <ClCompile Include="..\Classes\pbc\map.c" />
+    <ClCompile Include="..\Classes\pbc\pattern.c" />
+    <ClCompile Include="..\Classes\pbc\pbc-lua.c" />
+    <ClCompile Include="..\Classes\pbc\proto.c" />
+    <ClCompile Include="..\Classes\pbc\register.c" />
+    <ClCompile Include="..\Classes\pbc\rmessage.c" />
+    <ClCompile Include="..\Classes\pbc\stringpool.c" />
+    <ClCompile Include="..\Classes\pbc\varint.c" />
+    <ClCompile Include="..\Classes\pbc\wmessage.c" />
+    <ClCompile Include="..\Classes\SGCommon\SGCamera.cpp" />
+    <ClCompile Include="..\Classes\SGCommon\SGNode.cpp" />
+    <ClCompile Include="..\Classes\update\UpdateEngine.cpp" />
+    <ClCompile Include="..\Classes\VisibleRect.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SimulatorWin.cpp" />
     <ClCompile Include="stdafx.cpp" />
@@ -211,7 +739,24 @@ xcopy "$(ProjectDir)..\..\..\src" "$(ProjectDir)..\..\..\runtime\win32\src" /D /
   <ItemGroup>
     <Image Include="res\game.ico" />
   </ItemGroup>
-  
+  <ItemGroup>
+    <ProjectReference Include="..\..\cocos2d-x\cocos\2d\libcocos2d.vcxproj">
+      <Project>{98a51ba8-fc3a-415b-ac8f-8c7bd464e93e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\cocos2d-x\cocos\editor-support\spine\proj.win32\libSpine.vcxproj">
+      <Project>{b7c2a162-dec9-4418-972e-240ab3cbfcae}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\cocos2d-x\cocos\scripting\lua-bindings\proj.win32\libluacocos2d.vcxproj">
+      <Project>{9f2d6ce6-c893-4400-b50c-6db70cc2562f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\cocos2d-x\external\recast\proj.win32\librecast.vcxproj">
+      <Project>{41e34993-647e-4282-8384-4ab1ae31a452}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\entityx\config.h.in" />
+    <None Include="..\Classes\ide-support\lang" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

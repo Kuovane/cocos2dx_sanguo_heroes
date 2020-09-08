@@ -4,19 +4,16 @@
 //  Created by fuchenhao on 3/4/13.
 //  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
+#pragma once
 
-#ifndef __CC_ADVANCED_ANIMATION_H__
-#define __CC_ADVANCED_ANIMATION_H__
-
-#include <functional>
-#include <map>
-#include "2d/CCNode.h"
+//#include <functional>
+//#include <map>
+//#include "2d/CCNode.h"
+//#include "cocos2d.h"
 #include "CCAssetDefine.h"
-#include "cocos2d.h"
 
-NS_CC_BEGIN
 
-class CC_DLL AdvancedAnimation : public Node
+class  AdvancedAnimation : public cocos2d::Node
 {
 public:
     enum BlendMode
@@ -30,9 +27,9 @@ public:
     typedef std::function<void(int labelId)> onLabelChange;
     
 private:
-    GLProgram* m_shaderNormal;
-    GLProgram* m_shaderAlpha;
-    std::vector<CustomCommand*> m_renderCommands;
+    cocos2d::GLProgram* m_shaderNormal;
+	cocos2d::GLProgram* m_shaderAlpha;
+    std::vector<cocos2d::CustomCommand*> m_renderCommands;
     AssetDefine* m_define;
     AssetDefine::AnimationData* m_animation = nullptr;
     int m_currentFrame;
@@ -54,17 +51,17 @@ private:
     float m_delayShow = 0.0f;
     bool m_noDraw = true;
     
-    Vec4 m_uniformColor;
+	cocos2d::Vec4 m_uniformColor;
     
 public:
     AdvancedAnimation();
     ~AdvancedAnimation();
     
     //virtual void draw(Renderer *renderer, const Mat4& transform, uint32_t flags);//bool transformUpdated
-    virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
+    virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, uint32_t flags) override;
     virtual void update(float dt);
-    void onDraw(const Mat4& transform, ssize_t numberOfQuads, ssize_t start);
-    CustomCommand* getRenderCommand(int index);
+    void onDraw(const cocos2d::Mat4& transform, ssize_t numberOfQuads, ssize_t start);
+	cocos2d::CustomCommand* getRenderCommand(int index);
     
     void play()
     {
@@ -179,19 +176,24 @@ public:
     static AdvancedAnimation* create(AssetDefine* define, const std::string &animationName, float delayShow = 0.0f);
 };
 
-NS_CC_END
 
 
-//lua binding
-extern "C" int freeAllAdvancedAnimation(lua_State *L);
-extern "C" int freeAllAdvancedAnimationAsset(lua_State *L);
-extern "C" int createAdvancedAnimation(lua_State *L);
-extern "C" int setCurrentAnimation(lua_State *L);
-extern "C" int play(lua_State *L);
-extern "C" int stop(lua_State *L);
-extern "C" int playOnce(lua_State *L);
-extern "C" int setColor(lua_State *L);
-
-
-
+#ifdef __cplusplus
+extern "C"
+{
 #endif
+	//lua binding
+	extern  int freeAllAdvancedAnimation(lua_State *L);
+	extern  int freeAllAdvancedAnimationAsset(lua_State *L);
+	extern  int createAdvancedAnimation(lua_State *L);
+	extern  int setCurrentAnimation(lua_State *L);
+	extern  int play(lua_State *L);
+	extern  int stop(lua_State *L);
+	extern  int playOnce(lua_State *L);
+	extern  int setColor(lua_State *L);
+
+#ifdef __cplusplus
+}
+#endif
+
+

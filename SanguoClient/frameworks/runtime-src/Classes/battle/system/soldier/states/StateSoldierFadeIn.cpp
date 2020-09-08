@@ -37,7 +37,7 @@ void StateSoldierFadeIn::enter(entityx::Entity& entity)
     animation->battleAnimation->setPositionY(0);
     
     animation->m_tweenQueue.clearTween();
-    animation->m_tweenQueue.pushTween(TweenQueue::TARGET::ALPHA, TweenQueue::OPERATION::IN, new SimpleTween_linear(m_totalTime - m_inTime, 0.0f, 1.0f), m_inTime);
+    animation->m_tweenQueue.pushTween(TweenQueue::TARGET::ALPHA, TweenQueue::OPERATION::IN_T, new SimpleTween_linear(m_totalTime - m_inTime, 0.0f, 1.0f), m_inTime);
 }
 
 void StateSoldierFadeIn::exit(entityx::Entity& entity)

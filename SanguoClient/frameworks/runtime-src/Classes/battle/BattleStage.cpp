@@ -30,11 +30,14 @@
 #include "AnchorArrowSystem.h"
 #include "BattleSystem.h"
 #include "BattleWorld.h"
+#include "CameraManager.h"
+#include "BattleSceneUI.h"
+#include "BattleDialogueUI.h"
 
-#include "cocos2d.h"
+
 
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
-    #include "TargetConditionals.h"
+  //  #include "TargetConditionals.h"
 #endif
 
 #if (TARGET_IPHONE_SIMULATOR)
@@ -330,6 +333,8 @@ void BattleStage::changeTimeRate(float timeRate)
     }
 }
 
+inline cocos2d::Node* BattleStage::getMap() { return m_battleSceneUI->getMap(); };
+
 void BattleStage::showBGColor(float duration)
 {
     auto& children = m_bg->getChildren();
@@ -342,7 +347,7 @@ void BattleStage::showBGColor(float duration)
     }
 }
 
-void BattleStage::showBGColor(float duration, GLubyte red, GLubyte green, GLubyte blue)
+void BattleStage::showBGColor(float duration, unsigned char red, unsigned char green, unsigned char blue)
 {
     auto& children = m_bg->getChildren();
     for(const auto &child : children) {
@@ -372,14 +377,14 @@ void BattleStage::showBackgroundMask(float duration, float color)
         m_backgroundColorTween.init(duration, m_backgroundCurrentColor, color);
     }
     
-    cout << "show back ground:" << m_showBackgroundRefCount << endl;
+	CCLOG("show back ground:", m_showBackgroundRefCount);
     m_showBackgroundRefCount++;
 }
 
 void BattleStage::hideBackgroundMask(float duration)
 {
     m_showBackgroundRefCount--;
-    cout << "hide back ground:" << m_showBackgroundRefCount << endl;
+	CCLOG("hide back ground:", m_showBackgroundRefCount);
     
     if (m_showBackgroundRefCount == 0)
     {
@@ -391,7 +396,7 @@ void BattleStage::hideBackgroundMask(float duration)
         {
             m_backgroundColorTween.init(duration, m_backgroundCurrentColor, 255);
         }
-        cout << "hide back ground..." << endl;
+		CCLOG("hide back ground...");
     }
 }
 

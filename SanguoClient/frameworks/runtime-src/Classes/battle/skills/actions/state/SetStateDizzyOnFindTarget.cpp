@@ -15,7 +15,7 @@ void SetStateDizzyOnFindTarget::fireAction(entityx::EntityManager &es)
     SkillAction::fireAction(es);
 
     TargetFinder::TargetResults targetResults;
-    vector<int>& targets = targetResults.targets;
+    std::vector<int>& targets = targetResults.targets;
     if (m_skillActionData->hasMember("SkillTarget"))
     {
         auto skillTarget = EnumParserSkillTarget().getValue(*m_skillActionData->config["SkillTarget"]->s);

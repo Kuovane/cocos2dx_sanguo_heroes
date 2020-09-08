@@ -5,6 +5,7 @@
 #include "AudioManager.h"
 #include "SkillManager.h"
 #include "BattleAudioConfig.h"
+#include "BattleLoadingUI.h"
 
 extern "C"
 {

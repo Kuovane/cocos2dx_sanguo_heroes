@@ -48,7 +48,7 @@ void BattleResult::prepare()
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     root.Accept(writer);
     
-    m_result = string(buffer.GetString());
+    m_result = std::string(buffer.GetString());
 }
 
 void BattleResult::setTimeUp()
@@ -154,7 +154,7 @@ void BattleResult::prepairHeroResult(BattleConfig::Side side, rapidjson::Value& 
 
 void BattleResult::prepairSoldierResult(std::vector<entityx::Entity>& entities, rapidjson::Value& data, rapidjson::Document::AllocatorType& allocator)
 {
-    map<int, int> mapSoldier;
+    std::map<int, int> mapSoldier;
     
     for (auto& entity : entities)
     {
@@ -167,7 +167,7 @@ void BattleResult::prepairSoldierResult(std::vector<entityx::Entity>& entities, 
         }
         else
         {
-            mapSoldier.insert(pair<int, int>(soldier->config.id, 1));
+            mapSoldier.insert(std::pair<int, int>(soldier->config.id, 1));
         }
     }
     

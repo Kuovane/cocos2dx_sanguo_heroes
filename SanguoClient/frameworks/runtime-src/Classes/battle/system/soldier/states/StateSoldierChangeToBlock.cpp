@@ -99,22 +99,22 @@ void StateSoldierChangeToBlock::receive(const BattleEvent::HurtByAttack& e)
             auto position = m_blockData.entity.component<BattleComponent::Position>();
             
             auto animation = m_loopEffectEntity.component<BattleComponent::AnimationGroup>();
-            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::G, TweenQueue::OPERATION::IN,
+            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::G, TweenQueue::OPERATION::IN_T,
                                               new SimpleTween_linear(0.1, 1.0f, 0.0f), 0);
-            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::G, TweenQueue::OPERATION::IN,
+            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::G, TweenQueue::OPERATION::IN_T,
                                               new SimpleTween_linear(0.1, 0.0f, 1.0f), 0.2f);
             
-            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::B, TweenQueue::OPERATION::IN,
+            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::B, TweenQueue::OPERATION::IN_T,
                                               new SimpleTween_linear(0.1, 1.0f, 0.0f), 0);
-            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::B, TweenQueue::OPERATION::IN,
+            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::B, TweenQueue::OPERATION::IN_T,
                                               new SimpleTween_linear(0.1, 0.0f, 1.0f), 0.2f);
             
             auto identifyT = e.fromEntity.component<BattleComponent::Identify>();
             auto dirX = identifyT->faceTo == BattleConfig::FACE_TO_RIGHT ? 16: -16;
             
-            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::X, TweenQueue::OPERATION::IN,
+            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::X, TweenQueue::OPERATION::IN_T,
                                               new SimpleTween_linear(0.05, position->x, position->x + dirX), 0);
-            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::X, TweenQueue::OPERATION::IN,
+            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::X, TweenQueue::OPERATION::IN_T,
                                               new SimpleTween_linear(0.05, position->x + dirX, position->x), 0.05f);
         }
     }

@@ -15,8 +15,8 @@ void ColorTween::fireAction(entityx::EntityManager &es)
     
     int targetId = 0;
     
-    BattleConfig::DamageSide side = (BattleConfig::DamageSide)m_skillActionData->config["side"]->d;
-    switch (side)
+    int side = (int)m_skillActionData->config["side"]->d;
+    switch ((BattleConfig::DamageSide)side)
     {
         case BattleConfig::DamageSide::SELF:
             targetId = m_fromId;
@@ -39,25 +39,25 @@ void ColorTween::fireAction(entityx::EntityManager &es)
         
         if(m_skillActionData->hasMember("r"))
         {
-            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::R, TweenQueue::OPERATION::IN,
+            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::R, TweenQueue::OPERATION::IN_T,
                                               new SimpleTween_linear(duration, animation->battleAnimation->getColorR(), m_skillActionData->config["r"]->d), 0);
         }
         
         if(m_skillActionData->hasMember("g"))
         {
-            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::G, TweenQueue::OPERATION::IN,
+            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::G, TweenQueue::OPERATION::IN_T,
                                               new SimpleTween_linear(duration, animation->battleAnimation->getColorG(), m_skillActionData->config["g"]->d), 0);
         }
         
         if(m_skillActionData->hasMember("b"))
         {
-            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::B, TweenQueue::OPERATION::IN,
+            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::B, TweenQueue::OPERATION::IN_T,
                                               new SimpleTween_linear(duration, animation->battleAnimation->getColorB(), m_skillActionData->config["b"]->d), 0);
         }
         
         if(m_skillActionData->hasMember("a"))
         {
-            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::ALPHA, TweenQueue::OPERATION::IN,
+            animation->m_tweenQueue.pushTween(TweenQueue::TARGET::ALPHA, TweenQueue::OPERATION::IN_T,
                                               new SimpleTween_linear(duration, animation->battleAnimation->getAlpha(), m_skillActionData->config["a"]->d), 0);
         }
     }

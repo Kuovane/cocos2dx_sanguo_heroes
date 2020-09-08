@@ -84,7 +84,7 @@ void BattleWorld::destory()
     
     CC_SAFE_DELETE(m_entityX);
     
-    cocos2d::AssetDefineCache::getInstance()->removeAllAsset();
+    AssetDefineCache::getInstance()->removeAllAsset();
     
     m_created = false;
 }

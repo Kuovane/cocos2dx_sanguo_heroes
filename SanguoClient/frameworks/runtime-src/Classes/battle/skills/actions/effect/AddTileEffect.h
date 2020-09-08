@@ -17,7 +17,7 @@ class AddTileEffect : public SkillAction
 public:
     struct EffectConfigData
     {
-        string* pEffect;
+		std::string* pEffect;
         float duration;
         float delay;
         float randomOffset;

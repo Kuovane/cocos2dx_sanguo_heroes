@@ -56,9 +56,9 @@ void SkillChiTianBaFangYan::fireAction(entityx::EntityManager &es)
             int centerX = MapHelper::getTileX(position->x);
             float minDistance = -1;
             float maxDistance = -1;
-            vector<entityx::Entity*> soldiers;
-            vector<float> soldiersDistance;
-            vector<int> soldierIds;
+            std::vector<entityx::Entity*> soldiers;
+			std::vector<float> soldiersDistance;
+			std::vector<int> soldierIds;
             
             for (auto* pTile : results.tiles)
             {
@@ -88,7 +88,7 @@ void SkillChiTianBaFangYan::fireAction(entityx::EntityManager &es)
                 float hitIntervalMax = m_skillActionData->config["hitIntervalMax"]->d;
                 float speedFactor = m_skillActionData->config["ghostFlyUpSpeedFactor"]->d;
                 
-                float hitInterval = min(hitTotalTime / (float)numSoldiers, hitIntervalMax);
+                float hitInterval = std::min(hitTotalTime / (float)numSoldiers, hitIntervalMax);
                 float hitDelay = hitInterval;
                 
                 for (int i = 0; i < numSoldiers; i++)

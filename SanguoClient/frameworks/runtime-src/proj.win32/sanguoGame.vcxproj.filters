@@ -13,11 +13,161 @@
     <Filter Include="Classes\ide-support">
       <UniqueIdentifier>{833bf036-cf7e-4396-ab29-5f8b36672dbd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\asset">
+      <UniqueIdentifier>{9809cb48-8ba0-4957-b75c-aa0981f2bc31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle">
+      <UniqueIdentifier>{46b4928d-62af-408a-9995-0f7277748dc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\entityx">
+      <UniqueIdentifier>{01de5e69-b279-4958-a871-b188fe8a7fb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\lua">
+      <UniqueIdentifier>{0572d63e-6ed4-4c74-b14d-a9d83db862a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\network">
+      <UniqueIdentifier>{836ae794-8ce5-4d51-8a35-55c708a7e61e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\pbc">
+      <UniqueIdentifier>{79203f4f-befe-4be8-b5ea-d0f76b41b0c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\platform">
+      <UniqueIdentifier>{9187fb2f-5f23-435d-8bab-958e74fde4b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\SGCommon">
+      <UniqueIdentifier>{2d2aede6-0dbd-4866-affd-2e81d8fb806c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\update">
+      <UniqueIdentifier>{64007aa3-42c4-4628-bf95-9b219d533f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\asset\shader">
+      <UniqueIdentifier>{9e33f08c-d769-4e1f-9476-135ae65a5c4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\actorMode">
+      <UniqueIdentifier>{8e81bcae-54db-49db-a0ea-5916cf9c372f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\ai">
+      <UniqueIdentifier>{7030b61f-f864-4d36-95ad-d7c0bd385b08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\animation">
+      <UniqueIdentifier>{a1bbd352-8d61-4094-a8ad-f1538156bbaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\audio">
+      <UniqueIdentifier>{252cad10-af3a-42ef-9fbe-49236560d326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\common">
+      <UniqueIdentifier>{45f5d8f7-1575-4e10-9cc0-7776abf788e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\control">
+      <UniqueIdentifier>{548cefb3-f230-4827-89bb-656823c75fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills">
+      <UniqueIdentifier>{464ca57d-d564-4764-b6c0-66b983364def}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system">
+      <UniqueIdentifier>{9214889d-5a0f-42b3-89f8-6c4f52cdcce4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\tools">
+      <UniqueIdentifier>{741ed1d4-a29b-4444-b848-949cc1cb56b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\tween">
+      <UniqueIdentifier>{745856fa-f731-4d93-811c-42ed09562486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\ui">
+      <UniqueIdentifier>{65f1bd77-e6c3-4869-934b-4275dd13d539}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\ai\actions">
+      <UniqueIdentifier>{d364b922-3d20-4ad8-b766-70c083ea3b9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\ai\conditions">
+      <UniqueIdentifier>{2cf56282-1741-44d0-a7a5-5b92187de13a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\control\Camera">
+      <UniqueIdentifier>{685c307e-221e-41ae-84a5-1c108e578e43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\control\creator">
+      <UniqueIdentifier>{f8d28bac-ec15-4ed4-98af-f9e2d8ebb1c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\control\enterShow">
+      <UniqueIdentifier>{4e198ba6-9c0a-40f6-87fd-f9d2f05bd818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\control\map">
+      <UniqueIdentifier>{27b0cfac-f90b-4b03-8689-10702e2c5328}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system\battle">
+      <UniqueIdentifier>{89d9f57e-328d-40d2-9201-21131a36cd7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system\hero">
+      <UniqueIdentifier>{a79ebba8-ceee-452c-b45e-777a97725201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system\soldier">
+      <UniqueIdentifier>{e97ddbff-7474-417a-a4c3-7a5565763055}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system\stateMachine">
+      <UniqueIdentifier>{c2ce655f-c45f-4a70-955a-96c61258913a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system\battle\states">
+      <UniqueIdentifier>{583197da-41ee-4d3b-87df-8f12db7c8a4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system\hero\dizzy">
+      <UniqueIdentifier>{c3deacac-23b4-4617-affb-4b57e51b8c91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system\hero\dizzy\actions">
+      <UniqueIdentifier>{d51ca981-b3d1-4673-b0c5-e3de84c0300e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system\hero\dizzy\conditions">
+      <UniqueIdentifier>{175a1e16-3056-4ebe-91e7-5827a3655356}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system\soldier\states">
+      <UniqueIdentifier>{13b0d5b9-4b07-49a5-b454-4ca56f1e4c30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills\actions">
+      <UniqueIdentifier>{4350c67e-6c0a-4a91-8929-4c059bcbdbd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills\actions\arrow">
+      <UniqueIdentifier>{30df4e8f-a80e-4e49-b57c-cf96d00ddbca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills\actions\attack">
+      <UniqueIdentifier>{d8ad280e-43fe-48a7-b991-51c40d9715c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills\actions\buff">
+      <UniqueIdentifier>{4b0ae3fb-9b18-42b0-8b61-fa714066b5ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills\actions\camera">
+      <UniqueIdentifier>{48db8715-b42a-46b5-8b36-033fb464cc82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills\actions\effect">
+      <UniqueIdentifier>{712f8457-b5d1-4f40-b19b-c196c132f9a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills\actions\share">
+      <UniqueIdentifier>{410e2fd6-353c-44f3-b156-e3a0b4580190}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills\actions\skill">
+      <UniqueIdentifier>{9f059c51-beb9-43d6-9c42-acbf1f8d31c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills\actions\state">
+      <UniqueIdentifier>{8fc3083e-81d9-4dfa-9bb9-cd95d27c82a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\skills\actions\tween">
+      <UniqueIdentifier>{3f20064d-41f1-4e20-a931-fe2b73162fad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\entityx\3rdparty">
+      <UniqueIdentifier>{48e5db42-9957-4e51-a23f-94b8bfe618bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\entityx\deps">
+      <UniqueIdentifier>{249b6158-cdf1-48b3-a615-8ccef267eb12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\entityx\help">
+      <UniqueIdentifier>{5c5292f4-1de3-4b2d-9d17-1649fdba39fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\entityx\tags">
+      <UniqueIdentifier>{ead477cd-a64e-4a8c-8b6d-14db2e335780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\battle\system\hero\States">
+      <UniqueIdentifier>{b0cad1aa-bd15-444f-974b-0b34d9acead0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
@@ -29,20 +179,824 @@
     <ClInclude Include="targetver.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ide-support\CodeIDESupport.h">
+    <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BattleScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ProjectConfig.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VisibleRect.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\asset\shader\CCMyShader.h">
+      <Filter>Classes\asset\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\asset\CCAdvancedAnimation.h">
+      <Filter>Classes\asset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\asset\CCAsset.h">
+      <Filter>Classes\asset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\asset\CCAssetDefine.h">
+      <Filter>Classes\asset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\asset\CCAssetDefineCache.h">
+      <Filter>Classes\asset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\asset\CCBufferReader.h">
+      <Filter>Classes\asset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\actorMode\ActorMode.h">
+      <Filter>Classes\battle\actorMode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\actorMode\ModeGroup.h">
+      <Filter>Classes\battle\actorMode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\AIAction.h">
+      <Filter>Classes\battle\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\AICondition.h">
+      <Filter>Classes\battle\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\AIConfig.h">
+      <Filter>Classes\battle\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\AIManager.h">
+      <Filter>Classes\battle\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\actions\EntityCommand.h">
+      <Filter>Classes\battle\ai\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\actions\FireSkillAction.h">
+      <Filter>Classes\battle\ai\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\AfterAnySkillRelease.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\BattleStart.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\EnemyIsClose.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\FirstSoldierKilledInMelee.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroAndHeroDistanceLessThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroAndSoldierDistanceLessThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroHpLessThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroHpPercentLessThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroHpPercentMoreThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\HeroRush.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\NoHeroMove.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\NoHeroRush.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\NoOppSkillFired.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\NoSelfSkillFired.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\OppHeroAroundOppSoldiersMoreThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\OppHeroAroundSelfSoldiersLessThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\OppHeroAroundSelfSoldiersMoreThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\OppSoldiersMoreThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\SelfHeroAroundOppSoldiersMoreThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\SelfMainHeroBeAttacked.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\SkillOk.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\SkillRelease.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\SoldierAndHeroDistanceLessThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\SoldierAndSoldierDistanceLessThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\SoldiersLessThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ai\conditions\SoldiersMoreThan.h">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\animation\BattleAnimation.h">
+      <Filter>Classes\battle\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\animation\BattleAnimationGroup.h">
+      <Filter>Classes\battle\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\audio\AudioManager.h">
+      <Filter>Classes\battle\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\common\ActiveObject.h">
+      <Filter>Classes\battle\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\common\EnumParser.h">
+      <Filter>Classes\battle\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\common\StrategyControl.h">
+      <Filter>Classes\battle\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\common\TicketRequest.h">
+      <Filter>Classes\battle\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\Camera\CameraEventSystem.h">
+      <Filter>Classes\battle\control\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\Camera\CameraManager.h">
+      <Filter>Classes\battle\control\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\Camera\CameraSystem.h">
+      <Filter>Classes\battle\control\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\Camera\CameraTwins.h">
+      <Filter>Classes\battle\control\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\Camera\ShakeSystem.h">
+      <Filter>Classes\battle\control\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\creator\AnchorArrowCreator.h">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\creator\BackgroundCreator.h">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\creator\BattleAnimationCreator.h">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\creator\EffectCreator.h">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\creator\HeroCreator.h">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\creator\SoldierCreator.h">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\enterShow\EnterShowControl.h">
+      <Filter>Classes\battle\control\enterShow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\map\ArrowMovement.h">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\map\BattleEntity.h">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\map\FormationManager.h">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\map\HeroMovement.h">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\map\MapHelper.h">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\map\PathFinding.h">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\map\SimpleMovement.h">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\map\SoldierMovement.h">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\map\TargetFinder.h">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\control\PrepairBattle.h">
+      <Filter>Classes\battle\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ui\BattleDialogueUI.h">
+      <Filter>Classes\battle\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ui\BattleLoadingUI.h">
+      <Filter>Classes\battle\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\ui\BattleSceneUI.h">
+      <Filter>Classes\battle\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\tween\SimpleTween.h">
+      <Filter>Classes\battle\tween</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\tween\TweenQueue.h">
+      <Filter>Classes\battle\tween</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\tools\TestBattle.h">
+      <Filter>Classes\battle\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\tools\TestBattleConfigReader.h">
+      <Filter>Classes\battle\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\battle\states\StateBattleBeforeStart.h">
+      <Filter>Classes\battle\system\battle\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\battle\states\StateBattleChangeBackupHero.h">
+      <Filter>Classes\battle\system\battle\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\battle\states\StateBattleEnd.h">
+      <Filter>Classes\battle\system\battle\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\battle\states\StateBattleStartFight.h">
+      <Filter>Classes\battle\system\battle\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionChangeColor.h">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionKnockBack.h">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionPlayHitAnimation.h">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionPlayXuanyunEffect.h">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillChiTianBaFangYan.h">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillChuanSuo.h">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillGuiJiShiHun.h">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillTiaoJi.h">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionStopAnimation.h">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionByActionComplete.h">
+      <Filter>Classes\battle\system\hero\dizzy\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionBySkillEnd.h">
+      <Filter>Classes\battle\system\hero\dizzy\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionByTime.h">
+      <Filter>Classes\battle\system\hero\dizzy\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\DizzyAction.h">
+      <Filter>Classes\battle\system\hero\dizzy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\dizzy\DizzyCondition.h">
+      <Filter>Classes\battle\system\hero\dizzy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\stateMachine\IState.h">
+      <Filter>Classes\battle\system\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\stateMachine\StateMachine.h">
+      <Filter>Classes\battle\system\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\SoldierEventSystem.h">
+      <Filter>Classes\battle\system\soldier</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\SoldierSystem.h">
+      <Filter>Classes\battle\system\soldier</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierArchorAttack.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierAttackEnemy.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierBattleEnd.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierChangeToBlock.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierChangeToGhost.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierDead.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierDepart.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierDizzy.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierFadeIn.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierHitBack.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierIdle.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierLost.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierMoveBack.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToEnemy.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToEnemyHero.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToTargetTile.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierPlayAnimation.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierProtectHero.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\soldier\states\StateSoldierRecenter.h">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\CancelSkill.h">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\DisableBreak.h">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\IntervalTrigger.h">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\LockFireSkill.h">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\LockUserControl.h">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\MultiAttack.h">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\PauseBattle.h">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\PlayAnimation.h">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\PlaySound.h">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\ShowBackground.h">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\arrow\SkillArrow.h">
+      <Filter>Classes\battle\skills\actions\arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AddHpOnReduceEnemyHp.h">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AddMpOnReduceEnemyMp.h">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackDiamondAreaCenterOnHero.h">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackDiamondAreaCenterOnTile.h">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackOnFindTarget.h">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackOnTile.h">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackRectAreaOnHero.h">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackRectArroundHero.h">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\AttackRectArroundTile.h">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\attack\ReduceEnemyMp.h">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\AddBuff.h">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\AddBuffBase.h">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\AddBuffOnSkillAttack.h">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\BuffEffect.h">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\LockOppSkill.h">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\buff\RemoveShieldAnimationOnUseUp.h">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\camera\MoveCameraToHero.h">
+      <Filter>Classes\battle\skills\actions\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\camera\MoveCameraToTile.h">
+      <Filter>Classes\battle\skills\actions\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\camera\ShakeCamera.h">
+      <Filter>Classes\battle\skills\actions\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\camera\TriggerCameraActions.h">
+      <Filter>Classes\battle\skills\actions\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\AddEffectOnAddNormalAttack.h">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\AddEffectOnSkillAttack.h">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\AddEntityAnimation.h">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\AddEntityEffect.h">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\AddTileEffect.h">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\RemoveEntityAnimation.h">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\effect\ShowHeroEffect.h">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\tween\ColorTween.h">
+      <Filter>Classes\battle\skills\actions\tween</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\state\SetStateDizzyBase.h">
+      <Filter>Classes\battle\skills\actions\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnFindTarget.h">
+      <Filter>Classes\battle\skills\actions\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnNormalAttack.h">
+      <Filter>Classes\battle\skills\actions\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnSkillAttack.h">
+      <Filter>Classes\battle\skills\actions\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\CallSoldiers.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\EmptyArrow.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillBaJiaoShan.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillChiTianBaFangYan.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillChuanSuo.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillFenShenNuZhan.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillGuiCai.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillGuiJiShiHun.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillHongLianYeHuo.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillLianHuan.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillLieKongFengRen.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillMuLunQiangXi.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillNiePan.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillNuJi.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillShanXian.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillShunXiQianLi.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillTianDiWuYong.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillTiaoJi.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillWuYueHuaZhan.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\skill\SkillZhanHun.h">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\AssignEnemyHeroCenter.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\DelayTrigger.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindRandomTargetAroundHero.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindRandomTargetAroundTile.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindTarget.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindTargetByFormation.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindTileCenterOnMostPeople.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\FindTileOnEnemyHero.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\SkillDuration.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\TriggerOnSkillAttack.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\actions\share\TriStageTrigger.h">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\SkillAction.h">
+      <Filter>Classes\battle\skills</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\SkillConfig.h">
+      <Filter>Classes\battle\skills</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\SkillManager.h">
+      <Filter>Classes\battle\skills</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\skills\SkillObject.h">
+      <Filter>Classes\battle\skills</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\config.h">
+      <Filter>Classes\entityx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\Entity.h">
+      <Filter>Classes\entityx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\entityx.h">
+      <Filter>Classes\entityx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\Event.h">
+      <Filter>Classes\entityx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\quick.h">
+      <Filter>Classes\entityx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\System.h">
+      <Filter>Classes\entityx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\3rdparty\catch.hpp">
+      <Filter>Classes\entityx\3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\3rdparty\simplesignal.h">
+      <Filter>Classes\entityx\3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\deps\Dependencies.h">
+      <Filter>Classes\entityx\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\help\NonCopyable.h">
+      <Filter>Classes\entityx\help</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\help\Pool.h">
+      <Filter>Classes\entityx\help</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\help\Timer.h">
+      <Filter>Classes\entityx\help</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\entityx\tags\TagsComponent.h">
+      <Filter>Classes\entityx\tags</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ide-support\CodeIDESupport.h">
+      <Filter>Classes\ide-support</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ide-support\lua_debugger.h">
-      <Filter>Classes</Filter>
+      <Filter>Classes\ide-support</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ide-support\RuntimeLuaImpl.h">
-      <Filter>Classes</Filter>
+      <Filter>Classes\ide-support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ide-support\SimpleConfigParser.h">
+      <Filter>Classes\ide-support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\lua\convertJsonContent.h">
+      <Filter>Classes\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\lua\luaBinding.h">
+      <Filter>Classes\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\network\HttpAgent.h">
+      <Filter>Classes\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\network\TestHttpClient.h">
+      <Filter>Classes\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\update\UpdateEngine.h">
+      <Filter>Classes\update</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SGCommon\SGCamera.h">
+      <Filter>Classes\SGCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SGCommon\SGNode.h">
+      <Filter>Classes\SGCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\alloc.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\array.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\bootstrap.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\context.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\descriptor.pbc.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\map.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\pattern.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\pbc.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\pbc-lua.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\proto.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\stringpool.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pbc\varint.h">
+      <Filter>Classes\pbc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\BattleAudioConfig.h">
+      <Filter>Classes\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\BattleCocosEvent.h">
+      <Filter>Classes\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\BattleComponent.h">
+      <Filter>Classes\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\BattleConfig.h">
+      <Filter>Classes\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\BattleEvent.h">
+      <Filter>Classes\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\BattleResult.h">
+      <Filter>Classes\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\BattleStage.h">
+      <Filter>Classes\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\BattleWorld.h">
+      <Filter>Classes\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\DebugHelper.h">
+      <Filter>Classes\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\HeroEventSystem.h">
+      <Filter>Classes\battle\system\hero</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\HeroSystem.h">
+      <Filter>Classes\battle\system\hero</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroAttack.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroBattleEnd.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroChangeLine.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroDash.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroDead.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroDizzy.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroIdle.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroMoveToHeroBack.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroMoveToTargetTile.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroPlayAnimation.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\hero\States\StateHeroRun.h">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\battle\BattleSystem.h">
+      <Filter>Classes\battle\system\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\ActorModeSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\AICommonHelper.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\AISystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\AnchorArrowSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\AnimationSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\ArrowSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\AttackSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\AudioSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\BuffSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\ComboSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\EffectSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\GasSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\SkillSystem.h">
+      <Filter>Classes\battle\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\battle\system\TickerSystem.h">
+      <Filter>Classes\battle\system</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
@@ -50,11 +1004,779 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ide-support\lua_debugger.c">
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ide-support\RuntimeLuaImpl.cpp">
+    <ClCompile Include="..\Classes\BattleScene.cpp">
       <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VisibleRect.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\asset\CCAdvancedAnimation.cpp">
+      <Filter>Classes\asset</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\asset\CCAssetDefine.cpp">
+      <Filter>Classes\asset</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\asset\CCAssetDefineCache.cpp">
+      <Filter>Classes\asset</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\asset\CCBufferReader.cpp">
+      <Filter>Classes\asset</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\actorMode\ActorMode.cpp">
+      <Filter>Classes\battle\actorMode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\actorMode\ModeGroup.cpp">
+      <Filter>Classes\battle\actorMode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\AIAction.cpp">
+      <Filter>Classes\battle\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\AICondition.cpp">
+      <Filter>Classes\battle\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\AIConfig.cpp">
+      <Filter>Classes\battle\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\AIManager.cpp">
+      <Filter>Classes\battle\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\actions\EntityCommand.cpp">
+      <Filter>Classes\battle\ai\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\actions\FireSkillAction.cpp">
+      <Filter>Classes\battle\ai\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\AfterAnySkillRelease.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\BattleStart.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\EnemyIsClose.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\FirstSoldierKilledInMelee.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroAndHeroDistanceLessThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroAndSoldierDistanceLessThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroHpLessThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroHpPercentLessThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroHpPercentMoreThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\HeroRush.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\NoHeroMove.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\NoHeroRush.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\NoOppSkillFired.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\NoSelfSkillFired.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\OppHeroAroundOppSoldiersMoreThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\OppHeroAroundSelfSoldiersLessThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\OppHeroAroundSelfSoldiersMoreThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\OppSoldiersMoreThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\SelfHeroAroundOppSoldiersMoreThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\SelfMainHeroBeAttacked.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\SkillOk.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\SkillRelease.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\SoldierAndHeroDistanceLessThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\SoldierAndSoldierDistanceLessThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\SoldiersLessThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ai\conditions\SoldiersMoreThan.cpp">
+      <Filter>Classes\battle\ai\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\animation\BattleAnimation.cpp">
+      <Filter>Classes\battle\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\animation\BattleAnimationGroup.cpp">
+      <Filter>Classes\battle\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\audio\AudioManager.cpp">
+      <Filter>Classes\battle\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\common\ActiveObject.cpp">
+      <Filter>Classes\battle\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\common\StrategyControl.cpp">
+      <Filter>Classes\battle\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\common\TicketRequest.cpp">
+      <Filter>Classes\battle\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\Camera\CameraEventSystem.cpp">
+      <Filter>Classes\battle\control\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\Camera\CameraManager.cpp">
+      <Filter>Classes\battle\control\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\Camera\CameraSystem.cpp">
+      <Filter>Classes\battle\control\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\Camera\CameraTwins.cpp">
+      <Filter>Classes\battle\control\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\Camera\ShakeSystem.cpp">
+      <Filter>Classes\battle\control\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\creator\AnchorArrowCreator.cpp">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\creator\BackgroundCreator.cpp">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\creator\BattleAnimationCreator.cpp">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\creator\EffectCreator.cpp">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\creator\HeroCreator.cpp">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\creator\SoldierCreator.cpp">
+      <Filter>Classes\battle\control\creator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\enterShow\EnterShowControl.cpp">
+      <Filter>Classes\battle\control\enterShow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\map\ArrowMovement.cpp">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\map\BattleEntity.cpp">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\map\FormationManager.cpp">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\map\HeroMovement.cpp">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\map\MapHelper.cpp">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\map\PathFinding.cpp">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\map\SimpleMovement.cpp">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\map\SoldierMovement.cpp">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\map\TargetFinder.cpp">
+      <Filter>Classes\battle\control\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\control\PrepairBattle.cpp">
+      <Filter>Classes\battle\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ui\BattleDialogueUI.cpp">
+      <Filter>Classes\battle\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ui\BattleLoadingUI.cpp">
+      <Filter>Classes\battle\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\ui\BattleSceneUI.cpp">
+      <Filter>Classes\battle\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\tween\SimpleTween.cpp">
+      <Filter>Classes\battle\tween</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\tween\TweenQueue.cpp">
+      <Filter>Classes\battle\tween</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\tools\TestBattle.cpp">
+      <Filter>Classes\battle\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\tools\TestBattleConfigReader.cpp">
+      <Filter>Classes\battle\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\battle\states\StateBattleBeforeStart.cpp">
+      <Filter>Classes\battle\system\battle\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\battle\states\StateBattleChangeBackupHero.cpp">
+      <Filter>Classes\battle\system\battle\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\battle\states\StateBattleEnd.cpp">
+      <Filter>Classes\battle\system\battle\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\battle\states\StateBattleStartFight.cpp">
+      <Filter>Classes\battle\system\battle\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionChangeColor.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionKnockBack.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionPlayHitAnimation.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionPlayXuanyunEffect.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillChiTianBaFangYan.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillChuanSuo.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillGuiJiShiHun.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionSkillTiaoJi.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\actions\DizzyActionStopAnimation.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionByActionComplete.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionBySkillEnd.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\conditions\DizzyConditionByTime.cpp">
+      <Filter>Classes\battle\system\hero\dizzy\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\DizzyAction.cpp">
+      <Filter>Classes\battle\system\hero\dizzy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\dizzy\DizzyCondition.cpp">
+      <Filter>Classes\battle\system\hero\dizzy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\stateMachine\StateMachine.cpp">
+      <Filter>Classes\battle\system\stateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\SoldierEventSystem.cpp">
+      <Filter>Classes\battle\system\soldier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\SoldierSystem.cpp">
+      <Filter>Classes\battle\system\soldier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierArchorAttack.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierAttackEnemy.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierBattleEnd.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierChangeToBlock.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierChangeToGhost.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierDead.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierDepart.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierDizzy.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierFadeIn.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierHitBack.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierIdle.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierLost.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierMoveBack.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToEnemy.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToEnemyHero.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierMoveToTargetTile.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierPlayAnimation.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierProtectHero.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\soldier\states\StateSoldierRecenter.cpp">
+      <Filter>Classes\battle\system\soldier\states</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\CancelSkill.cpp">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\DisableBreak.cpp">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\IntervalTrigger.cpp">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\LockFireSkill.cpp">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\LockUserControl.cpp">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\MultiAttack.cpp">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\PauseBattle.cpp">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\PlayAnimation.cpp">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\PlaySound.cpp">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\ShowBackground.cpp">
+      <Filter>Classes\battle\skills\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\arrow\SkillArrow.cpp">
+      <Filter>Classes\battle\skills\actions\arrow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AddHpOnReduceEnemyHp.cpp">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AddMpOnReduceEnemyMp.cpp">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackDiamondAreaCenterOnHero.cpp">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackDiamondAreaCenterOnTile.cpp">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackOnFindTarget.cpp">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackOnTile.cpp">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackRectAreaOnHero.cpp">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackRectArroundHero.cpp">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\AttackRectArroundTile.cpp">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\attack\ReduceEnemyMp.cpp">
+      <Filter>Classes\battle\skills\actions\attack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\AddBuff.cpp">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\AddBuffBase.cpp">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\AddBuffOnSkillAttack.cpp">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\BuffEffect.cpp">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\LockOppSkill.cpp">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\buff\RemoveShieldAnimationOnUseUp.cpp">
+      <Filter>Classes\battle\skills\actions\buff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\camera\MoveCameraToHero.cpp">
+      <Filter>Classes\battle\skills\actions\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\camera\MoveCameraToTile.cpp">
+      <Filter>Classes\battle\skills\actions\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\camera\ShakeCamera.cpp">
+      <Filter>Classes\battle\skills\actions\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\camera\TriggerCameraActions.cpp">
+      <Filter>Classes\battle\skills\actions\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\AddEffectOnAddNormalAttack.cpp">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\AddEffectOnSkillAttack.cpp">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\AddEntityAnimation.cpp">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\AddEntityEffect.cpp">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\AddTileEffect.cpp">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\RemoveEntityAnimation.cpp">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\effect\ShowHeroEffect.cpp">
+      <Filter>Classes\battle\skills\actions\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\tween\ColorTween.cpp">
+      <Filter>Classes\battle\skills\actions\tween</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\state\SetStateDizzyBase.cpp">
+      <Filter>Classes\battle\skills\actions\state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnFindTarget.cpp">
+      <Filter>Classes\battle\skills\actions\state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnNormalAttack.cpp">
+      <Filter>Classes\battle\skills\actions\state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\state\SetStateDizzyOnSkillAttack.cpp">
+      <Filter>Classes\battle\skills\actions\state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\CallSoldiers.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\EmptyArrow.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillBaJiaoShan.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillChiTianBaFangYan.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillChuanSuo.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillFenShenNuZhan.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillGuiCai.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillGuiJiShiHun.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillHongLianYeHuo.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillLianHuan.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillLieKongFengRen.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillMuLunQiangXi.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillNiePan.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillNuJi.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillShanXian.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillShunXiQianLi.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillTianDiWuYong.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillTiaoJi.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillWuYueHuaZhan.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\skill\SkillZhanHun.cpp">
+      <Filter>Classes\battle\skills\actions\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\AssignEnemyHeroCenter.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\DelayTrigger.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindRandomTargetAroundHero.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindRandomTargetAroundTile.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindTarget.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindTargetByFormation.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindTileCenterOnMostPeople.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\FindTileOnEnemyHero.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\SkillDuration.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\TriggerOnSkillAttack.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\actions\share\TriStageTrigger.cpp">
+      <Filter>Classes\battle\skills\actions\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\SkillAction.cpp">
+      <Filter>Classes\battle\skills</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\SkillConfig.cpp">
+      <Filter>Classes\battle\skills</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\SkillManager.cpp">
+      <Filter>Classes\battle\skills</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\skills\SkillObject.cpp">
+      <Filter>Classes\battle\skills</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\entityx\Entity.cc">
+      <Filter>Classes\entityx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\entityx\Event.cc">
+      <Filter>Classes\entityx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\entityx\System.cc">
+      <Filter>Classes\entityx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\entityx\help\Pool.cc">
+      <Filter>Classes\entityx\help</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\entityx\help\Timer.cc">
+      <Filter>Classes\entityx\help</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ide-support\lua_debugger.c">
+      <Filter>Classes\ide-support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ide-support\RuntimeLuaImpl.cpp">
+      <Filter>Classes\ide-support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ide-support\SimpleConfigParser.cpp">
+      <Filter>Classes\ide-support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\lua\convertJsonContent.cpp">
+      <Filter>Classes\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\lua\luaBinding.cpp">
+      <Filter>Classes\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\network\HttpAgent.cpp">
+      <Filter>Classes\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\update\UpdateEngine.cpp">
+      <Filter>Classes\update</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SGCommon\SGCamera.cpp">
+      <Filter>Classes\SGCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SGCommon\SGNode.cpp">
+      <Filter>Classes\SGCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\alloc.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\array.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\bootstrap.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\context.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\decode.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\map.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\pattern.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\pbc-lua.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\proto.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\register.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\rmessage.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\stringpool.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\varint.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pbc\wmessage.c">
+      <Filter>Classes\pbc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\BattleAudioConfig.cpp">
+      <Filter>Classes\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\BattleComponent.cpp">
+      <Filter>Classes\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\BattleConfig.cpp">
+      <Filter>Classes\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\BattleResult.cpp">
+      <Filter>Classes\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\BattleStage.cpp">
+      <Filter>Classes\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\BattleWorld.cpp">
+      <Filter>Classes\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\DebugHelper.cpp">
+      <Filter>Classes\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\HeroEventSystem.cpp">
+      <Filter>Classes\battle\system\hero</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\HeroSystem.cpp">
+      <Filter>Classes\battle\system\hero</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroAttack.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroBattleEnd.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroChangeLine.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroDash.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroDead.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroDizzy.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroIdle.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroMoveToHeroBack.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroMoveToTargetTile.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroPlayAnimation.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\hero\States\StateHeroRun.cpp">
+      <Filter>Classes\battle\system\hero\States</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\battle\BattleSystem.cpp">
+      <Filter>Classes\battle\system\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\asset\shader\CCMyShader.cpp">
+      <Filter>Classes\asset\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\ActorModeSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\AICommonHelper.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\AISystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\AnchorArrowSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\AnimationSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\ArrowSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\AttackSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\AudioSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\BuffSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\ComboSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\EffectSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\GasSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\SkillSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\battle\system\TickerSystem.cpp">
+      <Filter>Classes\battle\system</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,5 +1786,13 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\game.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\entityx\config.h.in">
+      <Filter>Classes\entityx</Filter>
+    </None>
+    <None Include="..\Classes\ide-support\lang">
+      <Filter>Classes\ide-support</Filter>
+    </None>
   </ItemGroup>
 </Project>

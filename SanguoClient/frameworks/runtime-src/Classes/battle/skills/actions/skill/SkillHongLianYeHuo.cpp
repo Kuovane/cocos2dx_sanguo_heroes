@@ -25,12 +25,12 @@ void SkillHongLianYeHuo::receive(const BattleEvent::HurtByAttack& e)
         auto animation = e.targetEntity.component<BattleComponent::Animation>();
         
         animation->m_tweenQueue.pushTween(TweenQueue::TARGET::G,
-                                          TweenQueue::OPERATION::IN,
+                                          TweenQueue::OPERATION::IN_T,
                                           new SimpleTween_linear(0.7, 0.3, 1.0),
                                           0);
         
         animation->m_tweenQueue.pushTween(TweenQueue::TARGET::B,
-                                          TweenQueue::OPERATION::IN,
+                                          TweenQueue::OPERATION::IN_T,
                                           new SimpleTween_linear(0.7, 0.3, 1.0),
                                           0);
     }

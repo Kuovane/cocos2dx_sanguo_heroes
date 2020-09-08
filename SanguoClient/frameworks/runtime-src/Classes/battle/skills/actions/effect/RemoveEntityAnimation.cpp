@@ -17,7 +17,7 @@ void RemoveEntityAnimation::fireAction(entityx::EntityManager &es)
     do
     {
         TargetFinder::TargetResults targetResults;
-        vector<int>& targets = targetResults.targets;
+		std::vector<int>& targets = targetResults.targets;
         if (m_skillActionData->hasMember("SkillTarget"))
         {
             auto skillTarget = EnumParserSkillTarget().getValue(*m_skillActionData->config["SkillTarget"]->s);
@@ -30,7 +30,7 @@ void RemoveEntityAnimation::fireAction(entityx::EntityManager &es)
             targets = skillTargetResults->targets;
         }
         
-        string* pTagName = m_skillActionData->hasMember("tag") ? m_skillActionData->config["tag"]->s : nullptr;
+		std::string* pTagName = m_skillActionData->hasMember("tag") ? m_skillActionData->config["tag"]->s : nullptr;
         
         for (int targetId : targets)
         {

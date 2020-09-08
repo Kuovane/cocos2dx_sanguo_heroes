@@ -1,5 +1,5 @@
 //
-//  PlaySound.cpp
+//  SLGPlaySound.cpp
 //  sanguoClient
 //
 //  Created by fuchenhao on 6/3/15.
@@ -11,11 +11,11 @@
 #include "BattleWorld.h"
 #include "AudioManager.h"
 
-PlaySound::~PlaySound()
+SLGPlaySound::~SLGPlaySound()
 {
 }
 
-void PlaySound::addPlayingSoundToPool(int audioId)
+void SLGPlaySound::addPlayingSoundToPool(int audioId)
 {
     auto skillEntity = _ENTITY_MANAGER.get(m_entityId);
     if(skillEntity && skillEntity.valid())
@@ -26,7 +26,7 @@ void PlaySound::addPlayingSoundToPool(int audioId)
     
 }
 
-void PlaySound::fireAction(entityx::EntityManager &es)
+void SLGPlaySound::fireAction(entityx::EntityManager &es)
 {
     SkillAction::fireAction(es);
     

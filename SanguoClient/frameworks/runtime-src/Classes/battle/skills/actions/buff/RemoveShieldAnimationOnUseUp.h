@@ -18,8 +18,8 @@ public:
     void update(entityx::EntityManager &es, float elapse, float dt) override;
 private:
     BattleConfig::Property m_shieldProperty;
-    string m_tag;
-    vector<int> m_targets;
+	std::string m_tag;
+	std::vector<int> m_targets;
 };
 
 #endif /* defined(__sanguoClient__RemoveShieldAnimationOnUseUp__) */

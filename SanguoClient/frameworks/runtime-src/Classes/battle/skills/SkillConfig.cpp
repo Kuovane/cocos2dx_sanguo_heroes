@@ -39,7 +39,7 @@ void SkillConfig::initBuffEffect(const std::string& path)
     if(doc.HasMember("effect") && doc["effect"].IsObject())
     {
         auto& effect = doc["effect"];
-        for(auto it = effect.MemberonBegin(); it != effect.MemberonEnd(); it++)
+        for(auto it = effect.MemberBegin(); it != effect.MemberEnd(); it++)
         {
             if(it->value.IsArray())
             {
@@ -208,7 +208,7 @@ BattleConfig::SkillConfigData* SkillConfig::getSkillConfig(const std::string& co
             if(value.HasMember("params") && value["params"].IsObject())
             {
                 auto& params = value["params"];
-                for(auto it = params.MemberonBegin(); it != params.MemberonEnd(); it++)
+                for(auto it = params.MemberBegin(); it != params.MemberEnd(); it++)
                 {
                     auto param = new BattleConfig::ParamData();
                     if(it->value.IsString())
@@ -235,7 +235,7 @@ BattleConfig::SkillConfigData* SkillConfig::getSkillConfig(const std::string& co
         //formula,property
         
         auto& formulas = doc["formula"];
-        for(auto it = formulas.MemberonBegin(); it != formulas.MemberonEnd(); it++)
+        for(auto it = formulas.MemberBegin(); it != formulas.MemberEnd(); it++)
         {
             if(it->value.IsObject())
             {
@@ -258,7 +258,7 @@ BattleConfig::SkillConfigData* SkillConfig::getSkillConfig(const std::string& co
     if(doc.HasMember("cameraActions") && doc["cameraActions"].IsObject())
     {
         auto& cameraActions = doc["cameraActions"];
-        for(auto it = cameraActions.MemberonBegin(); it != cameraActions.MemberonEnd(); it++)
+        for(auto it = cameraActions.MemberBegin(); it != cameraActions.MemberEnd(); it++)
         {
             if(it->value.IsObject())
             {
@@ -271,7 +271,7 @@ BattleConfig::SkillConfigData* SkillConfig::getSkillConfig(const std::string& co
     if(doc.HasMember("dizzy") && doc["dizzy"].IsObject())
     {
         const auto& dizzyJsonMap = doc["dizzy"];
-        for(auto it = dizzyJsonMap.MemberonBegin(); it != dizzyJsonMap.MemberonEnd(); it++)
+        for(auto it = dizzyJsonMap.MemberBegin(); it != dizzyJsonMap.MemberEnd(); it++)
         {
             if(it->value.IsObject())
             {
@@ -296,7 +296,7 @@ BattleConfig::SkillConfigData* SkillConfig::getSkillConfig(const std::string& co
                         {
                             BattleConfig::HeroDizzyActionConfig dizzyActionConfig;
                             
-                            for (auto iterAction = dizzyActionJson.MemberonBegin(); iterAction != dizzyActionJson.MemberonEnd(); iterAction++)
+                            for (auto iterAction = dizzyActionJson.MemberBegin(); iterAction != dizzyActionJson.MemberEnd(); iterAction++)
                             {
                                 const std::string& key = iterAction->name.GetString();
                                 if (key == "name")
@@ -337,7 +337,7 @@ BattleConfig::SkillConfigData* SkillConfig::getSkillConfig(const std::string& co
                         {
                             BattleConfig::HeroDizzyConditionConfig dizzyConditionConfig;
                             
-                            for (auto iterCondition = dizzyConditionJson.MemberonBegin(); iterCondition != dizzyConditionJson.MemberonEnd(); iterCondition++)
+                            for (auto iterCondition = dizzyConditionJson.MemberBegin(); iterCondition != dizzyConditionJson.MemberEnd(); iterCondition++)
                             {
                                 const std::string& key = iterCondition->name.GetString();
                                 if (key == "name")
@@ -383,7 +383,7 @@ BattleConfig::SkillConfigData* SkillConfig::getSkillConfig(const std::string& co
     if(doc.HasMember("effect") && doc["effect"].IsObject())
     {
         auto& effect = doc["effect"];
-        for(auto it = effect.MemberonBegin(); it != effect.MemberonEnd(); it++)
+        for(auto it = effect.MemberBegin(); it != effect.MemberEnd(); it++)
         {
             if(it->value.IsArray())
             {

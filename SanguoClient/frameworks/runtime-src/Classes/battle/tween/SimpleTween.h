@@ -6,12 +6,12 @@
 //
 //
 
-#ifndef __Game__SimpleTween__
-#define __Game__SimpleTween__
+
+#pragma once
 
 #include <stdio.h>
 #include "2d/CCTweenFunction.h"
-#include "cocos2d.h"
+//#include "cocos2d.h"
 struct SimpleTween
 {
     SimpleTween(float duration, float s, float e): duration(duration), s(s), e(e), c(s) {};
@@ -302,22 +302,4 @@ struct SimpleTween_bounce : SimpleTween
     }
 };
 
-// ============
 
-static void sample()
-{
-    SimpleTween_cubic tween(3, 100, 500);
-    
-    float dt = 0.016;
-    while (true)
-    {
-        float currentValue = tween.in(dt);
-        if(tween.isFinish())
-        {
-            CCLOG("value at this frame = %f", currentValue);
-            break;
-        }
-    }
-}
-
-#endif /* defined(__Game__SimpleTween__) */

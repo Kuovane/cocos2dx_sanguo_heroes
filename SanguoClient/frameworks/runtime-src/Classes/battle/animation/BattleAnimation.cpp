@@ -9,7 +9,7 @@
 #include "BattleAnimation.h"
 #include "BattleWorld.h"
 
-BattleAnimation::BattleAnimation(cocos2d::AdvancedAnimation *animation)
+BattleAnimation::BattleAnimation(AdvancedAnimation *animation)
 {
     m_animation = animation;
     m_completed = false;

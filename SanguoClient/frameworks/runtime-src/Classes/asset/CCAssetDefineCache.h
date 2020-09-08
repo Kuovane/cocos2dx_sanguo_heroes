@@ -7,19 +7,12 @@
 //
 
 
-#ifndef __CC_ASSET_DEFINE_CACHE_H__
-#define __CC_ASSET_DEFINE_CACHE_H__
+#pragma once
 
-#include "base/CCRef.h"
-#include "base/CCValue.h"
 #include "CCAssetDefine.h"
 
-#include <string>
-#include <map>
 
-NS_CC_BEGIN
-
-class CC_DLL AssetDefineCache : public Ref
+class AssetDefineCache : public cocos2d::Ref
 {
 public:
     AssetDefineCache();
@@ -42,9 +35,7 @@ public:
     
 private:
     std::map<std::string, AssetDefine*> *m_assets;
-    static AssetDefineCache* s_sharedAssetDefineCache;
+	static AssetDefineCache* s_sharedAssetDefineCache;
 };
 
-NS_CC_END
 
-#endif // __CC_ASSET_DEFINE_CACHE_H__

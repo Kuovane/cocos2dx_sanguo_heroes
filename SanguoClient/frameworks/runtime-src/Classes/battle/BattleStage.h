@@ -1,31 +1,18 @@
-//
-//  BattleStage
-//
-//  Created by fuchenhao on 3/1/13.
-//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
-//
+#pragma once
 
-#ifndef __BATTLE_STAGE_H__
-#define __BATTLE_STAGE_H__
-
-#include "2d/CCNode.h"
-#include "2d/CCCamera.h"
-#include "ui/CocosGUI.h"
-#include "cocostudio/CocoStudio.h"
-#include <functional>
-#include "CCDirector.h"
-#include "base/CCScheduler.h"
-#include "base/CCRef.h"
+#include "cocos2d.h"
 #include "entityx.h"
+#include "SimpleTween.h"
 #include "CCAdvancedAnimation.h"
 #include "BattleConfig.h"
 #include "BattleComponent.h"
-#include "SimpleTween.h"
 #include "SGCamera.h"
-#include "CameraManager.h"
-#include "BattleConfig.h"
-#include "BattleSceneUI.h"
-#include "BattleDialogueUI.h"
+//#include "CameraManager.h"
+//#include "BattleSceneUI.h"
+//#include "BattleDialogueUI.h"
+
+class BattleSceneUI;
+class BattleDialogueUI;
 
 class BattleStage
 {
@@ -46,7 +33,7 @@ public:
     inline cocos2d::Node* getStage() { return m_stage; };
     inline cocos2d::Node* getBackground() { return m_bg; };
     inline cocos2d::Node* getRole() { return m_role; };
-    inline cocos2d::Node* getMap() { return m_battleSceneUI->getMap(); };
+    inline cocos2d::Node* getMap();
     inline BattleSceneUI* getBattleSceneUI() { return m_battleSceneUI; };
     inline BattleDialogueUI* getBattleDialogueUI() { return m_battleDialogueUI; };
    
@@ -61,7 +48,7 @@ public:
     void resumeBattle();
     
     void showBGColor(float duration);
-    void showBGColor(float duration, GLubyte red, GLubyte green, GLubyte blue);
+    void showBGColor(float duration, unsigned char red, unsigned char green, unsigned char blue);
     void stopBGColor();
     
 private:
@@ -108,5 +95,3 @@ private:
     
     void switchViewMode();
 };
-
-#endif

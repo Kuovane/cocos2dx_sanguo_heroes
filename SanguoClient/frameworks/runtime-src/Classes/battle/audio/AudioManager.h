@@ -6,13 +6,12 @@
 //
 //
 
-#ifndef __sanguoClient__AudioManager__
-#define __sanguoClient__AudioManager__
+#pragma once
 
 #include <string>
 #include <vector>
-#include "cocos2d.h"
-#include "cocostudio/CocoStudio.h"
+
+#include "CCLuaEngine.h"
 #include <functional>
 #include "stdlib.h"
 #include <map>
@@ -95,25 +94,30 @@ private:
     static AudioManager* s_sharedAudioManager;
 };
 
+
 extern "C"
 {
-    int preloadSoundEffect(lua_State *L);
-    int playSoundEffect(lua_State *L);
-    int playSoundEffectWithLowMusicVolume(lua_State *L);
+	extern int preloadSoundEffect(lua_State *L);
+	extern int playSoundEffect(lua_State *L);
+	extern int playSoundEffectWithLowMusicVolume(lua_State *L);
     
-    int playMusic(lua_State *L);
-    int stopMusic(lua_State *L);
-    int pauseMusic(lua_State *L);
-    int resumeMusic(lua_State *L);
+	extern int playMusic(lua_State *L);
+	extern int stopMusic(lua_State *L);
+	extern int pauseMusic(lua_State *L);
+	extern int resumeMusic(lua_State *L);
     
-    int enableMusic(lua_State *L);
-    int disableMusic(lua_State *L);
+	extern int enableMusic(lua_State *L);
+	extern int disableMusic(lua_State *L);
     
-    int enableSoundEffect(lua_State *L);
-    int disableSoundEffect(lua_State *L);
+	extern int enableSoundEffect(lua_State *L);
+	extern int disableSoundEffect(lua_State *L);
     
-    int unloadAllSoundEffects(lua_State *L);
+	extern int unloadAllSoundEffects(lua_State *L);
 };
+
+
+
+
 
 //TO-DO play effect and low down music volumn
 //TO-DO play effect and limit concurrency
@@ -137,4 +141,4 @@ extern "C"
 
 
 
-#endif /* defined(__sanguoClient__AudioManager__) */
+//#endif /* defined(__sanguoClient__AudioManager__) */

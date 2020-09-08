@@ -34,9 +34,9 @@ void AttackRectArroundTile::fireAction(entityx::EntityManager &es)
     
     for (auto* pTile : results.tiles)
     {
-        deltaX = abs(pTile->tileX - centerX);
-        deltaZ = abs(pTile->tileZ - centerZ);
-        distance = max(deltaX, deltaZ) - 1;
+        deltaX = std::abs(pTile->tileX - centerX);
+        deltaZ = std::abs(pTile->tileZ - centerZ);
+        distance = std::max(deltaX, deltaZ) - 1;
         
         delay = randomDelay ? cocos2d::rand_0_1() * 0.5 : (deltaX + deltaZ) * spreadInterval;
         BattleConfig::AttackData attackData(m_fromId, delay);

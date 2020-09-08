@@ -6,8 +6,7 @@
 //
 //
 
-#ifndef __BATTLE_CONFIG_H__
-#define __BATTLE_CONFIG_H__
+#pragma once
 
 #include <string>
 #include <array>
@@ -15,8 +14,8 @@
 #include "entityx.h"
 #include "AICondition.h"
 #include "AIAction.h"
-
-using namespace std;
+//#include "json/rapidjson.h"
+//using namespace std;
 
 #define STAGE_WIDTH         90
 #define STAGE_HEIGHT        20
@@ -86,84 +85,84 @@ using namespace std;
 class BattleConfig
 {
 public:
-    
-    enum Side
-    {
-        SIDE_LEFT,
-        SIDE_RIGHT,
-        SIDE_ALL
-    };
-    
-    enum FaceTo
-    {
-        FACE_TO_RIGHT,
-        FACE_TO_LEFT
-    };
-    
-    enum EntityType
-    {
-        ENTITY_SOLDIER,
-        ENTITY_HERO
-    };
-    
-    enum class BattleType
-    {
-        PVE,
-        PVP,
-        DUEL
-    };
-    
-    enum class SoldierType
-    {
-        MELEE = 1,
-        ARCHER,
-        BLOCK,
-        VIRUS
-    };
 
-    enum SoldierState
-    {
-        STATE_ATTACK,
-        STATE_IDLE,
-        STATE_PLAY_ANIMATION,
-        STATE_DIZZY,
-        STATE_PROTECT,
-//        STATE_PROTECT_WIND,
-//        STATE_PROTECT_RANDOM_RUN,
-        STATE_GENERAL,
-        STATE_SOLDIER, //move
+	enum Side
+	{
+		SIDE_LEFT,
+		SIDE_RIGHT,
+		SIDE_ALL
+	};
+
+	enum FaceTo
+	{
+		FACE_TO_RIGHT,
+		FACE_TO_LEFT
+	};
+
+	enum EntityType
+	{
+		ENTITY_SOLDIER,
+		ENTITY_HERO
+	};
+
+	enum class BattleType
+	{
+		PVE,
+		PVP,
+		DUEL
+	};
+
+	enum class SoldierType
+	{
+		MELEE = 1,
+		ARCHER,
+		BLOCK,
+		VIRUS
+	};
+
+	enum SoldierState
+	{
+		STATE_ATTACK,
+		STATE_IDLE,
+		STATE_PLAY_ANIMATION,
+		STATE_DIZZY,
+		STATE_PROTECT,
+		//        STATE_PROTECT_WIND,
+		//        STATE_PROTECT_RANDOM_RUN,
+		STATE_GENERAL,
+		STATE_SOLDIER, //move
 //        STATE_MOVE_TO_TARGET_WIND, //wind
-        STATE_DEPART,
-        STATE_CENTER,
+STATE_DEPART,
+STATE_CENTER,
 //        STATE_CENTER_WIND,
 //        STATE_CENTER_WAIT,
-        STATE_BACK,
-        STATE_TARGET,
-        STATE_LOST,
-        STATE_DEAD,
-        STATE_BATTLE_END,
-        STATE_CHANGE_TO_BLOCK,
-        STATE_CHANGE_TO_GHOST,
-        STATE_ANCHOR_ATTACK,
-        STATE_FADEIN,
-        STATE_HIT_BACK
-    };
-    
-    enum GeneralState
-    {
-        GENERAL_IDLE,
-        GENERAL_PLAY_ANIMATION,
-        GENERAL_RUN,
-        GENERAL_ATTACK,
-        GENERAL_DIZZY,
-        GENERAL_DEAD,
-        GENERAL_CHANGE_LINE,
-        GENERAL_MOVE_TO_HERO_BACK,
-        GENERAL_MOVE_TO_TARGET_TILE,
-        GENERAL_DASH,
-        GENERAL_BATTLE_END
-    };
-    
+STATE_BACK,
+STATE_TARGET,
+STATE_LOST,
+STATE_DEAD,
+STATE_BATTLE_END,
+STATE_CHANGE_TO_BLOCK,
+STATE_CHANGE_TO_GHOST,
+STATE_ANCHOR_ATTACK,
+STATE_FADEIN,
+STATE_HIT_BACK
+	};
+
+	enum GeneralState
+	{
+		GENERAL_IDLE,
+		GENERAL_PLAY_ANIMATION,
+		GENERAL_RUN,
+		GENERAL_ATTACK,
+		GENERAL_DIZZY,
+		GENERAL_DEAD,
+		GENERAL_CHANGE_LINE,
+		GENERAL_MOVE_TO_HERO_BACK,
+		GENERAL_MOVE_TO_TARGET_TILE,
+		GENERAL_DASH,
+		GENERAL_BATTLE_END
+	};
+
 	enum AnimationType
 	{
 		ANI_RUN,
@@ -172,1036 +171,1035 @@ public:
 		ANI_ATTACK3,
 		ANI_IDLE,
 		ANI_DEATH,
-        ANI_DEATH1,
-        ANI_DEATH2,
-        ANI_DIZZY,
-        ANI_DEFENCE,
-        ANI_HIT
+		ANI_DEATH1,
+		ANI_DEATH2,
+		ANI_DIZZY,
+		ANI_DEFENCE,
+		ANI_HIT
 	};
-    
-    enum ChangeGasType
-    {
-        GAS_KILLSOLDIER,//æ€æ­»å¯¹æ–¹å£«å…µ
-        GAS_SOLDIERKILLED,//å·±æ–¹å£«å…µè¢«å‡»æ€
-        GAS_ATTACKBYSOLDIER//æ­¦å°†è¢«å£«å…µæ”»å‡»
-    };
-    
-    enum SkillArrowType
-    {
-        ARROW_SKILL_LINE,//default
-        ARROW_SKILL_VERTICAL,//å‚ç›´æ–¹å¼
-        ARROW_SKILL_CURVE,
-        ARROW_SKILL_CIRCLE,//å›´ç»•æŒç»­
-        ARROW_SKILL_LINE_TRACK
-    };
-    
-    enum MoveArrowResult
-    {
-        ARROW_NO_HIT,
-        ARROW_HIT,
-        ARROW_OUT
-    };
-    
-    enum MoveSoldierResult
-    {
-        MOVE_SOLDIER_ARRIVE,
-        MOVE_SOLDIER_NEXT,
-        MOVE_SOLDIER_BLOCK
-    };
-    
-    enum TargetPosition
-    {
-        POSITION_LEFT,
-        POSITION_RIGHT,
-        POSITION_NONE
-    };
-    
-    enum AIState
-    {
-        AI_WAITING,// wait condition ok
-        AI_DELAY,// wait action delay
-        AI_WORKING,// try to implement action
-        AI_COMPLETE
-    };
-    
-    enum class AttackType
-    {
-        NORMAL,  //æ™®é€šæ”»å‡»
-        SKILL    //æŠ€èƒ½æ”»å‡»
-    };
-    
-    enum AttackTargetType
-    {
-        ATTACK_TARGET,  //åŸºäºç›®æ ‡çš„æ”»å‡»
-        ATTACK_POSITION //åŸºäºä½ç½®çš„æ”»å‡»
-    };
-    
-    enum class NormalDamageType
-    {
-        UNKNOWN,
-        PHYSICAL = 1,   //æ™®é€šç‰©ç†æ”»å‡»ï¼ŒåŸºäºattackå±æ€§è®¡ç®—ä¼¤å®³
-        MAGIC           //æ™®é€šæ³•æœ¯æ”»å‡»ï¼ŒåŸºäºpowerå±æ€§è®¡ç®—ä¼¤å®³
-    };
-    
-    enum DamageType
-    {
-        DAMAGE_PHYSICAL,//åŸºäºç‰©ç†ä¼¤å®³
-        DAMAGE_MAGIC,   //åŸºäºæ³•æœ¯ä¼¤å®³
-        DAMAGE_HOLY,    //çœŸå®ä¼¤å®³
-        DAMAGE_KILL,    //å¿…æ­»æ”»å‡»
-        DAMAGE_CURE,    //æ²»ç–—
-        DAMAGE_PERCENT, //åŸºäºç™¾åˆ†æ¯”ä¼¤å®³
-        DAMAGE_UNKNOWN  //æœªçŸ¥ä¼¤å®³ï¼Œä¸åšä»»ä½•å¤„ç†
-    };
-    
-    enum class DamageSide
-    {
-        ENEMY,
-        SELF,
-        BOTH
-    };
-    
-    enum DamageEntityType
-    {
-        DAMAGE_ENTITY_SOLDIER,
-        DAMAGE_ENTITY_HERO,
-        DAMAGE_ENTITY_ALL
-    };
-    
-    enum class SkillType
-    {
-        POSITIVE,
-        NEGATIVE
-    };
-    
-    enum class SkillTarget
-    {
-        SELF_HERO,
-        SELF_HERO_ALL,
-        SELF_SOLDIER,
-        SELF_ALL,
-        OPP_HERO,
-        OPP_HERO_ALL,
-        OPP_SOLDIER,
-        OPP_ALL,
-        FRONT_NEARBY_ENEMY
-    };
-    
-    enum Property
-    {
-        ARROW_SPEED,              //æ™®æ”»æ³¢åŠ¨é€Ÿåº¦	   arrowSpeed
-        SPEED,                    //ç§»åŠ¨é€Ÿåº¦å€¼	   speed
-        STRIKE_CD,                //æ”»å‡»é€Ÿåº¦å€¼	   strikeCD
-        DR,                       //ä¼¤å®³å‡å…ç‡	   DR
-        HP,                       //HPå€¼     	   HP
-        MP,                       //MPå€¼     	   MP
-        ATTACK,                   //ç‰©ç†æ”»å‡»å€¼	   attack
-        POWER,                    //æ³•æœ¯æ”»å‡»å€¼	   power
-        ATK_VAMP,                 //æ™®æ”»ç”Ÿå‘½å›å¤	   atkVamp
-        ABILITY_VAMP,             //æŠ€èƒ½ç”Ÿå‘½å›å¤	   abilityVamp
-        HOLY_DAMAGE,              //çœŸå®ä¼¤å®³å€¼	   holyDamage
-        ATK_HIT_RATE,             //æ™®æ”»å‘½ä¸­ç‡	   atkHitRate
-        ABILITY_HIT_RATE,         //æŠ€èƒ½å‘½ä¸­ç‡	   abilityHitRate
-        ATK_DODGE_RATE,           //æ™®æ”»é—ªé¿ç‡	   atkDodgeRate
-        ABILITY_DODGE_RATE,       //æŠ€èƒ½é—ªé¿ç‡	   abilityDodgeRate
-        ATK_CSR,                  //æ™®æ”»æš´å‡»ç‡	   atkCSR
-        ABILITY_CSR,              //æŠ€èƒ½æš´å‡»ç‡	   abilityCSR
-        ATK_ANTI_CSR,             //æ™®æ”»çˆ†æŠ—ç‡	   atkAntiCSR
-        ABILITY_ANTI_CSR,         //æŠ€èƒ½çˆ†æŠ—ç‡	   abilityAntiCSR
-        PHYSICAL_CSDR,            //ç‰©ç†çˆ†ä¼¤ç‡	   physicalCSDR
-        SPELL_CSDR,               //æ³•æœ¯çˆ†ä¼¤ç‡	   spellCSDR
-        PHYSICAL_RESILIENCE,      //ç‰©ç†éŸ§æ€§ç‡	   physicalResilience
-        SPELL_RESILIENCE,         //æ³•æœ¯éŸ§æ€§ç‡	   spellResilience
-        ARPR,                     //ç‰©ç†æŠ¤ç”²ç©¿é€ç‡	   ArPR
-        SRPR,                     //æ³•æœ¯é˜²å¾¡ç©¿é€ç‡	   SRPR
-        PHYSICAL_DR,              //ç‰©ç†ä¼¤å®³å‡å…ç‡	   physicalDR
-        SPELL_DR,                 //æ³•æœ¯ä¼¤å®³å‡å…ç‡	   spellDR
-        ATK_VAMP_RATE,            //æ™®æ”»å¸è¡€ç‡	   atkVampRate
-        ABILITY_VAMP_RATE,        //æŠ€èƒ½å¸è¡€ç‡	   abilityVampRate
-        HEALING_BONUS,            //æ²»ç–—æ•ˆæœæé«˜ç‡   healingBonus
-        PHYSICAL_SHIELD,          //ç‰©ç†æŠ¤ç›¾        physicalShield
-        SPELL_SHIELD,             //æ³•æœ¯æŠ¤ç›¾        spellShield
-        SHIELD,                   //ç‰©ç†å’Œæ³•æœ¯æŠ¤ç›¾   shield
-        ATK_HOLY_DAMAGE,          //æ™®æ”»é™„åŠ çœŸå®ä¼¤å®³ atkHolyDamage
-        ABILITY_HOLY_DAMAGE,      //æŠ€èƒ½é™„åŠ çœŸå®ä¼¤å®³ abilityHolyDamage
-        SIZE_OF_PROPERTY_NAME,
-        ALL_PROPERTIES
-    };
-    
-    struct HeroConfigData
-    {
-        int id;                                          //æ­¦å°†id
-        int maxSoldier;                                  //æœ€å¤§å¸¦å…µæ•°
-        int standOrder;                                  //æ­¦å°†ç«™ä½é¡ºåºï¼Œè¶Šå¤§è¡¨ç¤ºç«™ä½è¶Šé å‰
-        int level;                                       //æ­¦å°†ç­‰çº§
-        int ERHPBase;                                    //å·±æ–¹æ­¦å°†è¢«æ”»å‡»å›æ°”å€¼
-        int ERKillBase;                                  //æ€æ•Œå›æ°”å€¼
-        int ERLoseBase;                                  //æŸå¤±å›æ°”å€¼
-        float abilityCD;                                 //æŒ‰ç™¾åˆ†æ¯”é™ä½æŠ€èƒ½å†·å´æ—¶é—´
-        float spellCostReduction;                        //æŒ‰ç™¾åˆ†æ¯”é™ä½é‡Šæ”¾æŠ€èƒ½çš„æ¶ˆè€—MP
-        float currentHP;                                 //å¼€æˆ˜æ—¶çš„åˆå§‹HP
-        float currentMP;                                 //å¼€æˆ˜æ—¶çš„åˆå§‹MP
-        BattleConfig::NormalDamageType normalDamageType; //æ™®æ”»ä¼¤å®³ç±»å‹
-        int star;                                        //æ˜Ÿçº§
-        int maxStar;                                     //æœ€å¤§æ˜Ÿçº§
-        int heroType;                                    //åŠ› æ™º ç»Ÿ
-        std::string asset;
-        std::string pos;                                 //f1,b1
-        std::string strategy;                            //ai
-    };
-    
-    struct SoldierConfigData
-    {
-        int id;                                          //å…µç§id
-        BattleConfig::SoldierType soldierType;           //å…µç§ç±»å‹ï¼Œmelee or archer
-        float orderSpeed;                                //å…µç§æŒ‡ä»¤ç§»åŠ¨é€Ÿåº¦
-        BattleConfig::NormalDamageType normalDamageType; //æ™®æ”»ä¼¤å®³ç±»å‹
-    };
-    
-    struct Tile
-    {
-        int tileZ;
-        int tileX;
-        
-        Tile(int tileZ, int tileX) : tileZ(tileZ), tileX(tileX) {}
-    };
-    
-    struct TileResults
-    {
-        std::vector<Tile*> tiles;
-        
-        void add(int tileZ, int tileX)
-        {
-            tiles.push_back(new Tile(tileZ, tileX));
-        }
-        
-        ~TileResults()
-        {
-            for (auto* pTile : tiles)
-            {
-                delete pTile;
-            }
-            tiles.clear();
-        };
-    };
-    
-    // for skills
-    struct ParamData
-    {
-        std::string* s = nullptr;
-        double d;
-        bool b;
-        
-        ParamData() {}
-        ParamData(std::string* s) : s(s) {}
-        ParamData(double d) : d(d) {}
-        ParamData(bool b) : b(b) {}
-        ParamData(const ParamData& source)
-        {
-            if (source.s != nullptr) s = new std::string(*source.s);
-            d = source.d;
-            b = source.b;
-        }
-        
-        ~ParamData()
-        {
-            CC_SAFE_DELETE(s);
-        }
-    };
-    
-    struct EffectLayer
-    {
-        std::string layerName;
-        int layerType;
-        int layerZOrder;
-    };
-    
-    struct EffectGroup
-    {
-        std::string asset;
-        std::vector<EffectLayer*> effect;
-        
-        ~EffectGroup()
-        {
-            for(auto& i : effect)
-            {
-                delete i;
-            }
-            effect.clear();
-        };
-    };
-    
-    struct EffectMatrix
-    {
-        std::vector<EffectGroup*> effect;
-        
-        EffectGroup* getEffect()
-        {
-            return effect[cocos2d::random() % effect.size()];
-        };
-        
-        ~EffectMatrix()
-        {
-            for(auto& i : effect)
-            {
-                delete i;
-            }
-            effect.clear();
-        };
-    };
-    
-    struct SkillEffect
-    {
-        std::string asset;
-        std::map<std::string, EffectMatrix*> effect;
-        
-        SkillEffect()
-        {
-            asset = "";
-        }
-        
-        ~SkillEffect()
-        {
-            for(auto& i : effect)
-            {
-                delete i.second;
-            }
-            effect.clear();
-        }
-        
-        EffectGroup* getEffect(const std::string& name)
-        {
-            auto result = effect.find(name);
-            if(result != effect.end())
-            {
-                return result->second->getEffect();
-            }
-            return nullptr;
-        }
-    };
-    
-    struct DamageData
-    {
-        DamageType damageType = DamageType::DAMAGE_UNKNOWN;
-        DamageSide damageSide = DamageSide::ENEMY;
-        DamageEntityType damageEntityType = DamageEntityType::DAMAGE_ENTITY_ALL;
-        float damageDelay = 0;
-        float damageBase = 0;
-        float damageStep = 0; //increase some damage per level
-        float damageFactor = 0;
-        float damagePercent = 0;
-        float damageHoly = 0;
-        float deadSpeedH;
-        float deadSpeddV;
-        float deadSpeedHDecay;
-        float deadSpeedVDecay;
-        float gravity;
-        bool showHpFlyText = true;
-        bool showDefaultSkillHitEffect = false;
-        
-        std::string *triggerSkillActionOnAttack = nullptr;
-        std::string *deadAnimation = nullptr;
-    };
-    
-    struct DamagePosition
-    {
-        float x, y, z;
-        float speedH;
-        float speedV;
-        float gravity;
-        EffectGroup* group = nullptr;
-        
-        DamagePosition()
-        {
-            x = y = z = 0;
-            speedH = 0;
-            speedV = 0;
-            gravity = 1000;
-        }
-        
-        bool isZero()
-        {
-            return x == 0 && y == 0 && z == 0;
-        }
-    };
-    
-    struct CameraShakeData
-    {
-        float delay, duration, amplitude;
-        int mode, interval;
-        bool damping;
-        BattleConfig::Side side;
-        
-        CameraShakeData(float duration = 0.5f, float amplitude = 10.0f, int mode = 2, int interval = 2, float delay = 0.0f, bool damping = true, BattleConfig::Side side = BattleConfig::SIDE_LEFT)
-            : duration(duration), amplitude(amplitude), mode(mode), interval(interval), delay(delay), damping(damping), side(side) {}
-    };
-    
-    struct SkillArrowData
-    {
-        SkillArrowData(BattleConfig::SkillArrowType type,
-                       BattleConfig::Side side,
-                       BattleConfig::FaceTo face,
-                       float speed,
-                       entityx::Entity::Id id,
-                       int skillId,
-                       int radius = 0,
-                       int range = -1,
-                       int hp = -1,
-                       const std::string trigger = ""):
-        type(type),
-        side(side),
-        face(face),
-        speed(speed),
-        id(id),
-        skillId(skillId),
-        radius(radius),
-        range(range),
-        hp(hp),
-        trigger(trigger)
-        {
-        }
-        BattleConfig::SkillArrowType type;
-        float speed;
-        BattleConfig::Side side;
-        BattleConfig::FaceTo face;
-        entityx::Entity::Id id;
-        int skillId;
-        int radius;
-        int range;
-        int hp;
-        float breakDistance;
-        float targetZ;
-        std::string trigger;
-        
-        float phase;
-        float amplitude;
-        float frequency;
-    };
-    
-    struct CameraActionConfig
-    {
-        std::string name;
-        std::map<std::string, ParamData*> config;
-        
-        ~CameraActionConfig()
-        {
-            for(auto& it : config)
-            {
-                delete it.second;
-            }
-            config.clear();
-        }
-        
-        bool hasMember(const std::string& key)
-        {
-            return config.find(key) != config.end();
-        }
-    };
-    
-    struct CameraActions
-    {
-        std::string file;
-        std::vector<CameraActionConfig*> actionsX;
-        std::vector<CameraActionConfig*> actionsY;
-        std::vector<CameraActionConfig*> actionsZ;
-        std::vector<CameraActionConfig*> actionsR3d;
-        std::vector<CameraActionConfig*> actionsR2d;
-        
-        ~CameraActions()
-        {
-            for(auto& action : actionsX)
-            {
-                delete action;
-            }
-            actionsX.clear();
-            
-            for(auto& action : actionsY)
-            {
-                delete action;
-            }
-            actionsY.clear();
-            
-            for(auto& action : actionsZ)
-            {
-                delete action;
-            }
-            actionsZ.clear();
-            
-            for(auto& action : actionsR3d)
-            {
-                delete action;
-            }
-            actionsR3d.clear();
-            
-            for(auto& action : actionsR2d)
-            {
-                delete action;
-            }
-            actionsR2d.clear();
-        }
-    };
-    
-    struct SkillActionData
-    {
-        std::string name;
-        std::string trigger;
-        float startTime;     // -1:ä¸æŒ‰æ—¶é—´ç‚¹è‡ªåŠ¨è§¦å‘ï¼Œ>=0:æŒ‰æ—¶é—´ç‚¹è‡ªåŠ¨è§¦å‘
-        float lifeTime;      // -1:ä¸æ‰‹åŠ¨è°ƒç”¨removeåˆ™æ°¸ä¹…å­˜åœ¨ï¼Œ>=0:è§¦å‘åæŒç»­ä¸€æ®µæ—¶é—´è‡ªåŠ¨é”€æ¯
-        DamageData damageData;
-        std::string* pTriggerOnRemove = nullptr;
-        
-        std::map<std::string, ParamData*> config;
-        
-        ~SkillActionData()
-        {
-            for(auto& it : config)
-            {
-                delete it.second;
-            }
-            config.clear();
-            
-            CC_SAFE_DELETE(damageData.triggerSkillActionOnAttack);
-            CC_SAFE_DELETE(damageData.deadAnimation);
-            CC_SAFE_DELETE(pTriggerOnRemove);
-            CCLOG("skill action data remove");
-        }
-        
-        bool hasMember(const std::string& key)
-        {
-            return config.find(key) != config.end();
-        }
-    };
-    
-    struct Formula
-    {
-        std::string formula;
-        std::string property;
-        float max, min, divide, step, base, factor;
-    };
-    
-    struct SkillFormula
-    {
-        std::map<std::string, Formula*> formulas;
 
-        ~SkillFormula()
-        {
-            for(auto& iter : formulas)
-            {
-                delete iter.second;
-            }
-            formulas.clear();
-        }
-        
-        Formula* getFormula(const std::string& name)
-        {
-            auto result = formulas.find(name);
-            if(result != formulas.end())
-            {
-                return result->second;
-            }
-            return nullptr;
-        }
-    };
-    
-    struct SkillCameraActions
-    {
-        std::map<std::string, CameraActions*> actions;
-        
-        ~SkillCameraActions()
-        {
-            for(auto& iter : actions)
-            {
-                delete iter.second;
-            }
-            actions.clear();
-        }
-        
-        CameraActions* getCameraActions(const std::string& name)
-        {
-            auto result = actions.find(name);
-            if(result != actions.end())
-            {
-                return result->second;
-            }
-            return nullptr;
-        }
-    };
-    
-    struct HeroDizzyConfig;
-    struct SkillDizzy
-    {
-        std::map<std::string, HeroDizzyConfig*> config;
-        
-        ~SkillDizzy()
-        {
-            for (auto& iter : config)
-            {
-                delete iter.second;
-            }
-            config.clear();
-        }
-        
-        HeroDizzyConfig* getConfig(const std::string& name)
-        {
-            auto iter = config.find(name);
-            if (iter != config.end())
-            {
-                return iter->second;
-            }
-            return nullptr;
-        }
-    };
-    
-    struct SkillConfigData
-    {
-        SkillType type;
-        std::vector<SkillActionData*> actions;
-        SkillEffect* effect;
-        SkillFormula* formula;
-        SkillDizzy* dizzy;
-        SkillCameraActions* cameraActions;
-        
-        SkillConfigData()
-        {
-            effect = new SkillEffect();
-            formula = new SkillFormula();
-            dizzy = new SkillDizzy();
-            cameraActions = new SkillCameraActions();
-            type = SkillType::POSITIVE;
-        }
-        
-        ~SkillConfigData()
-        {
-            for(auto* action : actions)
-            {
-                delete action;
-            }
-            actions.clear();
-            
-            delete effect;
-            delete formula;
-            delete dizzy;
-            delete cameraActions;
-        }
-    };
-    
-    struct BuffData
-    {
-        int targetId;
-        BattleConfig::Property targetProperty;
-        float changeAbsolute;
-        float changePercent;
-        float changeFinal;
-        float lifeTime;
-        bool lock;
-        std::string buffIcon;
-        
-        BuffData(int targetId, BattleConfig::Property targetProperty, float changeAbsolute = 0, float changePercent = 0, float lifeTime = 0, bool lock = false) : targetId(targetId), targetProperty(targetProperty), changeAbsolute(changeAbsolute), changePercent(changePercent), lifeTime(lifeTime), lock(lock) { buffIcon = ""; }
-    };
-    
-    struct AttackData
-    {
-    public:
-        //å‘èµ·è€…Id
-        int fromId;
-        //æ–½æ”¾å‰ç­‰å¾…
-        float delay;
-        //æ–½æ”¾é—´éš”
-        float interval;
-        //æ–½æ”¾æ¬¡æ•°
-        int loop;
-        //æ˜¯å¦æ˜¯ç¬¬ä¸€ä¸‹ä¼¤å®³
-        bool isFirstHit;
-        //æŠ€èƒ½Id
-        int skillId;
-        //ç”¨äºè®¡ç®—ä¼¤å®³çš„æ•°æ®
-        DamageData damageData;
-        //å‘½ä¸­æ—¶å‡»é£çš„æ•°æ®
-        DamagePosition damagePosition;
-        //æŠ€èƒ½EntityId
-        entityx::Entity::Id skillEntityId;
-        //æœ€ç»ˆä¼¤å®³å€¼
-        float finalHpChanged = 0;
-        
-        AttackData(int fromId, float delay = 0, int loop = 1, float interval = 0) : m_type(AttackType::NORMAL), fromId(fromId), delay(delay), loop(loop), interval(interval), isFirstHit(true) {}
-        
-        void setTargetId(int targetId)
-        {
-            m_targetId = targetId;
-            m_targetType = ATTACK_TARGET;
-        }
-    
-        void setTargetPos(int tileZ, int tileX)
-        {
-            m_targetTileZ = tileZ;
-            m_targetTileX = tileX;
-            m_targetType = ATTACK_POSITION;
-        }
-        
-        void setSkillData(int sId, const DamageData& damage, const entityx::Entity::Id& entityId)
-        {
-            skillId = sId;
-            damageData = damage;
-            skillEntityId = entityId;
-            m_type = AttackType::SKILL;
-            
-            if (damageData.damageDelay > 0) delay = damageData.damageDelay;
-        }
-        
-        inline AttackType getAttackType() const
-        {
-            return m_type;
-        }
-        inline AttackTargetType getAttackTargetType() const
-        {
-            return m_targetType;
-        }
-        inline int getTargetId() const
-        {
-            return m_targetId;
-        }
-        inline int getTargetTileZ() const
-        {
-            return m_targetTileZ;
-        }
-        inline int getTargetTileX() const
-        {
-            return m_targetTileX;
-        }
-        
-    private:
-        AttackType m_type;
-        AttackTargetType m_targetType;
-        //ç›®æ ‡Id
-        int m_targetId;
-        //ç›®æ ‡ä½ç½®
-        int m_targetTileZ;
-        int m_targetTileX;
-    };
-    
-    struct AIData
-    {
-        BattleConfig::AIState state;
-        std::vector<AICondition*> *conditions;
-        AIAction* action;
-        bool repeated;
-        float elapse;
-        
-        AIData(std::vector<AICondition*> *conditions, AIAction* action, bool repeated) : conditions(conditions), action(action), repeated(repeated)
-        {
-            state = BattleConfig::AI_WAITING;
-            elapse = 0;
-            for(auto condition : *conditions)
-            {
-                condition->configure();
-            }
-            action->configure();
-        }
-        
-        ~AIData()
-        {
-            for(auto condition : *conditions)
-            {
-                delete condition;
-            }
-            conditions->clear();
-            delete conditions;
-            delete action;
-        }
-    };
-    
-    struct CameraAction
-    {
-        float fromX;
-        float toX;
-        float fromY;
-        float toY;
-        float fromZ;
-        float toZ;
-        float fromRotate;
-        float toRotate;
-        
-        float time;
-        float delay;
-        float elapse;
-        
-        int tweenMode;
-        int nextCameraState;
-    };
-    
-    struct CameraActionData
-    {
-        float toData;
-        
-        float time;
-        float delay;
-        float elapse;
-        
-        int tweenMode;
-        int nextCameraState;
-    };
-    
-    struct HeroDizzyActionConfig
-    {
-        std::string name;
-        std::map<std::string, ParamData> config;
-        
-        bool hasMember(const std::string& key)
-        {
-            return config.find(key) != config.end();
-        }
-    };
-    
-    struct HeroDizzyConditionConfig
-    {
-        std::string name;
-        bool required = true;
-        std::map<std::string, ParamData> config;
-        
-        bool hasMember(const std::string& key)
-        {
-            return config.find(key) != config.end();
-        }
-    };
-    
-    struct HeroDizzyConfig
-    {
-        bool allowBreakByAnotherDizzy = true;
-        std::vector<HeroDizzyActionConfig> actions;
-        std::vector<HeroDizzyConditionConfig> conditions;
-        
-        HeroDizzyActionConfig* findAction(const std::string& name)
-        {
-            for (auto& config : actions)
-            {
-                if (config.name == name) return &config;
-            }
-            return nullptr;
-        }
-        
-        HeroDizzyConditionConfig* findCondition(const std::string& name)
-        {
-            for (auto& config : conditions)
-            {
-                if (config.name == name) return &config;
-            }
-            return nullptr;
-        }
-    };
-    
-    struct HeroDizzyData
-    {
-        entityx::Entity::Id skillEntityId;
-        float dizzyTime;
-    };
-    
-    struct SoldierConfig
-    {
-        std::string asset;
-        int num;
-        BattleConfig::SoldierConfigData soldierConfigData;
-        std::array<float, SIZE_OF_PROPERTY_NAME> base;
-        
-        const std::string getAssetName(const std::string& style) const
-        {
-            return "soldier_" + asset + "_" + style;
-        }
-    };
-    
-    struct SkillData
-    {
-        int id;
-        std::string name;
-        int level = 1;
-        float energyCost = 0;
-        float energySpeed = 0;
-        float energyStart = 0;
-        int mpCost = 0;
-        SkillConfigData* pConfig = nullptr;
-        SoldierConfig* pSoldier = nullptr;
-        
-        float energy = 0;
-        bool isReady = false;
-        bool isActive = false;
-        bool canBreak = true;
-        
-        SkillData() {}
-        ~SkillData() { CC_SAFE_DELETE(pSoldier); }
-        
-        inline void changeEnergy(float delta)
-        {
-            energy += delta;
-            if (energy > energyCost) energy = energyCost;
-            if (energy < 0) energy = 0;
-        }
-    };
-    
-    struct HeroConfig
-    {
-        BattleConfig::HeroConfigData heroConfigData;
-        std::vector<BattleConfig::SkillData*> skills;
-        std::array<float, SIZE_OF_PROPERTY_NAME> base;
-        
-        bool hasAI() { return heroConfigData.strategy.length() > 0; };
-        
-        void clearSkills()
-        {
-            for (auto* s : skills)
-            {
-                delete s;
-            }
-            skills.clear();
-        }
-        
-        const std::string getAssetName() const
-        {
-            return "hero_" + heroConfigData.asset;
-        }
-        
-        ~HeroConfig()
-        {
-            clearSkills();
-        }
-    };
-    
-    struct TeamConfig
-    {
-        SoldierConfig soldier;
-        std::vector<HeroConfig*> heros;
-        std::string formation;
-        
-        ~TeamConfig()
-        {
-            for (auto* pHeroConfig : heros)
-            {
-                delete pHeroConfig;
-            }
-            heros.clear();
-        }
-    };
-    
-    //{"side":"left", "role":"1", "content":"æœ¬å®˜å§“å•åå¸ƒå­—å¥‰å…ˆï¼Œè°èƒ½è°ä¸Šåˆ«BB"},
-    
-    struct Dialogue
-    {
-        Side side;
-        std::string role;
-        std::string name;
-        std::string content;
-    };
-    
-    struct BattleFieldConfig
-    {
-        TeamConfig myTeam;
-        TeamConfig enemyTeam;
-        
-        std::vector<Dialogue*> enter;
-        std::vector<Dialogue*> win;
-        std::vector<Dialogue*> lose;
-        
-        std::array<float, SIZE_OF_PROPERTY_NAME> propertyMin;
-        std::array<float, SIZE_OF_PROPERTY_NAME> propertyMax;
-        
-        float slowTime;
-        int totalTime;
-        int xOffset;
-        float CSDRFloorCoefficient;
-        std::string enterShow;
-        std::string background;
-        std::string leftSoldierAssetStyle;
-        std::string rightSoldierAssetStyle;
-        std::string leftSoldierIcon = "";
-        std::string rightSoldierIcon = "";
-        std::string weather;
-        BattleType battleType;
-        bool forceAutoFight;
-        
-        TeamConfig& getTeam(Side side)
-        {
-            return (side == Side::SIDE_LEFT ? myTeam : enemyTeam);
-        }
-        
-        BattleFieldConfig()
-        {
-            weather = "";
-        }
-        
-        ~BattleFieldConfig()
-        {
-            for(auto dialogue : enter)
-            {
-                delete dialogue;
-            }
-            for(auto dialogue : win)
-            {
-                delete dialogue;
-            }
-            for(auto dialogue : lose)
-            {
-                delete dialogue;
-            }
-            enter.clear();
-            win.clear();
-            lose.clear();
-        }
-    };
-    
-    struct FormationConfig
-    {
-        std::vector<int> soldiers;
-        std::map<std::string, int> heros;
-        int validSoldiersNum;
-        
-        FormationConfig()
-        {
-            soldiers.assign(100, 0);
-        }
-        
-        cocos2d::Vec3& getSoldierPos(int idx)
-        {
-            if (idx >= 0 && idx < soldiers.size()) return getPos(soldiers.at(idx));
-            return getPos(-1);
-        }
-        
-        cocos2d::Vec3& getHeroPos(const std::string& pos)
-        {
-            auto iter = heros.find(pos);
-            if(iter != heros.end()) return getPos(iter->second);
-            return getPos(-1);
-        }
-        
-        cocos2d::Vec3& getPos(int pos)
-        {
-            static cocos2d::Vec3 tempPos;
-            if (pos == -1) tempPos.set(-1, -1, -1);
-            else tempPos.set(pos & 0xFF, 0, (pos >> 8) & 0xFF);
-            return tempPos;
-        }
-    };
+	enum ChangeGasType
+	{
+		GAS_KILLSOLDIER,//É±ËÀ¶Ô·½Ê¿±ø
+		GAS_SOLDIERKILLED,//¼º·½Ê¿±ø±»»÷É±
+		GAS_ATTACKBYSOLDIER//Îä½«±»Ê¿±ø¹¥»÷
+	};
+
+	enum SkillArrowType
+	{
+		ARROW_SKILL_LINE,//default
+		ARROW_SKILL_VERTICAL,//´¹Ö±·½Ê½
+		ARROW_SKILL_CURVE,
+		ARROW_SKILL_CIRCLE,//Î§ÈÆ³ÖĞø
+		ARROW_SKILL_LINE_TRACK
+	};
+
+	enum MoveArrowResult
+	{
+		ARROW_NO_HIT,
+		ARROW_HIT,
+		ARROW_OUT
+	};
+
+	enum MoveSoldierResult
+	{
+		MOVE_SOLDIER_ARRIVE,
+		MOVE_SOLDIER_NEXT,
+		MOVE_SOLDIER_BLOCK
+	};
+
+	enum TargetPosition
+	{
+		POSITION_LEFT,
+		POSITION_RIGHT,
+		POSITION_NONE
+	};
+
+	enum AIState
+	{
+		AI_WAITING,// wait condition ok
+		AI_DELAY,// wait action delay
+		AI_WORKING,// try to implement action
+		AI_COMPLETE
+	};
+	enum class AttackType
+	{
+		NORMAL,//ÆÕÍ¨¹¥»÷
+		SKILL//¼¼ÄÜ¹¥»÷
+	};
+
+	enum AttackTargetType
+	{
+		ATTACK_TARGET,//»ùÓÚÄ¿±êµÄ¹¥»÷
+		ATTACK_POSITION //»ùÓÚÎ»ÖÃµÄ¹¥»÷
+	};
+
+	enum class NormalDamageType
+	{
+		UNKNOWN,
+		PHYSICAL = 1,   //ÆÕÍ¨ÎïÀí¹¥»÷£¬»ùÓÚattackÊôĞÔ¼ÆËãÉËº¦
+		MAGIC       //ÆÕÍ¨·¨Êõ¹¥»÷£¬»ùÓÚpowerÊôĞÔ¼ÆËãÉËº¦
+	};
+
+	enum DamageType
+	{
+		DAMAGE_PHYSICAL,//»ùÓÚÎïÀíÉËº¦
+		DAMAGE_MAGIC,   //»ùÓÚ·¨ÊõÉËº¦
+		DAMAGE_HOLY,    //ÕæÊµÉËº¦
+		DAMAGE_KILL,    //±ØËÀ¹¥»÷
+		DAMAGE_CURE,    //ÖÎÁÆ
+		DAMAGE_PERCENT, //»ùÓÚ°Ù·Ö±ÈÉËº¦
+		DAMAGE_UNKNOWN  //Î´ÖªÉËº¦£¬²»×öÈÎºÎ´¦Àí
+	};
+
+	enum class DamageSide
+	{
+		ENEMY,
+		SELF,
+		BOTH
+	};
+
+	enum DamageEntityType
+	{
+		DAMAGE_ENTITY_SOLDIER,
+		DAMAGE_ENTITY_HERO,
+		DAMAGE_ENTITY_ALL
+	};
+
+	enum class SkillType
+	{
+		POSITIVE,
+		NEGATIVE
+	};
+
+	enum class SkillTarget
+	{
+		SELF_HERO,
+		SELF_HERO_ALL,
+		SELF_SOLDIER,
+		SELF_ALL,
+		OPP_HERO,
+		OPP_HERO_ALL,
+		OPP_SOLDIER,
+		OPP_ALL,
+		FRONT_NEARBY_ENEMY
+	};
+
+	enum Property
+	{
+		ARROW_SPEED,              //ÆÕ¹¥²¨¶¯ËÙ¶È     arrowSpeed
+		SPEED,                    //ÒÆ¶¯ËÙ¶ÈÖµ      speed
+		STRIKE_CD,                //¹¥»÷ËÙ¶ÈÖµ      strikeCD
+		DR,                       //ÉËº¦¼õÃâÂÊ      DR
+		HP,                       //HPÖµ            HP
+		MP,                       //MPÖµ            MP
+		ATTACK,                   //ÎïÀí¹¥»÷Öµ      attack
+		POWER,                    //·¨Êõ¹¥»÷Öµ      power
+		ATK_VAMP,                 //ÆÕ¹¥ÉúÃü»Ø¸´     atkVamp
+		ABILITY_VAMP,             //¼¼ÄÜÉúÃü»Ø¸´     abilityVamp
+		HOLY_DAMAGE,              //ÕæÊµÉËº¦Öµ      holyDamage
+		ATK_HIT_RATE,             //ÆÕ¹¥ÃüÖĞÂÊ      atkHitRate
+		ABILITY_HIT_RATE,         //¼¼ÄÜÃüÖĞÂÊ      abilityHitRate
+		ATK_DODGE_RATE,           //ÆÕ¹¥ÉÁ±ÜÂÊ      atkDodgeRate
+		ABILITY_DODGE_RATE,       //¼¼ÄÜÉÁ±ÜÂÊ      abilityDodgeRate
+		ATK_CSR,                  //ÆÕ¹¥±©»÷ÂÊ      atkCSR
+		ABILITY_CSR,              //¼¼ÄÜ±©»÷ÂÊ      abilityCSR
+		ATK_ANTI_CSR,             //ÆÕ¹¥±¬¿¹ÂÊ      atkAntiCSR
+		ABILITY_ANTI_CSR,         //¼¼ÄÜ±¬¿¹ÂÊ      abilityAntiCSR
+		PHYSICAL_CSDR,            //ÎïÀí±¬ÉËÂÊ      physicalCSDR
+		SPELL_CSDR,               //·¨Êõ±¬ÉËÂÊ      spellCSDR
+		PHYSICAL_RESILIENCE,      //ÎïÀíÈÍĞÔÂÊ      physicalResilience
+		SPELL_RESILIENCE,         //·¨ÊõÈÍĞÔÂÊ      spellResilience
+		ARPR,                     //ÎïÀí»¤¼×´©Í¸ÂÊ    ArPR
+		SRPR,                     //·¨Êõ·ÀÓù´©Í¸ÂÊ    SRPR
+		PHYSICAL_DR,              //ÎïÀíÉËº¦¼õÃâÂÊ    physicalDR
+		SPELL_DR,                 //·¨ÊõÉËº¦¼õÃâÂÊ    spellDR
+		ATK_VAMP_RATE,            //ÆÕ¹¥ÎüÑªÂÊ      atkVampRate
+		ABILITY_VAMP_RATE,        //¼¼ÄÜÎüÑªÂÊ      abilityVampRate
+		HEALING_BONUS,            //ÖÎÁÆĞ§¹ûÌá¸ßÂÊ   healingBonus
+		PHYSICAL_SHIELD,          //ÎïÀí»¤¶Ü        physicalShield
+		SPELL_SHIELD,             //·¨Êõ»¤¶Ü        spellShield
+		SHIELD,                   //ÎïÀíºÍ·¨Êõ»¤¶Ü   shield
+		ATK_HOLY_DAMAGE,          //ÆÕ¹¥¸½¼ÓÕæÊµÉËº¦ atkHolyDamage
+		ABILITY_HOLY_DAMAGE,      //¼¼ÄÜ¸½¼ÓÕæÊµÉËº¦ abilityHolyDamage
+		SIZE_OF_PROPERTY_NAME,
+		ALL_PROPERTIES
+	};
+
+	struct HeroConfigData
+	{
+		int id;                                          //Îä½«id
+		int maxSoldier;                                  //×î´ó´ø±øÊı
+		int standOrder;                                  //Îä½«Õ¾Î»Ë³Ğò£¬Ô½´ó±íÊ¾Õ¾Î»Ô½¿¿Ç°
+		int level;                                       //Îä½«µÈ¼¶
+		int ERHPBase;                                    //¼º·½Îä½«±»¹¥»÷»ØÆøÖµ
+		int ERKillBase;                                  //É±µĞ»ØÆøÖµ
+		int ERLoseBase;                                  //ËğÊ§»ØÆøÖµ
+		float abilityCD;                                 //°´°Ù·Ö±È½µµÍ¼¼ÄÜÀäÈ´Ê±¼ä
+		float spellCostReduction;                        //°´°Ù·Ö±È½µµÍÊÍ·Å¼¼ÄÜµÄÏûºÄMP
+		float currentHP;                                 //¿ªÕ½Ê±µÄ³õÊ¼HP
+		float currentMP;                                 //¿ªÕ½Ê±µÄ³õÊ¼MP
+		BattleConfig::NormalDamageType normalDamageType; //ÆÕ¹¥ÉËº¦ÀàĞÍ
+		int star;                                        //ĞÇ¼¶
+		int maxStar;                                     //×î´óĞÇ¼¶
+		int heroType;                                    //Á¦ ÖÇ Í³
+		std::string asset;
+		std::string pos;                                 //f1,b1
+		std::string strategy;                            //ai
+	};
+
+	struct SoldierConfigData
+	{
+		int id;                                          //±øÖÖid
+		BattleConfig::SoldierType soldierType;           //±øÖÖÀàĞÍ£¬melee or archer
+		float orderSpeed;                                //±øÖÖÖ¸ÁîÒÆ¶¯ËÙ¶È
+		BattleConfig::NormalDamageType normalDamageType; //ÆÕ¹¥ÉËº¦ÀàĞÍ
+	};
+
+	struct Tile
+	{
+		int tileZ;
+		int tileX;
+
+		Tile(int tileZ, int tileX) : tileZ(tileZ), tileX(tileX) {}
+	};
+
+	struct TileResults
+	{
+		std::vector<Tile*> tiles;
+
+		void add(int tileZ, int tileX)
+		{
+			tiles.push_back(new Tile(tileZ, tileX));
+		}
+
+		~TileResults()
+		{
+			for (auto* pTile : tiles)
+			{
+				delete pTile;
+			}
+			tiles.clear();
+		};
+	};
+
+	// for skills
+	struct ParamData
+	{
+		std::string* s = nullptr;
+		double d;
+		bool b;
+
+		ParamData() {}
+		ParamData(std::string* s) : s(s) {}
+		ParamData(double d) : d(d) {}
+		ParamData(bool b) : b(b) {}
+		ParamData(const ParamData& source)
+		{
+			if (source.s != nullptr) s = new std::string(*source.s);
+			d = source.d;
+			b = source.b;
+		}
+
+		~ParamData()
+		{
+			CC_SAFE_DELETE(s);
+		}
+	};
+
+	struct EffectLayer
+	{
+		std::string layerName;
+		int layerType;
+		int layerZOrder;
+	};
+
+	struct EffectGroup
+	{
+		std::string asset;
+		std::vector<EffectLayer*> effect;
+
+		~EffectGroup()
+		{
+			for (auto& i : effect)
+			{
+				delete i;
+			}
+			effect.clear();
+		};
+	};
+
+	struct EffectMatrix
+	{
+		std::vector<EffectGroup*> effect;
+
+		EffectGroup* getEffect()
+		{
+			return effect[cocos2d::random() % effect.size()];
+		};
+
+		~EffectMatrix()
+		{
+			for (auto& i : effect)
+			{
+				delete i;
+			}
+			effect.clear();
+		};
+	};
+
+	struct SkillEffect
+	{
+		std::string asset;
+		std::map<std::string, EffectMatrix*> effect;
+
+		SkillEffect()
+		{
+			asset = "";
+		}
+
+		~SkillEffect()
+		{
+			for (auto& i : effect)
+			{
+				delete i.second;
+			}
+			effect.clear();
+		}
+
+		EffectGroup* getEffect(const std::string& name)
+		{
+			auto result = effect.find(name);
+			if (result != effect.end())
+			{
+				return result->second->getEffect();
+			}
+			return nullptr;
+		}
+	};
+
+	struct DamageData
+	{
+		DamageType damageType = DamageType::DAMAGE_UNKNOWN;
+		DamageSide damageSide = DamageSide::ENEMY;
+		DamageEntityType damageEntityType = DamageEntityType::DAMAGE_ENTITY_ALL;
+		float damageDelay = 0;
+		float damageBase = 0;
+		float damageStep = 0; //increase some damage per level
+		float damageFactor = 0;
+		float damagePercent = 0;
+		float damageHoly = 0;
+		float deadSpeedH;
+		float deadSpeddV;
+		float deadSpeedHDecay;
+		float deadSpeedVDecay;
+		float gravity;
+		bool showHpFlyText = true;
+		bool showDefaultSkillHitEffect = false;
+
+		std::string *triggerSkillActionOnAttack = nullptr;
+		std::string *deadAnimation = nullptr;
+	};
+
+	struct DamagePosition
+	{
+		float x, y, z;
+		float speedH;
+		float speedV;
+		float gravity;
+		EffectGroup* group = nullptr;
+
+		DamagePosition()
+		{
+			x = y = z = 0;
+			speedH = 0;
+			speedV = 0;
+			gravity = 1000;
+		}
+
+		bool isZero()
+		{
+			return x == 0 && y == 0 && z == 0;
+		}
+	};
+
+	struct CameraShakeData
+	{
+		float delay, duration, amplitude;
+		int mode, interval;
+		bool damping;
+		BattleConfig::Side side;
+
+		CameraShakeData(float duration = 0.5f, float amplitude = 10.0f, int mode = 2, int interval = 2, float delay = 0.0f, bool damping = true, BattleConfig::Side side = BattleConfig::SIDE_LEFT)
+			: duration(duration), amplitude(amplitude), mode(mode), interval(interval), delay(delay), damping(damping), side(side) {}
+	};
+
+	struct SkillArrowData
+	{
+		SkillArrowData(BattleConfig::SkillArrowType type,
+			BattleConfig::Side side,
+			BattleConfig::FaceTo face,
+			float speed,
+			entityx::Entity::Id id,
+			int skillId,
+			int radius = 0,
+			int range = -1,
+			int hp = -1,
+			const std::string trigger = "") :
+			type(type),
+			side(side),
+			face(face),
+			speed(speed),
+			id(id),
+			skillId(skillId),
+			radius(radius),
+			range(range),
+			hp(hp),
+			trigger(trigger)
+		{
+		}
+		BattleConfig::SkillArrowType type;
+		float speed;
+		BattleConfig::Side side;
+		BattleConfig::FaceTo face;
+		entityx::Entity::Id id;
+		int skillId;
+		int radius;
+		int range;
+		int hp;
+		float breakDistance;
+		float targetZ;
+		std::string trigger;
+
+		float phase;
+		float amplitude;
+		float frequency;
+	};
+
+	struct CameraActionConfig
+	{
+		std::string name;
+		std::map<std::string, ParamData*> config;
+
+		~CameraActionConfig()
+		{
+			for (auto& it : config)
+			{
+				delete it.second;
+			}
+			config.clear();
+		}
+
+		bool hasMember(const std::string& key)
+		{
+			return config.find(key) != config.end();
+		}
+	};
+
+	struct CameraActions
+	{
+		std::string file;
+		std::vector<CameraActionConfig*> actionsX;
+		std::vector<CameraActionConfig*> actionsY;
+		std::vector<CameraActionConfig*> actionsZ;
+		std::vector<CameraActionConfig*> actionsR3d;
+		std::vector<CameraActionConfig*> actionsR2d;
+
+		~CameraActions()
+		{
+			for (auto& action : actionsX)
+			{
+				delete action;
+			}
+			actionsX.clear();
+
+			for (auto& action : actionsY)
+			{
+				delete action;
+			}
+			actionsY.clear();
+
+			for (auto& action : actionsZ)
+			{
+				delete action;
+			}
+			actionsZ.clear();
+
+			for (auto& action : actionsR3d)
+			{
+				delete action;
+			}
+			actionsR3d.clear();
+
+			for (auto& action : actionsR2d)
+			{
+				delete action;
+			}
+			actionsR2d.clear();
+		}
+	};
+
+	struct SkillActionData
+	{
+		std::string name;
+		std::string trigger;
+		float startTime;     // -1:²»°´Ê±¼äµã×Ô¶¯´¥·¢£¬>=0:°´Ê±¼äµã×Ô¶¯´¥·¢
+		float lifeTime;      // -1:²»ÊÖ¶¯µ÷ÓÃremoveÔòÓÀ¾Ã´æÔÚ£¬>=0:´¥·¢ºó³ÖĞøÒ»¶ÎÊ±¼ä×Ô¶¯Ïú»Ù
+		DamageData damageData;
+		std::string* pTriggerOnRemove = nullptr;
+
+		std::map<std::string, ParamData*> config;
+
+		~SkillActionData()
+		{
+			for (auto& it : config)
+			{
+				delete it.second;
+			}
+			config.clear();
+
+			CC_SAFE_DELETE(damageData.triggerSkillActionOnAttack);
+			CC_SAFE_DELETE(damageData.deadAnimation);
+			CC_SAFE_DELETE(pTriggerOnRemove);
+			CCLOG("skill action data remove");
+		}
+
+		bool hasMember(const std::string& key)
+		{
+			return config.find(key) != config.end();
+		}
+	};
+
+	struct Formula
+	{
+		std::string formula;
+		std::string property;
+		float max, min, divide, step, base, factor;
+	};
+
+	struct SkillFormula
+	{
+		std::map<std::string, Formula*> formulas;
+
+		~SkillFormula()
+		{
+			for (auto& iter : formulas)
+			{
+				delete iter.second;
+			}
+			formulas.clear();
+		}
+
+		Formula* getFormula(const std::string& name)
+		{
+			auto result = formulas.find(name);
+			if (result != formulas.end())
+			{
+				return result->second;
+			}
+			return nullptr;
+		}
+	};
+
+	struct SkillCameraActions
+	{
+		std::map<std::string, CameraActions*> actions;
+
+		~SkillCameraActions()
+		{
+			for (auto& iter : actions)
+			{
+				delete iter.second;
+			}
+			actions.clear();
+		}
+
+		CameraActions* getCameraActions(const std::string& name)
+		{
+			auto result = actions.find(name);
+			if (result != actions.end())
+			{
+				return result->second;
+			}
+			return nullptr;
+		}
+	};
+
+	struct HeroDizzyConfig;
+	struct SkillDizzy
+	{
+		std::map<std::string, HeroDizzyConfig*> config;
+
+		~SkillDizzy()
+		{
+			for (auto& iter : config)
+			{
+				delete iter.second;
+			}
+			config.clear();
+		}
+
+		HeroDizzyConfig* getConfig(const std::string& name)
+		{
+			auto iter = config.find(name);
+			if (iter != config.end())
+			{
+				return iter->second;
+			}
+			return nullptr;
+		}
+	};
+
+	struct SkillConfigData
+	{
+		SkillType type;
+		std::vector<SkillActionData*> actions;
+		SkillEffect* effect;
+		SkillFormula* formula;
+		SkillDizzy* dizzy;
+		SkillCameraActions* cameraActions;
+
+		SkillConfigData()
+		{
+			effect = new SkillEffect();
+			formula = new SkillFormula();
+			dizzy = new SkillDizzy();
+			cameraActions = new SkillCameraActions();
+			type = SkillType::POSITIVE;
+		}
+
+		~SkillConfigData()
+		{
+			for (auto* action : actions)
+			{
+				delete action;
+			}
+			actions.clear();
+
+			delete effect;
+			delete formula;
+			delete dizzy;
+			delete cameraActions;
+		}
+	};
+
+	struct BuffData
+	{
+		int targetId;
+		BattleConfig::Property targetProperty;
+		float changeAbsolute;
+		float changePercent;
+		float changeFinal;
+		float lifeTime;
+		bool lock;
+		std::string buffIcon;
+
+		BuffData(int targetId, BattleConfig::Property targetProperty, float changeAbsolute = 0, float changePercent = 0, float lifeTime = 0, bool lock = false) : targetId(targetId), targetProperty(targetProperty), changeAbsolute(changeAbsolute), changePercent(changePercent), lifeTime(lifeTime), lock(lock) { buffIcon = ""; }
+	};
+
+	struct AttackData
+	{
+	public:
+		//·¢ÆğÕßId
+		int fromId;
+		//Ê©·ÅÇ°µÈ´ı
+		float delay;
+		//Ê©·Å¼ä¸ô
+		float interval;
+		//Ê©·Å´ÎÊı
+		int loop;
+		//ÊÇ·ñÊÇµÚÒ»ÏÂÉËº¦
+		bool isFirstHit;
+		//¼¼ÄÜId
+		int skillId;
+		//ÓÃÓÚ¼ÆËãÉËº¦µÄÊı¾İ
+		DamageData damageData;
+		//ÃüÖĞÊ±»÷·ÉµÄÊı¾İ
+		DamagePosition damagePosition;
+		//¼¼ÄÜEntityId
+		entityx::Entity::Id skillEntityId;
+		//×îÖÕÉËº¦Öµ
+		float finalHpChanged = 0;
+
+		AttackData(int fromId, float delay = 0, int loop = 1, float interval = 0) : m_type(AttackType::NORMAL), fromId(fromId), delay(delay), loop(loop), interval(interval), isFirstHit(true) {}
+
+		void setTargetId(int targetId)
+		{
+			m_targetId = targetId;
+			m_targetType = ATTACK_TARGET;
+		}
+
+		void setTargetPos(int tileZ, int tileX)
+		{
+			m_targetTileZ = tileZ;
+			m_targetTileX = tileX;
+			m_targetType = ATTACK_POSITION;
+		}
+
+		void setSkillData(int sId, const DamageData& damage, const entityx::Entity::Id& entityId)
+		{
+			skillId = sId;
+			damageData = damage;
+			skillEntityId = entityId;
+			m_type = AttackType::SKILL;
+
+			if (damageData.damageDelay > 0) delay = damageData.damageDelay;
+		}
+
+		inline AttackType getAttackType() const
+		{
+			return m_type;
+		}
+		inline AttackTargetType getAttackTargetType() const
+		{
+			return m_targetType;
+		}
+		inline int getTargetId() const
+		{
+			return m_targetId;
+		}
+		inline int getTargetTileZ() const
+		{
+			return m_targetTileZ;
+		}
+		inline int getTargetTileX() const
+		{
+			return m_targetTileX;
+		}
+
+	private:
+		AttackType m_type;
+		AttackTargetType m_targetType;
+		//Ä¿±êId
+		int m_targetId;
+		//Ä¿±êÎ»ÖÃ
+		int m_targetTileZ;
+		int m_targetTileX;
+	};
+
+	struct AIData
+	{
+		BattleConfig::AIState state;
+		std::vector<AICondition*> *conditions;
+		AIAction* action;
+		bool repeated;
+		float elapse;
+
+		AIData(std::vector<AICondition*> *conditions, AIAction* action, bool repeated) : conditions(conditions), action(action), repeated(repeated)
+		{
+			state = BattleConfig::AI_WAITING;
+			elapse = 0;
+			for (auto condition : *conditions)
+			{
+				condition->configure();
+			}
+			action->configure();
+		}
+
+		~AIData()
+		{
+			for (auto condition : *conditions)
+			{
+				delete condition;
+			}
+			conditions->clear();
+			delete conditions;
+			delete action;
+		}
+	};
+
+	struct CameraAction
+	{
+		float fromX;
+		float toX;
+		float fromY;
+		float toY;
+		float fromZ;
+		float toZ;
+		float fromRotate;
+		float toRotate;
+
+		float time;
+		float delay;
+		float elapse;
+
+		int tweenMode;
+		int nextCameraState;
+	};
+
+	struct CameraActionData
+	{
+		float toData;
+
+		float time;
+		float delay;
+		float elapse;
+
+		int tweenMode;
+		int nextCameraState;
+	};
+
+	struct HeroDizzyActionConfig
+	{
+		std::string name;
+		std::map<std::string, ParamData> config;
+
+		bool hasMember(const std::string& key)
+		{
+			return config.find(key) != config.end();
+		}
+	};
+
+	struct HeroDizzyConditionConfig
+	{
+		std::string name;
+		bool required = true;
+		std::map<std::string, ParamData> config;
+
+		bool hasMember(const std::string& key)
+		{
+			return config.find(key) != config.end();
+		}
+	};
+
+	struct HeroDizzyConfig
+	{
+		bool allowBreakByAnotherDizzy = true;
+		std::vector<HeroDizzyActionConfig> actions;
+		std::vector<HeroDizzyConditionConfig> conditions;
+
+		HeroDizzyActionConfig* findAction(const std::string& name)
+		{
+			for (auto& config : actions)
+			{
+				if (config.name == name) return &config;
+			}
+			return nullptr;
+		}
+
+		HeroDizzyConditionConfig* findCondition(const std::string& name)
+		{
+			for (auto& config : conditions)
+			{
+				if (config.name == name) return &config;
+			}
+			return nullptr;
+		}
+	};
+
+	struct HeroDizzyData
+	{
+		entityx::Entity::Id skillEntityId;
+		float dizzyTime;
+	};
+
+	struct SoldierConfig
+	{
+		std::string asset;
+		int num;
+		BattleConfig::SoldierConfigData soldierConfigData;
+		std::array<float, SIZE_OF_PROPERTY_NAME> base;
+
+		const std::string getAssetName(const std::string& style) const
+		{
+			return "soldier_" + asset + "_" + style;
+		}
+	};
+
+	struct SkillData
+	{
+		int id;
+		std::string name;
+		int level = 1;
+		float energyCost = 0;
+		float energySpeed = 0;
+		float energyStart = 0;
+		int mpCost = 0;
+		SkillConfigData* pConfig = nullptr;
+		SoldierConfig* pSoldier = nullptr;
+
+		float energy = 0;
+		bool isReady = false;
+		bool isActive = false;
+		bool canBreak = true;
+
+		SkillData() {}
+		~SkillData() { CC_SAFE_DELETE(pSoldier); }
+
+		inline void changeEnergy(float delta)
+		{
+			energy += delta;
+			if (energy > energyCost) energy = energyCost;
+			if (energy < 0) energy = 0;
+		}
+	};
+
+	struct HeroConfig
+	{
+		BattleConfig::HeroConfigData heroConfigData;
+		std::vector<BattleConfig::SkillData*> skills;
+		std::array<float, SIZE_OF_PROPERTY_NAME> base;
+
+		bool hasAI() { return heroConfigData.strategy.length() > 0; };
+
+		void clearSkills()
+		{
+			for (auto* s : skills)
+			{
+				delete s;
+			}
+			skills.clear();
+		}
+
+		const std::string getAssetName() const
+		{
+			return "hero_" + heroConfigData.asset;
+		}
+
+		~HeroConfig()
+		{
+			clearSkills();
+		}
+	};
+
+	struct TeamConfig
+	{
+		SoldierConfig soldier;
+		std::vector<HeroConfig*> heros;
+		std::string formation;
+
+		~TeamConfig()
+		{
+			for (auto* pHeroConfig : heros)
+			{
+				delete pHeroConfig;
+			}
+			heros.clear();
+		}
+	};
+
+	//{"side":"left", "role":"1", "content":"±¾¹ÙĞÕÂÀÃû²¼×Ö·îÏÈ£¬Ë­ÄÜË­ÉÏ±ğBB"},
+
+	struct Dialogue
+	{
+		Side side;
+		std::string role;
+		std::string name;
+		std::string content;
+	};
+
+	struct BattleFieldConfig
+	{
+		TeamConfig myTeam;
+		TeamConfig enemyTeam;
+
+		std::vector<Dialogue*> enter;
+		std::vector<Dialogue*> win;
+		std::vector<Dialogue*> lose;
+
+		std::array<float, SIZE_OF_PROPERTY_NAME> propertyMin;
+		std::array<float, SIZE_OF_PROPERTY_NAME> propertyMax;
+
+		float slowTime;
+		int totalTime;
+		int xOffset;
+		float CSDRFloorCoefficient;
+		std::string enterShow;
+		std::string background;
+		std::string leftSoldierAssetStyle;
+		std::string rightSoldierAssetStyle;
+		std::string leftSoldierIcon = "";
+		std::string rightSoldierIcon = "";
+		std::string weather;
+		BattleType battleType;
+		bool forceAutoFight;
+
+		TeamConfig& getTeam(Side side)
+		{
+			return (side == Side::SIDE_LEFT ? myTeam : enemyTeam);
+		}
+
+		BattleFieldConfig()
+		{
+			weather = "";
+		}
+
+		~BattleFieldConfig()
+		{
+			for (auto dialogue : enter)
+			{
+				delete dialogue;
+			}
+			for (auto dialogue : win)
+			{
+				delete dialogue;
+			}
+			for (auto dialogue : lose)
+			{
+				delete dialogue;
+			}
+			enter.clear();
+			win.clear();
+			lose.clear();
+		}
+	};
+
+	struct FormationConfig
+	{
+		std::vector<int> soldiers;
+		std::map<std::string, int> heros;
+		int validSoldiersNum;
+
+		FormationConfig()
+		{
+			soldiers.assign(100, 0);
+		}
+
+		cocos2d::Vec3& getSoldierPos(int idx)
+		{
+			if (idx >= 0 && idx < soldiers.size()) return getPos(soldiers.at(idx));
+			return getPos(-1);
+		}
+
+		cocos2d::Vec3& getHeroPos(const std::string& pos)
+		{
+			auto iter = heros.find(pos);
+			if (iter != heros.end()) return getPos(iter->second);
+			return getPos(-1);
+		}
+
+		cocos2d::Vec3& getPos(int pos)
+		{
+			static cocos2d::Vec3 tempPos;
+			if (pos == -1) tempPos.set(-1, -1, -1);
+			else tempPos.set(pos & 0xFF, 0, (pos >> 8) & 0xFF);
+			return tempPos;
+		}
+	};
 
 	static BattleConfig* getInstance();
-    
-	inline std::string& getAnimationName(int id) {return m_animationNames[id];};
-    
-    BattleConfig::BattleFieldConfig& getBattleFieldConfig() { return *m_pBattleFieldConfig; };
-    
-    void clearBattleFieldConfig();
-    void initBattleFieldConfig(const std::string& config);
-    void parseTeamConfig(BattleConfig::TeamConfig& config, rapidjson::Value& data);
-    void parseSoldierConfig(BattleConfig::SoldierConfig& config, rapidjson::Value& data);
-    void parseHeroConfig(BattleConfig::HeroConfig& config, rapidjson::Value& data);
-    void parseSkillConfig(BattleConfig::HeroConfig& config, rapidjson::Value& data);
-    void parseDialogueConfig(BattleConfig::Dialogue* dialogue, rapidjson::Value& data);
-    void parseBaseConfig(std::array<float, SIZE_OF_PROPERTY_NAME>& base, rapidjson::Value& data);
-    
+
+	inline std::string& getAnimationName(int id) { return m_animationNames[id]; };
+
+	BattleConfig::BattleFieldConfig& getBattleFieldConfig() { return *m_pBattleFieldConfig; };
+
+	void clearBattleFieldConfig();
+	void initBattleFieldConfig(const std::string& config);
+	void parseTeamConfig(BattleConfig::TeamConfig& config, rapidjson::Value& data);
+	void parseSoldierConfig(BattleConfig::SoldierConfig& config, rapidjson::Value& data);
+	void parseHeroConfig(BattleConfig::HeroConfig& config, rapidjson::Value& data);
+	void parseSkillConfig(BattleConfig::HeroConfig& config, rapidjson::Value& data);
+	void parseDialogueConfig(BattleConfig::Dialogue* dialogue, rapidjson::Value& data);
+	void parseBaseConfig(std::array<float, SIZE_OF_PROPERTY_NAME>& base, rapidjson::Value& data);
+
 	BattleConfig();
 	~BattleConfig();
 
 private:
-    std::array<std::string, 11> m_animationNames;
-    BattleConfig::BattleFieldConfig* m_pBattleFieldConfig = nullptr;
-    
-    static BattleConfig *s_sharedBattleConfig;
+	std::array<std::string, 11> m_animationNames;
+	BattleConfig::BattleFieldConfig* m_pBattleFieldConfig = nullptr;
+
+	static BattleConfig *s_sharedBattleConfig;
 };
 
-#endif
+

@@ -9,9 +9,9 @@
 #ifndef __HERO_GO_H__
 #define __HERO_GO_H__
 
-#include "../AICondition.h"
-#include "../../../entityx/entityx.h"
 #include "BattleEvent.h"
+#include "../AICondition.h"
+
 
 class HeroRush : public AICondition, public entityx::Receiver<HeroRush>
 {

@@ -12,7 +12,7 @@
 
 extern "C"
 {
-#include "CCLuaEngine.h"
+
 #include "lua.h"
 #include "tolua++.h"
 #include "lauxlib.h"

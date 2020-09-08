@@ -9,7 +9,7 @@
 #ifndef __AI_CONDITION_H__
 #define __AI_CONDITION_H__
 
-#include "entityx.h"
+//#include "entityx.h"
 #include "AIConfig.h"
 
 #define MAX_COUNT       30

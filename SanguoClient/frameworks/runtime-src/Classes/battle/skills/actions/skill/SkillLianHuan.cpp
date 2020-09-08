@@ -108,10 +108,10 @@ void SkillLianHuan::createHeroBeingHurtEffect(entityx::Entity& entity)
     
     auto animationGroup = effectEntity.component<BattleComponent::AnimationGroup>();
     animationGroup->m_tweenQueue.clearTween();
-    animationGroup->m_tweenQueue.pushTween(TweenQueue::TARGET::G, TweenQueue::OPERATION::IN, new SimpleTween_linear(0.0, 0.5, 0.5), 0.0);
-    animationGroup->m_tweenQueue.pushTween(TweenQueue::TARGET::G, TweenQueue::OPERATION::IN, new SimpleTween_linear(0.0, 1.0, 1.0), 0.1);
-    animationGroup->m_tweenQueue.pushTween(TweenQueue::TARGET::B, TweenQueue::OPERATION::IN, new SimpleTween_linear(0.0, 0.5, 0.5), 0.0);
-    animationGroup->m_tweenQueue.pushTween(TweenQueue::TARGET::B, TweenQueue::OPERATION::IN, new SimpleTween_linear(0.0, 1.0, 1.0), 0.1);
+    animationGroup->m_tweenQueue.pushTween(TweenQueue::TARGET::G, TweenQueue::OPERATION::IN_T, new SimpleTween_linear(0.0, 0.5, 0.5), 0.0);
+    animationGroup->m_tweenQueue.pushTween(TweenQueue::TARGET::G, TweenQueue::OPERATION::IN_T, new SimpleTween_linear(0.0, 1.0, 1.0), 0.1);
+    animationGroup->m_tweenQueue.pushTween(TweenQueue::TARGET::B, TweenQueue::OPERATION::IN_T, new SimpleTween_linear(0.0, 0.5, 0.5), 0.0);
+    animationGroup->m_tweenQueue.pushTween(TweenQueue::TARGET::B, TweenQueue::OPERATION::IN_T, new SimpleTween_linear(0.0, 1.0, 1.0), 0.1);
 }
 
 void SkillLianHuan::createLineEffect(const cocos2d::Vec3& fromPos, const cocos2d::Vec3& toPos, float delay)

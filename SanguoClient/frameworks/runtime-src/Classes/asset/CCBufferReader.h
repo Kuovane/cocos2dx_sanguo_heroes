@@ -5,14 +5,11 @@
 //  Copyright 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#ifndef __CC_BUFFER_READER_H__
-#define __CC_BUFFER_READER_H__
+#pragma once
 
-#include "CCBufferReader.h"
-#include "base/CCValue.h"
+//#include "CCBufferReader.h"
+#include "cocos2d.h"
 #include <string>
-
-NS_CC_BEGIN
 
 enum Endian
 {
@@ -44,6 +41,6 @@ private:
 };
 
 
-NS_CC_END
 
-#endif
+
+

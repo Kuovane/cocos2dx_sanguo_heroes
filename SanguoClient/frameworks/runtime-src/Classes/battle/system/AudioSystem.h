@@ -5,19 +5,16 @@
 //  Created by fu.chenhao on 6/4/15.
 //
 //
-
-#ifndef __sanguoClient__AudioSystem__
-#define __sanguoClient__AudioSystem__
+#pragma once
 
 #include <stdio.h>
 
-#include "BattleComponent.h"
+//#include "BattleComponent.h"
 #include "BattleEvent.h"
-#include "BattleWorld.h"
-#include "../skills/SkillManager.h"
-#include "cocos2d.h"
+//#include "BattleWorld.h"
+//#include "../skills/SkillManager.h"
 #include "BattleAudioConfig.h"
-#include "BattleWorld.h"
+//#include "BattleWorld.h"
 
 
 //soldier
@@ -186,4 +183,3 @@ static std::string getHeroSoldierAudioTriggerName(entityx::Entity& entity)
 }
  */
 
-#endif /* defined(__sanguoClient__AudioSystem__) */

@@ -145,7 +145,7 @@ void StateSoldierChangeToGhost::prepareToFlyUp(entityx::Entity& entity)
     m_deltaPos.normalize();
     m_deltaPos.x *= m_ghostData.flyUpFactorX;
     
-    m_scale = CHARACTER_SCALE + (myPos->z < targetPos->z ? min(m_ghostData.scaleFactor * abs(myPos->z - targetPos->z), m_ghostData.scaleMax) : 0);
+    m_scale = CHARACTER_SCALE + (myPos->z < targetPos->z ? std::min(m_ghostData.scaleFactor * abs(myPos->z - targetPos->z), m_ghostData.scaleMax) : 0);
 }
 
 void StateSoldierChangeToGhost::prepareToChangeToGhost(entityx::Entity& entity)

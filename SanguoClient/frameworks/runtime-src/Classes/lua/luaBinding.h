@@ -12,6 +12,16 @@
 #include "cocos2d.h"
 #include <stdio.h>
 
-extern "C" void bindingAll(lua_State *L);
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+	void bindingAll(lua_State *L);
+
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif /* defined(__sanguoClient__luaBinding__) */

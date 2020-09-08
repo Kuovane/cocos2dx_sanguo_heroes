@@ -11,13 +11,13 @@
 
 #include "SkillAction.h"
 
-class PlaySound : public SkillAction
+class SLGPlaySound : public SkillAction
 {
 private:
     void addPlayingSoundToPool(int audioId);
     
 public:
-    ~PlaySound();
+    ~SLGPlaySound();
     
     void fireAction(entityx::EntityManager &es) override;
 };

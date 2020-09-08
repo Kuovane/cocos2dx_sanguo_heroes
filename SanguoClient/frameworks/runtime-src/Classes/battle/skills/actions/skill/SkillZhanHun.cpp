@@ -41,7 +41,7 @@ void SkillZhanHun::receive(const BattleEvent::HurtByAttack& e)
             property->set(BattleConfig::Property::HP, hp);
             
             //存活时间：min(10,5+rounddown(技能等级×0.5)/5) 致死攻击，对自己
-            float lifeTime = min(m_skillActionData->config["lifeMin"]->d, m_skillActionData->config["lifeBase"]->d + m_skillData->level * m_skillActionData->config["lifeFactor"]->d);
+            float lifeTime = std::min(m_skillActionData->config["lifeMin"]->d, m_skillActionData->config["lifeBase"]->d + m_skillData->level * m_skillActionData->config["lifeFactor"]->d);
             
             BattleConfig::AttackData attackData(m_fromId, lifeTime);
             attackData.setTargetId(m_fromId);

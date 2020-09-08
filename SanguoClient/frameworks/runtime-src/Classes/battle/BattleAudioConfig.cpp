@@ -7,6 +7,7 @@
 //
 
 #include "BattleAudioConfig.h"
+#include "cocos2d.h"
 #include "SkillManager.h"
 #include "EnumParser.h"
 

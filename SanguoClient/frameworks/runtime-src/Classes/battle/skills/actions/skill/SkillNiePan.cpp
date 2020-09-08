@@ -41,7 +41,7 @@ void SkillNiePan::receive(const BattleEvent::HurtByAttack& e)
             property->set(BattleConfig::Property::HP, hp);
             
             float maxMp = property->getOriginal(BattleConfig::Property::MP);
-            float mp = (min(m_skillActionData->config["mpMin"]->d, m_skillActionData->config["mpBase"]->d + m_skillData->level * m_skillActionData->config["mpFactor"]->d)) * maxMp;
+            float mp = (std::min(m_skillActionData->config["mpMin"]->d, m_skillActionData->config["mpBase"]->d + m_skillData->level * m_skillActionData->config["mpFactor"]->d)) * maxMp;
             property->set(BattleConfig::Property::MP, mp);
             
             auto position = entity->component<BattleComponent::Position>();

@@ -169,7 +169,8 @@ BattleConfig::CameraActions* EnterShowControl::parseCameraActions(rapidjson::Val
             if(value.HasMember("params") && value["params"].IsObject())
             {
                 auto& params = value["params"];
-                for(auto it = params.MemberonBegin(); it != params.MemberonEnd(); it++)
+			
+                for(auto it = params.MemberBegin(); it != params.MemberEnd(); it++)
                 {
                     auto param = new BattleConfig::ParamData();
                     if(it->value.IsString())
@@ -203,7 +204,7 @@ BattleConfig::CameraActions* EnterShowControl::parseCameraActions(rapidjson::Val
             if(value.HasMember("params") && value["params"].IsObject())
             {
                 auto& params = value["params"];
-                for(auto it = params.MemberonBegin(); it != params.MemberonEnd(); it++)
+                for(auto it = params.MemberBegin(); it != params.MemberEnd(); it++)
                 {
                     auto param = new BattleConfig::ParamData();
                     if(it->value.IsString())
@@ -237,7 +238,7 @@ BattleConfig::CameraActions* EnterShowControl::parseCameraActions(rapidjson::Val
             if(value.HasMember("params") && value["params"].IsObject())
             {
                 auto& params = value["params"];
-                for(auto it = params.MemberonBegin(); it != params.MemberonEnd(); it++)
+                for(auto it = params.MemberBegin(); it != params.MemberEnd(); it++)
                 {
                     auto param = new BattleConfig::ParamData();
                     if(it->value.IsString())
@@ -271,7 +272,7 @@ BattleConfig::CameraActions* EnterShowControl::parseCameraActions(rapidjson::Val
             if(value.HasMember("params") && value["params"].IsObject())
             {
                 auto& params = value["params"];
-                for(auto it = params.MemberonBegin(); it != params.MemberonEnd(); it++)
+                for(auto it = params.MemberBegin(); it != params.MemberEnd(); it++)
                 {
                     auto param = new BattleConfig::ParamData();
                     if(it->value.IsString())
@@ -305,7 +306,7 @@ BattleConfig::CameraActions* EnterShowControl::parseCameraActions(rapidjson::Val
             if(value.HasMember("params") && value["params"].IsObject())
             {
                 auto& params = value["params"];
-                for(auto it = params.MemberonBegin(); it != params.MemberonEnd(); it++)
+                for(auto it = params.MemberBegin(); it != params.MemberEnd(); it++)
                 {
                     auto param = new BattleConfig::ParamData();
                     if(it->value.IsString())

@@ -11,7 +11,7 @@
 #include "EnumParser.h"
 #include "SkillManager.h"
 
-using namespace std;
+//using namespace std;
 
 void AddBuffBase::addBuffToTarget(int targetId)
 {

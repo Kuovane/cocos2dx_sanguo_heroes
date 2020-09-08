@@ -17,7 +17,7 @@ void AddEntityAnimation::fireAction(entityx::EntityManager &es)
     do
     {
         TargetFinder::TargetResults targetResults;
-        vector<int>& targets = targetResults.targets;
+		std::vector<int>& targets = targetResults.targets;
         if (m_skillActionData->hasMember("SkillTarget"))
         {
             auto skillTarget = EnumParserSkillTarget().getValue(*m_skillActionData->config["SkillTarget"]->s);
@@ -43,9 +43,9 @@ void AddEntityAnimation::fireAction(entityx::EntityManager &es)
         }
         
         bool loop = m_skillActionData->config["loop"]->b;
-        string* pHeroAniName = m_skillActionData->hasMember("heroAni") ? m_skillActionData->config["heroAni"]->s : nullptr;
-        string* pSoldierAniName = m_skillActionData->hasMember("soldierAni") ? m_skillActionData->config["soldierAni"]->s : nullptr;
-        string* pTagName = m_skillActionData->hasMember("tag") ? m_skillActionData->config["tag"]->s : nullptr;
+		std::string* pHeroAniName = m_skillActionData->hasMember("heroAni") ? m_skillActionData->config["heroAni"]->s : nullptr;
+		std::string* pSoldierAniName = m_skillActionData->hasMember("soldierAni") ? m_skillActionData->config["soldierAni"]->s : nullptr;
+		std::string* pTagName = m_skillActionData->hasMember("tag") ? m_skillActionData->config["tag"]->s : nullptr;
         
         for (int targetId : targets)
         {

@@ -9,7 +9,6 @@
 #include "CCAssetDefineCache.h"
 #include <iostream>
 
-#include "cocos2d.h"
 #include <vector>
 
 extern "C"
@@ -23,8 +22,6 @@ extern "C"
 #include "tolua_fix.h"
 #include "LuaBasicConversions.h"
 
-
-NS_CC_BEGIN
 
 AdvancedAnimation::AdvancedAnimation()
 {
@@ -347,12 +344,10 @@ void AdvancedAnimation::removeAllReplaces()
     }
 }
 
-NS_CC_END
-
 
 //lua binding
 
-static std::vector<cocos2d::AdvancedAnimation*> advanceAnimationList;
+static std::vector<AdvancedAnimation*> advanceAnimationList;
 
 int freeAllAdvancedAnimation(lua_State *L)
 {
@@ -364,7 +359,7 @@ int freeAllAdvancedAnimation(lua_State *L)
 
 int freeAllAdvancedAnimationAsset(lua_State *L)
 {
-    cocos2d::AssetDefineCache::getInstance()->removeAllAsset();
+   AssetDefineCache::getInstance()->removeAllAsset();
 
     lua_pushinteger(L, 0);
     return 1;
@@ -382,13 +377,13 @@ int createAdvancedAnimation(lua_State *L)
 
     std::string defineName = pDefineName;
     std::string animationName = pAnimationName;
-    cocos2d::AssetDefine *define = cocos2d::AssetDefineCache::getInstance()->getAsset(defineName);
+    AssetDefine *define = AssetDefineCache::getInstance()->getAsset(defineName);
     if(define == NULL)
     {
-        cocos2d::AssetDefineCache::getInstance()->addAssetWithFile(pathHero + defineName + ".png", pathHero + defineName + ".dat", defineName);
-        define = cocos2d::AssetDefineCache::getInstance()->getAsset(defineName);
+        AssetDefineCache::getInstance()->addAssetWithFile(pathHero + defineName + ".png", pathHero + defineName + ".dat", defineName);
+        define = AssetDefineCache::getInstance()->getAsset(defineName);
     }
-    cocos2d::AdvancedAnimation* pAnimation = cocos2d::AdvancedAnimation::create(define, animationName, 0);
+    AdvancedAnimation* pAnimation = AdvancedAnimation::create(define, animationName, 0);
     pAnimation->scheduleUpdate();
 
     int handle = advanceAnimationList.size();
@@ -404,7 +399,7 @@ int createAdvancedAnimation(lua_State *L)
 int setCurrentAnimation(lua_State *L)
 {
     int handle = lua_tointeger(L, 1);
-    cocos2d::AdvancedAnimation* pAnimation = advanceAnimationList[handle];
+    AdvancedAnimation* pAnimation = advanceAnimationList[handle];
 
     const char* pAnimationName = lua_tostring(L, 2);
     std::string animationName = pAnimationName;
@@ -420,7 +415,7 @@ int setCurrentAnimation(lua_State *L)
 int play(lua_State *L)
 {
     int handle = lua_tointeger(L, 1);
-    cocos2d::AdvancedAnimation* pAnimation = advanceAnimationList[handle];
+    AdvancedAnimation* pAnimation = advanceAnimationList[handle];
 
     if(pAnimation)
     {
@@ -433,7 +428,7 @@ int play(lua_State *L)
 int stop(lua_State *L)
 {
     int handle = lua_tointeger(L, 1);
-    cocos2d::AdvancedAnimation* pAnimation = advanceAnimationList[handle];
+    AdvancedAnimation* pAnimation = advanceAnimationList[handle];
     
     if(pAnimation)
     {
@@ -446,7 +441,7 @@ int stop(lua_State *L)
 int playOnce(lua_State *L)
 {
     int handle = lua_tointeger(L, 1);
-    cocos2d::AdvancedAnimation* pAnimation = advanceAnimationList[handle];
+    AdvancedAnimation* pAnimation = advanceAnimationList[handle];
     
     if(pAnimation)
     {
@@ -459,7 +454,7 @@ int playOnce(lua_State *L)
 int setColor(lua_State *L)
 {
     int handle = lua_tointeger(L, 1);
-    cocos2d::AdvancedAnimation* pAnimation = advanceAnimationList[handle];
+    AdvancedAnimation* pAnimation = advanceAnimationList[handle];
 
     float r = lua_tonumber(L, 2);
     float g = lua_tonumber(L, 3);

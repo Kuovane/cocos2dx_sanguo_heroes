@@ -6,35 +6,36 @@
 //
 //
 
-#ifndef __Game__TweenQueue__
-#define __Game__TweenQueue__
+
+#pragma once
 
 #include <stdio.h>
 #include "SimpleTween.h"
-#include "cocos2d.h"
+#include <vector>
 struct TweenQueueResult;
 
 class TweenQueue
 {
 public:
+	enum OPERATION
+	{
+		IN_T,
+		OUT_T,
+		INOUT_T
+	};
     enum TARGET
     {
-        R,
-        G,
-        B,
-        ALPHA,
-        X,
-        Y,
-        Z,
+		R,
+		G,
+		B,
+		ALPHA,
+		X,
+		Y,
+		Z,
     };
-    
-    enum OPERATION
-    {
-        IN,
-        OUT,
-        INOUT,
-    };
-    
+
+
+
     TweenQueue();
     ~TweenQueue();
     
@@ -82,4 +83,3 @@ struct TweenQueueResult
 };
 
 
-#endif /* defined(__Game__TweenQueue__) */

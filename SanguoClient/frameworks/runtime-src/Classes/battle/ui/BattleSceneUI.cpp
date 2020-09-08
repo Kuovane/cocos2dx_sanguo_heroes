@@ -7,13 +7,7 @@
 //
 
 #include "BattleSceneUI.h"
-#include "base/CCScriptSupport.h"
-#include "2d/CCSpriteFrame.h"
-#include "2d/CCCamera.h"
-#include "cocos2d.h"
-#include "ui/CocosGUI.h"
 #include "entityx.h"
-#include "cocostudio/CocoStudio.h"
 #include "DebugHelper.h"
 #include "BattleWorld.h"
 #include "AudioManager.h"
@@ -83,7 +77,7 @@ BattleSceneUI::BattleSceneUI()
     
     //layout
     Node* current;
-    float scale = max((frameSize.height / dSize.height), (frameSize.width / dSize.width));
+    float scale = std::max((frameSize.height / dSize.height), (frameSize.width / dSize.width));
     
     //warn
     m_battleSceneUI->getChildByName("Panel_Bg")->getChildByName("Node_warn")->setVisible(false);
@@ -206,7 +200,7 @@ void BattleSceneUI::receive(const BattleEvent::UpdateBuffIcon& e)
                     index++;
                     auto* node = m_battleSceneUI->getChildByName("Panel_Bottom_Left")->getChildByName("Buff_L_" + Value(index).asString());
                     node->setVisible(true);
-                    auto* buffIcon = node->getChildByName("Panel_RisingStar_Head")->getChildByName<ImageView*>("Image_Buff");
+                    auto* buffIcon = node->getChildByName("Panel_RisingStar_Head")->getChildByName<ui::ImageView*>("Image_Buff");
                     buffIcon->loadTexture("items/buff/" + buffData->buffIcon);
                     
                     if(index > 5) break;
@@ -245,7 +239,7 @@ void BattleSceneUI::receive(const BattleEvent::UpdateBuffIcon& e)
                     index++;
                     auto* node = m_battleSceneUI->getChildByName("Panel_Bottom_Right")->getChildByName("Buff_R_" + Value(index).asString());
                     node->setVisible(true);
-                    auto* buffIcon = node->getChildByName("Panel_RisingStar_Head")->getChildByName<ImageView*>("Image_Buff");
+                    auto* buffIcon = node->getChildByName("Panel_RisingStar_Head")->getChildByName<ui::ImageView*>("Image_Buff");
                     buffIcon->loadTexture("items/buff/" + buffData->buffIcon);
                     
                     if(index > 5) break;
@@ -299,7 +293,7 @@ void BattleSceneUI::showBattleSceneUI()
     _ENTITY_EVENT.emit<BattleEvent::UpdateBuffIcon>();
     
     auto pauseContainer = m_battleSceneUI->getChildByName("Panel_Top");
-    Button* stopFightButton = static_cast<Button*>(pauseContainer->getChildByName("Button_Shift"));
+	ui::Button* stopFightButton = static_cast<ui::Button*>(pauseContainer->getChildByName("Button_Shift"));
     if(stopFightButton->isVisible())
     {
         cocos2d::Director::getInstance()->getEventDispatcher()->dispatchCustomEvent(EVENT_START_DELEGATE);
@@ -310,8 +304,8 @@ void BattleSceneUI::showBattleSceneUI()
     {
         m_isHeroAttack = true;
         _STRATEGY_CONTROL.setSoldierControl(StrategyControl::SOLDIER_ATTACK_SOLDIER, true);
-        auto* panel = m_battleSceneUI->getChildByName<Layout*>("Panel_Right");
-        auto* soldier = panel->getChildByName<ImageView*>("Sprite_Icon_soldiers_start");
+        auto* panel = m_battleSceneUI->getChildByName<ui::Layout*>("Panel_Right");
+        auto* soldier = panel->getChildByName<ui::ImageView*>("Sprite_Icon_soldiers_start");
         soldier->loadTexture("Assece/BattleScene/icon_soldiers_stop.png");
     }
 }
@@ -423,7 +417,7 @@ void BattleSceneUI::receive(const BattleEvent::FireSkill& e)
         
         auto* node = m_battleSceneUI->getChildByName("Node_Animation_Skill2");
         node->setVisible(true);
-        ImageView* skillName = node->getChildByName("Panel_Skill_2")->getChildByName<cocos2d::ui::ImageView*>("Sprite_Skill_sglw");
+		ui::ImageView* skillName = node->getChildByName("Panel_Skill_2")->getChildByName<cocos2d::ui::ImageView*>("Sprite_Skill_sglw");
         skillName->loadTexture("png/skillNames/" + e.pSkillData->pConfig->effect->asset + ".png");
     
         m_skillDescAction->gotoFrameAndPlay(0, false);
@@ -437,23 +431,23 @@ void BattleSceneUI::receive(const BattleEvent::PlayHeroDeadEffect& e)
     float x = frameSize.width / 2;
     float y = frameSize.height / 2;
     
-    auto pDefine = cocos2d::AssetDefineCache::getInstance()->getAsset("battleEffect");
+    auto pDefine = AssetDefineCache::getInstance()->getAsset("battleEffect");
     
-    auto pAni0 = cocos2d::AdvancedAnimation::create(pDefine, "animation_full_kill_layer1");
+    auto pAni0 = AdvancedAnimation::create(pDefine, "animation_full_kill_layer1");
     pAni0->setPositionX(x);
     pAni0->setPositionY(y);
     pAni0->setBlendMode(2);
     pAni0->playOnce(true);
     pAni0->scheduleUpdate();
     
-    auto pAni1 = cocos2d::AdvancedAnimation::create(pDefine, "animation_full_kill_layer2");
+    auto pAni1 = AdvancedAnimation::create(pDefine, "animation_full_kill_layer2");
     pAni1->setPositionX(x);
     pAni1->setPositionY(y);
     pAni1->setBlendMode(0);
     pAni1->playOnce(true);
     pAni1->scheduleUpdate();
     
-    auto pAni2 = cocos2d::AdvancedAnimation::create(pDefine, "animation_full_kill_layer3");
+    auto pAni2 = AdvancedAnimation::create(pDefine, "animation_full_kill_layer3");
     pAni2->setPositionX(x);
     pAni2->setPositionY(y);
     pAni2->setBlendMode(2);
@@ -478,54 +472,54 @@ void BattleSceneUI::initPausePanel()
     
     auto panel = m_battlePausePanel->getChildByName("Panel_PauseMenu")->getChildByName("Panel_C")->getChildByName("Panel_Center");
     
-    Button* continueButton = panel->getChildByName<Button*>("Button_Continue");//continue game
+	ui::Button* continueButton = panel->getChildByName<ui::Button*>("Button_Continue");//continue game
     continueButton->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::resumeBattle, this));
     
-    Button* exitButton = panel->getChildByName<Button*>("Button_Menu");//exit battle
+	ui::Button* exitButton = panel->getChildByName<ui::Button*>("Button_Menu");//exit battle
     exitButton->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::exitBattle, this));
     
-    Button* enableEffectButton = panel->getChildByName<Button*>("Button_Voice");//enable effect
+	ui::Button* enableEffectButton = panel->getChildByName<ui::Button*>("Button_Voice");//enable effect
     enableEffectButton->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::enableEffect, this));
     
-    Button* disableEffectButton = panel->getChildByName<Button*>("Button_Mute");//disable effect
+	ui::Button* disableEffectButton = panel->getChildByName<ui::Button*>("Button_Mute");//disable effect
     disableEffectButton->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::disableEffect, this));
     
-    Button* enableMusicButton = panel->getChildByName<Button*>("Button_Music_1");//enable music
+	ui::Button* enableMusicButton = panel->getChildByName<ui::Button*>("Button_Music_1");//enable music
     enableMusicButton->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::enableMusic, this));
     
-    Button* disableMusicButton = panel->getChildByName<Button*>("Button_Music_2");//disable music
+	ui::Button* disableMusicButton = panel->getChildByName<ui::Button*>("Button_Music_2");//disable music
     disableMusicButton->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::disableMusic, this));
     
     updateSoundButtonStatus();
     
     auto pauseContainer = m_battleSceneUI->getChildByName("Panel_Top");
-    Button* pauseButton = static_cast<Button*>(pauseContainer->getChildByName("Button_Stop"));//open pause panel
+	ui::Button* pauseButton = static_cast<ui::Button*>(pauseContainer->getChildByName("Button_Stop"));//open pause panel
     pauseButton->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::showPausePanel, this));
     
-    Button* autoFightButton = static_cast<Button*>(pauseContainer->getChildByName("Button_Auto"));
+	ui::Button* autoFightButton = static_cast<ui::Button*>(pauseContainer->getChildByName("Button_Auto"));
     autoFightButton->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::startDelegate, this));
     
-    Button* stopFightButton = static_cast<Button*>(pauseContainer->getChildByName("Button_Shift"));
+	ui::Button* stopFightButton = static_cast<ui::Button*>(pauseContainer->getChildByName("Button_Shift"));
     stopFightButton->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::stopDelegate, this));
     
     auto& battleFieldConfig = BattleConfig::getInstance()->getBattleFieldConfig();
     stopFightButton->setVisible(false);
     autoFightButton->setVisible(!battleFieldConfig.forceAutoFight);
     
-    m_battlePausePanel->getChildByName("Panel_PauseMenu")->getChildByName("Panel_Bg")->getChildByName<ImageView*>("Image_BlackBg")->setTouchEnabled(true);
+    m_battlePausePanel->getChildByName("Panel_PauseMenu")->getChildByName("Panel_Bg")->getChildByName<ui::ImageView*>("Image_BlackBg")->setTouchEnabled(true);
 }
 
 
 void BattleSceneUI::initHeroInfoPanel()
 {
-    auto leftHeroPanel = m_battleSceneUI->getChildByName<Widget*>("Panel_Bottom_Left");
-    auto rightHeroPanel = m_battleSceneUI->getChildByName<Widget*>("Panel_Bottom_Right");
+    auto leftHeroPanel = m_battleSceneUI->getChildByName<ui::Widget*>("Panel_Bottom_Left");
+    auto rightHeroPanel = m_battleSceneUI->getChildByName<ui::Widget*>("Panel_Bottom_Right");
     
-    leftHeroPanel->getChildByName<Widget*>("Panel_Role_InfoGroup")->setTouchEnabled(false);
-    rightHeroPanel->getChildByName<Widget*>("Panel_Role_InfoGroup")->setTouchEnabled(false);
+    leftHeroPanel->getChildByName<ui::Widget*>("Panel_Role_InfoGroup")->setTouchEnabled(false);
+    rightHeroPanel->getChildByName<ui::Widget*>("Panel_Role_InfoGroup")->setTouchEnabled(false);
 
-    ImageView* leftRole = leftHeroPanel->getChildByName<ImageView*>("Image_Role");
-    ImageView* rightRole = rightHeroPanel->getChildByName<ImageView*>("Image_Role");
+	ui::ImageView* leftRole = leftHeroPanel->getChildByName<ui::ImageView*>("Image_Role");
+	ui::ImageView* rightRole = rightHeroPanel->getChildByName<ui::ImageView*>("Image_Role");
     leftRole->setTouchEnabled(true);
     leftRole->setEnabled(true);
     rightRole->setTouchEnabled(true);
@@ -536,8 +530,8 @@ void BattleSceneUI::initHeroInfoPanel()
 
 void BattleSceneUI::bindHeroInfoPanelWithHeros()
 {
-    auto leftHeroPanel = m_battleSceneUI->getChildByName<Widget*>("Panel_Bottom_Left");
-    auto rightHeroPanel = m_battleSceneUI->getChildByName<Widget*>("Panel_Bottom_Right");
+    auto leftHeroPanel = m_battleSceneUI->getChildByName<ui::Widget*>("Panel_Bottom_Left");
+    auto rightHeroPanel = m_battleSceneUI->getChildByName<ui::Widget*>("Panel_Bottom_Right");
     
     auto& battleFieldConfig = BattleConfig::getInstance()->getBattleFieldConfig();
     Node* current;
@@ -547,7 +541,7 @@ void BattleSceneUI::bindHeroInfoPanelWithHeros()
     if (pLeftEntity)
     {
         auto hero = pLeftEntity->component<BattleComponent::General>();
-        leftHeroPanel->getChildByName<ImageView*>("Image_Role")->loadTexture("items/Monster_half/Monster_half_" + hero->config.asset + ".png");
+        leftHeroPanel->getChildByName<ui::ImageView*>("Image_Role")->loadTexture("items/Monster_half/Monster_half_" + hero->config.asset + ".png");
         
         for (int i = 0; i < 5; i++)
         {
@@ -572,7 +566,7 @@ void BattleSceneUI::bindHeroInfoPanelWithHeros()
             if (heroConfigs.size() > i)
             {
                 current->setVisible(true);
-                current->getChildByName("Panel_RisingStar_Head")->getChildByName<ImageView*>("Image_Hero")->loadTexture("items/Monster/Monster_" + heroConfigs[i]->heroConfigData.asset + ".png");
+                current->getChildByName("Panel_RisingStar_Head")->getChildByName<ui::ImageView*>("Image_Hero")->loadTexture("items/Monster/Monster_" + heroConfigs[i]->heroConfigData.asset + ".png");
                 current->getChildByName("Panel_RisingStar_Head")->getChildByName("Image_Zhanbai")->setVisible(heroConfigs[i]->heroConfigData.currentHP <= 0);
             }
             else
@@ -588,7 +582,7 @@ void BattleSceneUI::bindHeroInfoPanelWithHeros()
     if (pRightEntity)
     {
         auto hero = pRightEntity->component<BattleComponent::General>();
-        rightHeroPanel->getChildByName<ImageView*>("Image_Role")->loadTexture("items/Monster_half/Monster_half_" + hero->config.asset + ".png");
+        rightHeroPanel->getChildByName<ui::ImageView*>("Image_Role")->loadTexture("items/Monster_half/Monster_half_" + hero->config.asset + ".png");
     
         for (int i = 0; i < 5; i++)
         {
@@ -613,7 +607,7 @@ void BattleSceneUI::bindHeroInfoPanelWithHeros()
             if (heroConfigs.size() > i)
             {
                 current->setVisible(true);
-                current->getChildByName("Panel_RisingStar_Head")->getChildByName<ImageView*>("Image_Hero")->loadTexture("items/Monster/Monster_" + heroConfigs[i]->heroConfigData.asset + ".png");
+                current->getChildByName("Panel_RisingStar_Head")->getChildByName<ui::ImageView*>("Image_Hero")->loadTexture("items/Monster/Monster_" + heroConfigs[i]->heroConfigData.asset + ".png");
                 current->getChildByName("Panel_RisingStar_Head")->getChildByName("Image_Zhanbai")->setVisible(heroConfigs[i]->heroConfigData.currentHP <= 0);
             }
             else
@@ -625,8 +619,8 @@ void BattleSceneUI::bindHeroInfoPanelWithHeros()
         rightHeroPanel->getChildByName("Panel_Role_InfoGroup")->getChildByName<Sprite*>("Sprite_Job2")->setTexture("items/army/" + battleFieldConfig.rightSoldierIcon);
     }
     
-    ImageView* leftRole = leftHeroPanel->getChildByName<ImageView*>("Image_Role");
-    ImageView* rightRole = rightHeroPanel->getChildByName<ImageView*>("Image_Role");
+	ui::ImageView* leftRole = leftHeroPanel->getChildByName<ui::ImageView*>("Image_Role");
+	ui::ImageView* rightRole = rightHeroPanel->getChildByName<ui::ImageView*>("Image_Role");
     leftRole->setScale9Enabled(false);
     rightRole->setScale9Enabled(false);
     
@@ -634,11 +628,11 @@ void BattleSceneUI::bindHeroInfoPanelWithHeros()
     rightRole->setContentSize(rightRole->getVirtualRendererSize());
 }
 
-void BattleSceneUI::onHeroClick(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::onHeroClick(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type, true, 0.7, 1.05))
     {
-        auto img = static_cast<Widget*>(pSender);
+        auto img = static_cast<ui::Widget*>(pSender);
         
         //tag 338://敌方武将
         //tag 50://我方武将
@@ -662,12 +656,12 @@ void BattleSceneUI::updateHeroInfo(int roleId)
     float mp = property->get(BattleConfig::Property::MP);
     float maxMp = property->getOriginal(BattleConfig::Property::MP);
     
-    Widget* panel = static_cast<Widget*>(m_battleSceneUI->getChildByName(roleId == LEFT_HERO ? "Panel_Bottom_Left" : "Panel_Bottom_Right"));
+	ui::Widget* panel = static_cast<ui::Widget*>(m_battleSceneUI->getChildByName(roleId == LEFT_HERO ? "Panel_Bottom_Left" : "Panel_Bottom_Right"));
     
-    auto barHp = static_cast<LoadingBar*>(panel->getChildByName("LoadingBar_1"));
-    auto barMp = static_cast<LoadingBar*>(panel->getChildByName("LoadingBar_2"));
-    auto hpLabel = static_cast<Text*>(barHp->getChildByName(roleId == LEFT_HERO ? "Text_1" : "Text_7"));
-    auto mPLabel = static_cast<Text*>(barMp->getChildByName(roleId == LEFT_HERO ? "Text_2" : "Text_8"));
+    auto barHp = static_cast<ui::LoadingBar*>(panel->getChildByName("LoadingBar_1"));
+    auto barMp = static_cast<ui::LoadingBar*>(panel->getChildByName("LoadingBar_2"));
+    auto hpLabel = static_cast<ui::Text*>(barHp->getChildByName(roleId == LEFT_HERO ? "Text_1" : "Text_7"));
+    auto mPLabel = static_cast<ui::Text*>(barMp->getChildByName(roleId == LEFT_HERO ? "Text_2" : "Text_8"));
     barHp->setPercent(hp / maxHp * 100.0f);
     barMp->setPercent(mp / maxMp * 100.0f);
     
@@ -715,8 +709,8 @@ void BattleSceneUI::updateHeroInfo(int roleId)
     
     //减血减MP效果
     int index = 100;
-    auto barHpLayer = static_cast<LoadingBar*>(panel->getChildByName(roleId == LEFT_HERO ? "LoadingBar_1_1" : "LoadingBar_1_2"));
-    auto barMpLayer = static_cast<LoadingBar*>(panel->getChildByName("LoadingBar_2_1"));
+    auto barHpLayer = static_cast<ui::LoadingBar*>(panel->getChildByName(roleId == LEFT_HERO ? "LoadingBar_1_1" : "LoadingBar_1_2"));
+    auto barMpLayer = static_cast<ui::LoadingBar*>(panel->getChildByName("LoadingBar_2_1"));
     
     if(hp <= 0)
     {
@@ -763,9 +757,9 @@ void BattleSceneUI::updateHpBar(int roleId)
 
     //减血减MP效果
     int index = 100;
-    Widget* panel = static_cast<Widget*>(m_battleSceneUI->getChildByName(roleId == LEFT_HERO ? "Panel_Bottom_Left" : "Panel_Bottom_Right"));
-    auto barHpLayer = static_cast<LoadingBar*>(panel->getChildByName(roleId == LEFT_HERO ?"LoadingBar_1_1":"LoadingBar_1_2"));
-    auto barMpLayer = static_cast<LoadingBar*>(panel->getChildByName("LoadingBar_2_1"));
+	ui::Widget* panel = static_cast<ui::Widget*>(m_battleSceneUI->getChildByName(roleId == LEFT_HERO ? "Panel_Bottom_Left" : "Panel_Bottom_Right"));
+    auto barHpLayer = static_cast<ui::LoadingBar*>(panel->getChildByName(roleId == LEFT_HERO ?"LoadingBar_1_1":"LoadingBar_1_2"));
+    auto barMpLayer = static_cast<ui::LoadingBar*>(panel->getChildByName("LoadingBar_2_1"));
     
     if(info.currentHp == info.maxHp)
     {
@@ -813,10 +807,10 @@ void BattleSceneUI::initCountDown()
 void BattleSceneUI::updateCountDown()
 {    
     auto panel = m_battleSceneUI->getChildByName("Panel_Skill")->getChildByName("Panel_Bottom_9");
-    auto labelValue = panel->getChildByName<Text*>("labelValue");
+    auto labelValue = panel->getChildByName<ui::Text*>("labelValue");
     if (!labelValue)
     {
-        Text* label = panel->getChildByName<Text*>("FntLabel_TimeNum_4");
+		ui::Text* label = panel->getChildByName<ui::Text*>("FntLabel_TimeNum_4");
         
         labelValue = cocos2d::ui::Text::create("99", "Share/text/Marker Felt.ttf", 40);
         panel->addChild(labelValue);
@@ -853,7 +847,7 @@ void BattleSceneUI::battleComplete(float dt)
     _ENTITY_EVENT.emit<BattleEvent::PlayBattleResultEffectComplete>();
 }
 
-void BattleSceneUI::exitBattle(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::exitBattle(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type, true, 1.25))
     {
@@ -863,7 +857,7 @@ void BattleSceneUI::exitBattle(cocos2d::Ref *pSender, Widget::TouchEventType typ
     }
 }
 
-void BattleSceneUI::resumeBattle(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::resumeBattle(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type, true, 1.25))
     {
@@ -880,7 +874,7 @@ void BattleSceneUI::hidePausePanel()
     m_pausePanelStatus = CLOSING;
 }
 
-void BattleSceneUI::showPausePanel(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::showPausePanel(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type))
     {
@@ -921,13 +915,13 @@ void BattleSceneUI::updatePausePanel()
     }
 }
 
-void BattleSceneUI::startDelegate(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::startDelegate(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type))
     {
         auto pauseContainer = m_battleSceneUI->getChildByName("Panel_Top");
-        Button* autoFightButton = static_cast<Button*>(pauseContainer->getChildByName("Button_Auto"));
-        Button* stopFightButton = static_cast<Button*>(pauseContainer->getChildByName("Button_Shift"));
+		ui::Button* autoFightButton = static_cast<ui::Button*>(pauseContainer->getChildByName("Button_Auto"));
+		ui::Button* stopFightButton = static_cast<ui::Button*>(pauseContainer->getChildByName("Button_Shift"));
         
         stopFightButton->setVisible(true);
         autoFightButton->setVisible(false);
@@ -936,13 +930,13 @@ void BattleSceneUI::startDelegate(cocos2d::Ref *pSender, Widget::TouchEventType 
     }
 }
 
-void BattleSceneUI::stopDelegate(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::stopDelegate(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type))
     {
         auto pauseContainer = m_battleSceneUI->getChildByName("Panel_Top");
-        Button* autoFightButton = static_cast<Button*>(pauseContainer->getChildByName("Button_Auto"));
-        Button* stopFightButton = static_cast<Button*>(pauseContainer->getChildByName("Button_Shift"));
+		ui::Button* autoFightButton = static_cast<ui::Button*>(pauseContainer->getChildByName("Button_Auto"));
+		ui::Button* stopFightButton = static_cast<ui::Button*>(pauseContainer->getChildByName("Button_Shift"));
         
         stopFightButton->setVisible(false);
         autoFightButton->setVisible(true);
@@ -953,7 +947,7 @@ void BattleSceneUI::stopDelegate(cocos2d::Ref *pSender, Widget::TouchEventType t
 
 
 
-void BattleSceneUI::enableEffect(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::enableEffect(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type, true, 1.25))
     {
@@ -962,7 +956,7 @@ void BattleSceneUI::enableEffect(cocos2d::Ref *pSender, Widget::TouchEventType t
     }
 }
 
-void BattleSceneUI::disableEffect(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::disableEffect(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type, true, 1.25))
     {
@@ -971,7 +965,7 @@ void BattleSceneUI::disableEffect(cocos2d::Ref *pSender, Widget::TouchEventType 
     }
 }
 
-void BattleSceneUI::enableMusic(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::enableMusic(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type, true, 1.25))
     {
@@ -980,7 +974,7 @@ void BattleSceneUI::enableMusic(cocos2d::Ref *pSender, Widget::TouchEventType ty
     }
 }
 
-void BattleSceneUI::disableMusic(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::disableMusic(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type, true, 1.25))
     {
@@ -993,16 +987,16 @@ void BattleSceneUI::updateSoundButtonStatus()
 {
     auto panel = m_battlePausePanel->getChildByName("Panel_PauseMenu")->getChildByName("Panel_C")->getChildByName("Panel_Center");
     
-    Button* enableEffectButton = panel->getChildByName<Button*>("Button_Voice");//enable effect
+	ui::Button* enableEffectButton = panel->getChildByName<ui::Button*>("Button_Voice");//enable effect
     enableEffectButton->setVisible(!AudioManager::getInstance()->isEffectEnable());
     
-    Button* disableEffectButton = panel->getChildByName<Button*>("Button_Mute");//disable effect
+	ui::Button* disableEffectButton = panel->getChildByName<ui::Button*>("Button_Mute");//disable effect
     disableEffectButton->setVisible(AudioManager::getInstance()->isEffectEnable());
     
-    Button* enableMusicButton = panel->getChildByName<Button*>("Button_Music_1");//enable music
+	ui::Button* enableMusicButton = panel->getChildByName<ui::Button*>("Button_Music_1");//enable music
     enableMusicButton->setVisible(!AudioManager::getInstance()->isMusicEnable());
     
-    Button* disableMusicButton = panel->getChildByName<Button*>("Button_Music_2");//disable music
+	ui::Button* disableMusicButton = panel->getChildByName<ui::Button*>("Button_Music_2");//disable music
     disableMusicButton->setVisible(AudioManager::getInstance()->isMusicEnable());
 
 }
@@ -1014,20 +1008,20 @@ void BattleSceneUI::updateSoundButtonStatus()
 
 void BattleSceneUI::initControlPanel()
 {
-    auto* panel = m_battleSceneUI->getChildByName<Layout*>("Panel_Right");
-    auto* hero = panel->getChildByName<ImageView*>("Sprite_Icon_wujiang_start");
-    auto* soldier = panel->getChildByName<ImageView*>("Sprite_Icon_soldiers_start");
+    auto* panel = m_battleSceneUI->getChildByName<ui::Layout*>("Panel_Right");
+    auto* hero = panel->getChildByName<ui::ImageView*>("Sprite_Icon_wujiang_start");
+    auto* soldier = panel->getChildByName<ui::ImageView*>("Sprite_Icon_soldiers_start");
     soldier->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::switchSoldierAttack, this));
     hero->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::switchHeroAttack, this));
     
     auto* sprite = static_cast<Sprite*>(m_battleSceneUI->getChildByName("Sprite_AddIcon_Bg"));
     for (int i = 1; i < 5; i++)
     {
-        Widget* icon = static_cast<Widget*>(sprite->getChildByName("btn_op_"+Value(i).asString()));
+		ui::Widget* icon = static_cast<ui::Widget*>(sprite->getChildByName("btn_op_"+Value(i).asString()));
         if(icon)icon->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::switchSoldierStrategy, this));
     }
     
-    auto* switchIcon = static_cast<ImageView*>(m_battleSceneUI->getChildByName("img_add"));
+    auto* switchIcon = static_cast<ui::ImageView*>(m_battleSceneUI->getChildByName("img_add"));
     m_strategyStartX = sprite->getPosition().x;
     
     //sprite->setVisible(false);
@@ -1047,7 +1041,7 @@ void BattleSceneUI::closeStrategyPanel(EventCustom* event)
 {
     m_showStrategyPanel = false;
     
-    auto* icon = static_cast<ImageView*>(m_battleSceneUI->getChildByName("img_add"));
+    auto* icon = static_cast<ui::ImageView*>(m_battleSceneUI->getChildByName("img_add"));
     
     icon->loadTexture("Assece/BattleScene/Btn_add.png");
     
@@ -1055,13 +1049,13 @@ void BattleSceneUI::closeStrategyPanel(EventCustom* event)
     sprite->setPositionX(Director::getInstance()->getOpenGLView()->getDesignResolutionSize().width + 100);
 }
 
-void BattleSceneUI::switchStrategyPanel(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::switchStrategyPanel(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type, false))
     {
         m_showStrategyPanel = !m_showStrategyPanel;
         
-        auto* icon = static_cast<ImageView*>(m_battleSceneUI->getChildByName("img_add"));
+        auto* icon = static_cast<ui::ImageView*>(m_battleSceneUI->getChildByName("img_add"));
         icon->loadTexture(m_showStrategyPanel ? "Assece/BattleScene/Btn_minus.png" : "Assece/BattleScene/Btn_add.png");
         
         auto* sprite = static_cast<Sprite*>(m_battleSceneUI->getChildByName("Sprite_AddIcon_Bg"));
@@ -1069,11 +1063,11 @@ void BattleSceneUI::switchStrategyPanel(cocos2d::Ref *pSender, Widget::TouchEven
     }
 }
 
-void BattleSceneUI::switchHeroAttack(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::switchHeroAttack(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type))
     {
-        auto img = static_cast<Widget*>(pSender);
+        auto img = static_cast<ui::Widget*>(pSender);
         m_isSoldierAttack = !m_isSoldierAttack;
         
         _CAMERA_MANAGER.initSmartFollowSolider();
@@ -1087,22 +1081,22 @@ void BattleSceneUI::switchHeroAttack(cocos2d::Ref *pSender, Widget::TouchEventTy
             
             moveCameraToRole(LEFT_HERO, true);
             
-            static_cast<ImageView*>(img)->loadTexture("Assece/BattleScene/icon_wujiang_stop.png");
+            static_cast<ui::ImageView*>(img)->loadTexture("Assece/BattleScene/icon_wujiang_stop.png");
              _STRATEGY_CONTROL.setHeroControl(StrategyControl::HERO_RUSH_OUT, LEFT_HERO);
         }
         else
         {
-            static_cast<ImageView*>(img)->loadTexture("Assece/BattleScene/icon_wujiang_start.png");
+            static_cast<ui::ImageView*>(img)->loadTexture("Assece/BattleScene/icon_wujiang_start.png");
             _STRATEGY_CONTROL.setHeroControl(StrategyControl::HERO_STOP, LEFT_HERO);
         }
     }
 }
 
-void BattleSceneUI::switchSoldierAttack(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::switchSoldierAttack(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type))
     {
-        auto img = static_cast<Widget*>(pSender);
+        auto img = static_cast<ui::Widget*>(pSender);
         m_isHeroAttack = !m_isHeroAttack;
         
         if (m_isHeroAttack)
@@ -1113,22 +1107,22 @@ void BattleSceneUI::switchSoldierAttack(cocos2d::Ref *pSender, Widget::TouchEven
             _ENTITY_EVENT.emit(soundEvent);
             
             
-            static_cast<ImageView*>(img)->loadTexture("Assece/BattleScene/icon_soldiers_stop.png");
+            static_cast<ui::ImageView*>(img)->loadTexture("Assece/BattleScene/icon_soldiers_stop.png");
             _STRATEGY_CONTROL.setSoldierControl(StrategyControl::SOLDIER_ATTACK_SOLDIER, true);
         }
         else
         {
-            static_cast<ImageView*>(img)->loadTexture("Assece/BattleScene/icon_soldiers_start.png");
+            static_cast<ui::ImageView*>(img)->loadTexture("Assece/BattleScene/icon_soldiers_start.png");
             _STRATEGY_CONTROL.setSoldierControl(StrategyControl::SOLDIER_STOP, true);
         }
     }
 }
 
-void BattleSceneUI::switchSoldierStrategy(cocos2d::Ref *pSender, Widget::TouchEventType type)
+void BattleSceneUI::switchSoldierStrategy(cocos2d::Ref *pSender,ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type))
     {
-        auto img = static_cast<Widget*>(pSender);
+        auto img = static_cast<ui::Widget*>(pSender);
         
         closeStrategyPanel(nullptr);
         if(img->getTag() != 30002) _CAMERA_MANAGER.initSmartFollowSolider();
@@ -1188,7 +1182,7 @@ void BattleSceneUI::setCurrentHit(int num)
     auto node = panel->getChildByName("ProjectNode_1_5");
     node->setVisible(true);
     
-    Widget* textPanel = static_cast<Widget*>(node->getChildByName("Panel_text_continue"));
+	ui::Widget* textPanel = static_cast<ui::Widget*>(node->getChildByName("Panel_text_continue"));
     auto labelValue = static_cast<Label*>(textPanel->getChildByName("labelValue"));
     if (!labelValue)
     {
@@ -1284,11 +1278,11 @@ void BattleSceneUI::switchMapPanel(bool hide)
 
 
 
-bool BattleSceneUI::checkTouchType(cocos2d::Ref *pSender,Widget::TouchEventType type, bool closeStrategyPanel, float orginScale, float targetScale)
+bool BattleSceneUI::checkTouchType(cocos2d::Ref *pSender, ui::Widget::TouchEventType type, bool closeStrategyPanel, float orginScale, float targetScale)
 {
     if(closeStrategyPanel) this->closeStrategyPanel(nullptr);
     
-    auto img = static_cast<Widget*>(pSender);
+    auto img = static_cast<ui::Widget*>(pSender);
     if(type == cocos2d::ui::Widget::TouchEventType::BEGAN)
     {
         img->stopAllActions();
@@ -1365,8 +1359,8 @@ void BattleSceneUI::update(float dt)
 
 void BattleSceneUI::initSkillButtons()
 {
-    m_battleSceneUI->getChildByName<Layout*>("Panel_Skill")->setTouchEnabled(false);
-    auto panelBottom = m_battleSceneUI->getChildByName("Panel_Skill")->getChildByName<Layout*>("Panel_Bottom_9");
+    m_battleSceneUI->getChildByName<ui::Layout*>("Panel_Skill")->setTouchEnabled(false);
+    auto panelBottom = m_battleSceneUI->getChildByName("Panel_Skill")->getChildByName<ui::Layout*>("Panel_Bottom_9");
     panelBottom->setTouchEnabled(false);
     
     for (int i = 0; i < 4; i++)
@@ -1379,12 +1373,12 @@ void BattleSceneUI::initSkillButtons()
         skillButton->runAction(effectAction);
         m_skillButtonAnimation.push_back(effectAction);
         
-        auto iconItem = skillButton->getChildByName("Panel_1")->getChildByName<ImageView*>("Image_Icon");
+        auto iconItem = skillButton->getChildByName("Panel_1")->getChildByName<ui::ImageView*>("Image_Icon");
         iconItem->setTag(i);
         iconItem->setTouchEnabled(true);
         iconItem->setEnabled(true);
         iconItem->addTouchEventListener(CC_CALLBACK_2(BattleSceneUI::onSkillButtonClick, this));
-        m_skillButtonLoadingBar.push_back(iconItem->getChildByName<LoadingBar*>("LoadingBar_1"));
+        m_skillButtonLoadingBar.push_back(iconItem->getChildByName<ui::LoadingBar*>("LoadingBar_1"));
         m_skillButtonIconWidth = iconItem->getContentSize().width;
     }
 }
@@ -1421,10 +1415,10 @@ void BattleSceneUI::bindSkillButtonsWithSkills()
                 skillButton->setPositionX(x);
                 
                 int mpNum = skills[m_positiveSkills[i]]->mpCost;
-                skillButton->getChildByName("Image_Num_Bg")->getChildByName<Text*>("Text_1")->setString(Value(mpNum).asString());
+                skillButton->getChildByName("Image_Num_Bg")->getChildByName<ui::Text*>("Text_1")->setString(Value(mpNum).asString());
                 
                 
-                cocos2d::ui::LoadingBar* skillIcon = skillButton->getChildByName("Panel_1")->getChildByName("Image_Icon")->getChildByName<LoadingBar*>("LoadingBar_Skill");
+                cocos2d::ui::LoadingBar* skillIcon = skillButton->getChildByName("Panel_1")->getChildByName("Image_Icon")->getChildByName<ui::LoadingBar*>("LoadingBar_Skill");
                 auto skillIconPath = "items/icon_skill/icon_skill_" + Value(skills[m_positiveSkills[i]]->id).asString();
                 skillIcon->loadTexture(skillIconPath + ".png");
                 
@@ -1438,11 +1432,11 @@ void BattleSceneUI::bindSkillButtonsWithSkills()
     }
 }
 
-void BattleSceneUI::onSkillButtonClick(cocos2d::Ref *pSender,Widget::TouchEventType type)
+void BattleSceneUI::onSkillButtonClick(cocos2d::Ref *pSender, ui::Widget::TouchEventType type)
 {
     if(checkTouchType(pSender, type))
     {
-        auto img = static_cast<Widget*>(pSender);
+        auto img = static_cast<ui::Widget*>(pSender);
         
         auto* pEntity = _BATTLE_ENTITY.getEntity(LEFT_HERO);
         if (pEntity)

@@ -9,7 +9,7 @@
 #include "HeroCreator.h"
 #include "BattleWorld.h"
 
-using namespace std;
+//using namespace std;
 
 HeroCreator::HeroCreator(BattleEntity* entities, BattleStage* stage)
 {

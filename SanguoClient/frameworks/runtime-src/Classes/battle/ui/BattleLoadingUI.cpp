@@ -7,13 +7,18 @@
 //
 
 #include "BattleLoadingUI.h"
+#include "cocos2d.h"
+#include "ui/CocosGUI.h"
+#include "BattleConfig.h"
+#include "BattleCocosEvent.h"
+using namespace cocos2d;
 
 BattleLoadingUI::BattleLoadingUI()
 {
     Size frameSize = Director::getInstance()->getVisibleSize();
     Size dSize(1136, 640);
     
-    auto* loading = CSLoader::getInstance()->createNode("Scene/LoginScene.csb");
+    auto* loading = cocos2d::CSLoader::getInstance()->createNode("Scene/LoginScene.csb");
     loading->setContentSize(frameSize);
     ui::Helper::doLayout(loading);
     this->addChild(loading);
@@ -31,7 +36,7 @@ BattleLoadingUI::BattleLoadingUI()
     bg->getChildByName("Particle_2")->removeFromParent();
     
     //layout
-    float scale = max((frameSize.height / dSize.height), (frameSize.width / dSize.width));
+    float scale = std::max((frameSize.height / dSize.height), (frameSize.width / dSize.width));
     
     //bg
     bg->setScale(scale);

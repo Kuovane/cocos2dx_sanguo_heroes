@@ -11,13 +11,13 @@
 
 #include "stdlib.h"
 #include "BattleConfig.h"
-#include "../../asset/CCAsset.h"
+#include "CCAsset.h"
 
 class BattleAnimation
 {
     
 public:
-    BattleAnimation(cocos2d::AdvancedAnimation *animation);
+    BattleAnimation(AdvancedAnimation *animation);
     ~BattleAnimation();
     
     void playCurrent(bool loop, bool randomStart = true);
@@ -25,7 +25,7 @@ public:
     void playAnimation(int id, bool loop, bool randomStart = true);
     void playAnimation(const std::string& animationName, bool loop, bool randomStart = true);
     
-    inline cocos2d::AdvancedAnimation* getAnimation() {return m_animation;};
+    inline AdvancedAnimation* getAnimation() {return m_animation;};
     int getCurrent() {return m_current;};
     
 //    void setPositionX(float x);
@@ -146,8 +146,8 @@ public:
     
 private:
     
-    cocos2d::AdvancedAnimation *m_animation;
-    cocos2d::AdvancedAnimation::onAnimationComplete m_onComplete;
+    AdvancedAnimation *m_animation;
+    AdvancedAnimation::onAnimationComplete m_onComplete;
     bool m_completed;
     int m_current;
     float m_biasZ = 0;

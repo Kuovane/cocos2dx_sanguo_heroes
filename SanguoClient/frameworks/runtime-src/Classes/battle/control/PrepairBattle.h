@@ -22,13 +22,13 @@ protected:
     int m_currentStep;
     int m_currentAsset;
     
-    const string m_pathSolder = "png/soldier/";
-    const string m_pathHero = "png/hero/";
-    const string m_pathSkill = "png/skill/";
+    const std::string m_pathSolder = "png/soldier/";
+    const std::string m_pathHero = "png/hero/";
+    const std::string m_pathSkill = "png/skill/";
 
-    vector<string> m_assetSoldiers;
-    vector<string> m_assetHeros;
-    vector<string> m_assetSkills;
+	std::vector<std::string> m_assetSoldiers;
+	std::vector<std::string> m_assetHeros;
+	std::vector<std::string> m_assetSkills;
 
     void start();
     void collectHeroAsset(std::vector<BattleConfig::HeroConfig*>& heros, const std::string& soldierStyle);

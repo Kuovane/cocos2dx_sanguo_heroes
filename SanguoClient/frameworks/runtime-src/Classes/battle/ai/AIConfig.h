@@ -10,8 +10,10 @@
 #define __AI_CONFIG_H__
 
 #include <map>
-#include "cocostudio/CocoStudio.h"
-#include "cocos2d.h"
+#include <string>
+#include <vector>
+//#include "cocos2d.h"
+//#include "cocostudio/CocoStudio.h"
 
 class AIConfig
 {

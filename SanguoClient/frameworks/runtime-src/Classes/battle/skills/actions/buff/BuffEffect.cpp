@@ -11,7 +11,7 @@
 #include "EnumParser.h"
 #include "SkillManager.h"
 
-using namespace std;
+//using namespace std;
 
 void BuffEffect::fireAction(entityx::EntityManager &es)
 {
@@ -19,7 +19,7 @@ void BuffEffect::fireAction(entityx::EntityManager &es)
     if (m_skillActionData->hasMember("SkillTarget"))
     {
         TargetFinder::TargetResults targetResults;
-        vector<int>& targets = targetResults.targets;
+        std::vector<int>& targets = targetResults.targets;
         auto skillTarget = EnumParserSkillTarget().getValue(*m_skillActionData->config["SkillTarget"]->s);
         _TARGET_FINDER.findSkillTargets(m_fromId, skillTarget, targetResults);
         

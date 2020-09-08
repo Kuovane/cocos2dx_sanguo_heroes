@@ -18,7 +18,7 @@ void AttackDiamondAreaCenterOnHero::fireAction(entityx::EntityManager &es)
     float spreadInterval = m_skillActionData->config["spreadInterval"]->d;
     
     TargetFinder::TargetResults targetResults;
-    vector<int>& targets = targetResults.targets;
+    std::vector<int>& targets = targetResults.targets;
     if (m_skillActionData->hasMember("SkillTarget"))
     {
         auto skillTarget = EnumParserSkillTarget().getValue(*m_skillActionData->config["SkillTarget"]->s);
@@ -53,7 +53,7 @@ void AttackDiamondAreaCenterOnHero::fireAction(entityx::EntityManager &es)
         {
             deltaX = abs(pTile->tileX - centerX);
             deltaZ = abs(pTile->tileZ - centerZ);
-            distance = max(deltaX, deltaZ) - 1;
+            distance = std::max(deltaX, deltaZ) - 1;
             
             BattleConfig::AttackData attackData(m_fromId, (deltaX + deltaZ) * spreadInterval);
             attackData.setTargetPos(pTile->tileZ, pTile->tileX);

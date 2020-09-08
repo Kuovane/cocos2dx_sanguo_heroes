@@ -9,10 +9,9 @@
 #ifndef __FIRST_SOLDIER_KILLED_IN_MELEE_H__
 #define __FIRST_SOLDIER_KILLED_IN_MELEE_H__
 
-
-#include "../AICondition.h"
-#include "../../../entityx/entityx.h"
 #include "BattleEvent.h"
+#include "../AICondition.h"
+
 
 class FirstSoldierKilledInMelee : public AICondition, public entityx::Receiver<FirstSoldierKilledInMelee>
 {

@@ -53,15 +53,15 @@ std::vector<TweenQueueResult>& TweenQueue::update(float dt)
             r.m_lastTarget = s->m_target;
             r.m_lastOperation = s->m_operation;
             
-            if(r.m_lastOperation == IN)
+            if(r.m_lastOperation == IN_T)
             {
                 r.m_lastValue = s->m_pTween->in(dt);
             }
-            else if(r.m_lastOperation == OUT)
+            else if(r.m_lastOperation == OUT_T)
             {
                 r.m_lastValue = s->m_pTween->out(dt);
             }
-            else if(r.m_lastOperation == INOUT)
+            else if(r.m_lastOperation == INOUT_T)
             {
                 r.m_lastValue = s->m_pTween->inout(dt);
             }

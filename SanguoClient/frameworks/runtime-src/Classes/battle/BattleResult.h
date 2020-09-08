@@ -11,7 +11,7 @@
 
 #include "BattleConfig.h"
 
-using namespace std;
+//using namespace std;
 
 class BattleResult
 {
@@ -25,7 +25,7 @@ public:
     };
     
     void prepare();
-    inline const string& getResult() { return m_result; };
+    inline const std::string& getResult() { return m_result; };
     inline bool isWin() { return m_win; };
     inline Reason getReason() { return m_reason; };
     
@@ -46,7 +46,7 @@ private:
     
     Reason m_reason = Reason::UNKNOWN;
     
-    string m_result;
+    std::string m_result;
     bool m_win = false;
 };
 

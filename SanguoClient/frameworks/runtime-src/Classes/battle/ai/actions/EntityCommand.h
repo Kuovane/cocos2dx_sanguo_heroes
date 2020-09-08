@@ -10,7 +10,7 @@
 #define __ENTITY_COMMAND_H__
 
 #include "../AIAction.h"
-#include "../../../entityx/entityx.h"
+#include "entityx.h"
 
 class SoldierKillSoldier : public AIAction, public entityx::Receiver<SoldierKillSoldier>
 {

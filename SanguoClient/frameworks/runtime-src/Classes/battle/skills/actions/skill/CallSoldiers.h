@@ -48,11 +48,11 @@ private:
     BattleConfig::Side m_soldierSide;
     float m_elapse = 0.0f;
     float m_holdTime = -1.0f;
-    vector<int> m_createSoldiers;
+    std::vector<int> m_createSoldiers;
     
     float m_delayElapse = 0.0f;
     float m_delayKill = 0.0f;
-    vector<entityx::Entity> m_killSoldiers;
+	std::vector<entityx::Entity> m_killSoldiers;
     
     void changeRoleColor(int changedID, bool effect = false, bool opp = false, bool colorChange = true);
     

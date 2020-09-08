@@ -31,24 +31,16 @@ ui
             transform
  *******************************/
 
-#ifndef __CC_ASSET_DEFINE_H__
-#define __CC_ASSET_DEFINE_H__
+#pragma once
 
-#include "base/CCValue.h"
-#include "base/CCRef.h"
-#include "base/ccTypes.h"
-#include "renderer/CCTextureAtlas.h"
-#include "renderer/CCBatchCommand.h"
-#include "2d/CCSpriteFrame.h"
-#include "2d/CCSprite.h"
+#include "cocos2d.h"
 #include <string>
 #include <vector>
 #include <map>
 
 
-NS_CC_BEGIN
 
-class CC_DLL AssetDefine : public Ref
+class  AssetDefine : public cocos2d::Ref
 {
 public:
     struct TilesheetData
@@ -71,7 +63,7 @@ public:
         float b;
         float c;
         float d;
-        Color4B color;
+		cocos2d::Color4B color;
         char alpha;
     };
     
@@ -88,7 +80,7 @@ public:
     
     struct AnimationData
     {
-        TextureAtlas *atlas;
+		cocos2d::TextureAtlas *atlas;
         std::string *name;
         int frameCount;
         int labelCount;
@@ -156,9 +148,7 @@ private:
     std::vector<TilesheetData*> *m_tilesheet;
     std::map<std::string, AnimationData*> *m_animations;
     std::map<std::string, UIData*> *m_ui;
-    Texture2D *m_texture;
+	cocos2d::Texture2D *m_texture;
 };
 
-NS_CC_END
 
-#endif

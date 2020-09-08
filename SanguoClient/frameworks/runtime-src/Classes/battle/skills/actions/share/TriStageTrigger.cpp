@@ -69,12 +69,12 @@ void TriStageTrigger::addAnimation(int stage)
 {
     m_stageFired[stage - 1] = true;
     
-    std::string animationName = (*m_skillActionData->config["animation" + Value(stage).asString()]->s);
+    std::string animationName = (*m_skillActionData->config["animation" + cocos2d::Value(stage).asString()]->s);
 
     float loopTime = (stage == 2) ? m_stage2Duration : 0.0;
     
     TargetFinder::TargetResults targetResults;
-    vector<int>& targets = targetResults.targets;
+    std::vector<int>& targets = targetResults.targets;
     auto skillTarget = EnumParserSkillTarget().getValue(*m_skillActionData->config["SkillTarget"]->s);
     _TARGET_FINDER.findSkillTargets(m_fromId, skillTarget, targetResults);
     

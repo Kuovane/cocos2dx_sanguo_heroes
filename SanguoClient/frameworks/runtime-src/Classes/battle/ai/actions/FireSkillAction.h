@@ -10,8 +10,8 @@
 #define __FIRE_SKILL_ACTION_H__
 
 #include "../AIAction.h"
-#include "../../BattleEvent.h"
-#include "../../../entityx/entityx.h"
+#include "BattleEvent.h"
+#include "entityx/entityx.h"
 
 class FireSkillAction : public AIAction, public entityx::Receiver<FireSkillAction>
 {

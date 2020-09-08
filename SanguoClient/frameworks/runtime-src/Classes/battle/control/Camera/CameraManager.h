@@ -16,8 +16,6 @@
 #include "SGCamera.h"
 #include "CameraTwins.h"
 
-#include "../../../entityx/entityx.h"
-
 class CameraManager
 {
     

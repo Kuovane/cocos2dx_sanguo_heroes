@@ -83,11 +83,11 @@ float SkillAction::caclFormulaResult(const std::string name)
     
     if(formula->formula == "max")
     {
-        return max(formula->min, min(formula->max, floor((float)m_skillData->level / formula->divide)));
+        return std::max(formula->min, std::min(formula->max, floor((float)m_skillData->level / formula->divide)));
     }
     else if(formula->formula == "min")
     {
-        return min(formula->min, formula->base + floor((float)m_skillData->level * formula->factor) / formula->divide);
+        return std::min(formula->min, formula->base + floor((float)m_skillData->level * formula->factor) / formula->divide);
     }
     else if(formula->formula == "damage")
     {
