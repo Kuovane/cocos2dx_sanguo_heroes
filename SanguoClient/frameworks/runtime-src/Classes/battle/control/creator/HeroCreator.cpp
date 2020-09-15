@@ -8,6 +8,7 @@
 
 #include "HeroCreator.h"
 #include "BattleWorld.h"
+#include "BattleStage.h"
 
 //using namespace std;
 
@@ -64,8 +65,10 @@ bool HeroCreator::addHero(int heroId, BattleConfig::HeroConfig& config, int tile
         entity.assign<BattleComponent::MiniIcon>(icon);
         
         auto frame = _BATTLE_STAGE.getMap()->getChildByTag(MAP_FRAME);
+		frame->retain();
+		frame->removeFromParentAndCleanup(false);
         _BATTLE_STAGE.getMap()->addChild(frame);
-        
+		frame->release();
         auto animation = _BATTLE_ANIMATION_CREATOR.createSingle(config.getAssetName(), BattleConfig::getInstance()->getAnimationName(BattleConfig::ANI_IDLE), x, y, z, (side == BattleConfig::SIDE_LEFT));
         auto animationComp = entity.assign<BattleComponent::Animation>(animation);
         animationComp->assetName = config.getAssetName();

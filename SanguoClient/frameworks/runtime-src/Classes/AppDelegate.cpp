@@ -1,7 +1,7 @@
 #include "AppDelegate.h"
 #include "scripting/lua-bindings/manual/CCLuaEngine.h"
 #include "scripting/lua-bindings/manual/lua_module_register.h"
-//#include "BattleScene.h"
+#include "BattleScene.h"
 #include "DebugHelper.h"
 #include "luaBinding.h"
 #include "pbc-lua.h"
@@ -18,7 +18,7 @@ extern "C" {
 
 #include "CCMyShader.h"
 
-#define TEST_BATTLE 1
+//#define TEST_BATTLE 1
 
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_LINUX)
 //#include "ide-support/CodeIDESupport.h"

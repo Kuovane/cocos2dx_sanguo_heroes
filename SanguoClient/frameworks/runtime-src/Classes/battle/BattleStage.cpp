@@ -333,7 +333,7 @@ void BattleStage::changeTimeRate(float timeRate)
     }
 }
 
-inline cocos2d::Node* BattleStage::getMap() { return m_battleSceneUI->getMap(); };
+ cocos2d::Node* BattleStage::getMap() { return m_battleSceneUI->getMap(); };
 
 void BattleStage::showBGColor(float duration)
 {

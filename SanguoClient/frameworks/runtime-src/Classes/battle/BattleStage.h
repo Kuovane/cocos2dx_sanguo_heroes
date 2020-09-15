@@ -33,7 +33,7 @@ public:
     inline cocos2d::Node* getStage() { return m_stage; };
     inline cocos2d::Node* getBackground() { return m_bg; };
     inline cocos2d::Node* getRole() { return m_role; };
-    inline cocos2d::Node* getMap();
+     cocos2d::Node* getMap();
     inline BattleSceneUI* getBattleSceneUI() { return m_battleSceneUI; };
     inline BattleDialogueUI* getBattleDialogueUI() { return m_battleDialogueUI; };
    

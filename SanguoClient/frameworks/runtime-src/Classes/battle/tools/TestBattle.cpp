@@ -5,10 +5,11 @@
 //  Created by fuchenhao on 5/15/15.
 //
 //
-
+#include "TestBattle.h"
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
 
-#include "TestBattle.h"
+
+#include "cocostudio/CocoStudio.h"
 #include "BattleScene.h"
 #include "BattleWorld.h"
 #include "SkillManager.h"
@@ -197,7 +198,7 @@ void TestBattle::createBattleConfigData(rapidjson::Value& toData, rapidjson::Val
     
     if (fromData.IsObject())
     {
-        for (auto iter = fromData.MemberonBegin(); iter != fromData.MemberonEnd(); iter++)
+        for (auto iter = fromData.MemberBegin(); iter != fromData.MemberEnd(); iter++)
         {
             std::string key = iter->name.GetString();
             
@@ -370,7 +371,7 @@ void TestBattle::loadVersion()
     {
         if (!cocos2d::FileUtils::getInstance()->removeDirectory(configDir))
         {
-            m_pScene->onConfigLoadFail("删除旧配置失败，请重启");
+            m_pScene->onConfigLoadFail("删除旧配置失败，请重启.");
             return;
         }
     }
@@ -432,9 +433,9 @@ void TestBattle::onLoadVersionCompleted(cocos2d::network::HttpClient *sender, co
 
 TestBattleScene::TestBattleScene()
 {
-    Size frameSize = cocos2d::Director::getInstance()->getVisibleSize();
+    auto frameSize = cocos2d::Director::getInstance()->getVisibleSize();
     
-    m_pLayout = CSLoader::getInstance()->createNode("Scene/TestBattleScene.csb");
+    m_pLayout = cocos2d::CSLoader::getInstance()->createNode("Scene/TestBattleScene.csb");
     m_pLayout->setContentSize(frameSize);
     cocos2d::ui::Helper::doLayout(m_pLayout);
     this->addChild(m_pLayout);
@@ -519,7 +520,7 @@ void TestBattleScene::onVersionLoadFail()
     m_pLayout->getChildByName("Panel_Progress")->setVisible(true);
     m_pLoadingBar->setPercent(0);
     m_pLoadingText->setString("0%");
-    m_pLoadingTip->setString("版本号载入失败，请重启");
+    m_pLoadingTip->setString("版本号载入失败，请重启.");
 }
 
 void TestBattleScene::onConfigLoadBegin()
@@ -907,8 +908,8 @@ void TestBattleScene::updateUI()
     {
         m_pBtnPre->setVisible(true);
         m_pBtnNext->setVisible(true);
-        m_pBtnPre->setTitleText("开战");
-        m_pBtnNext->setTitleText("配置敌方");
+        m_pBtnPre->setTitleText("开战.");
+        m_pBtnNext->setTitleText("配置敌方.");
         
         m_pBtnPre->setVisible(true);
         if (m_useMode == UseMode::DESIGNER)
@@ -929,8 +930,8 @@ void TestBattleScene::updateUI()
     {
         m_pBtnPre->setVisible(true);
         m_pBtnNext->setVisible(true);
-        m_pBtnPre->setTitleText("配置己方");
-        m_pBtnNext->setTitleText("开战");
+        m_pBtnPre->setTitleText("配置己方.");
+        m_pBtnNext->setTitleText("开战.");
         
         m_pBtnNext->setVisible(true);
         if (m_useMode == UseMode::DESIGNER)
@@ -951,8 +952,8 @@ void TestBattleScene::updateUI()
     {
         m_pBtnPre->setVisible(true);
         m_pBtnNext->setVisible(true);
-        m_pBtnPre->setTitleText("继续战斗");
-        m_pBtnNext->setTitleText("结束战斗");
+        m_pBtnPre->setTitleText("继续战斗.");
+        m_pBtnNext->setTitleText("结束战斗.");
     }
     
     if (m_useMode == UseMode::DESIGNER)
@@ -996,23 +997,23 @@ void TestBattleScene::updateTextByTeamData(cocos2d::ui::Text* pText, const TestB
     
     if (m_useMode == UseMode::TESTER)
     {
-        textStr += (teamData.heroTestFileName.length() > 0 ? teamData.heroTestFileName : "英雄无");
+        textStr += (teamData.heroTestFileName.length() > 0 ? teamData.heroTestFileName : "英雄无.");
         textStr += ",";
-        textStr += (teamData.soldierTestFileName.length() > 0 ? teamData.soldierTestFileName : "兵种无");
+        textStr += (teamData.soldierTestFileName.length() > 0 ? teamData.soldierTestFileName : "兵种无.");
         textStr += ",";
-        textStr += (teamData.formation.length() > 0 ? teamData.formation : "阵型无");
+        textStr += (teamData.formation.length() > 0 ? teamData.formation : "阵型无.");
         textStr += ",";
-        textStr += (teamData.pos.length() > 0 ? teamData.pos : "位置无");
+        textStr += (teamData.pos.length() > 0 ? teamData.pos : "位置无.");
         textStr += ",";
-        textStr += (teamData.ai.length() > 0 ? teamData.ai : "AI无");
+        textStr += (teamData.ai.length() > 0 ? teamData.ai : "AI无.");
         textStr += ",\n";
-        textStr += (teamData.skills.size() > 0 ? *teamData.skills[0] : "技能1无");
+        textStr += (teamData.skills.size() > 0 ? *teamData.skills[0] : "技能1无.");
         textStr += ",";
-        textStr += (teamData.skills.size() > 1 ? *teamData.skills[1] : "技能2无");
+        textStr += (teamData.skills.size() > 1 ? *teamData.skills[1] : "技能2无.");
         textStr += ",";
-        textStr += (teamData.skills.size() > 2 ? *teamData.skills[2] : "技能3无");
+        textStr += (teamData.skills.size() > 2 ? *teamData.skills[2] : "技能3无.");
         textStr += ",";
-        textStr += (teamData.skills.size() > 3 ? *teamData.skills[3] : "技能4无");
+        textStr += (teamData.skills.size() > 3 ? *teamData.skills[3] : "技能4无.");
     }
     else if (m_useMode == UseMode::DESIGNER)
     {
@@ -1051,7 +1052,7 @@ void TestBattleScene::updateTextByTeamData(cocos2d::ui::Text* pText, const TestB
         }
         else
         {
-            textStr += "英雄无";
+            textStr += "英雄无.";
         }
     }
     

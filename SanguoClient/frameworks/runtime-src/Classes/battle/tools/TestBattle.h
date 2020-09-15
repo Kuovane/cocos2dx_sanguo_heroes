@@ -9,11 +9,11 @@
 #ifndef __sanguoClient__TestBattle__
 #define __sanguoClient__TestBattle__
 
-
+#include "cocos2d.h"
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
 
 #include "assets-manager/AssetsManager.h"
-#include "cocos2d.h"
+
 #include "ui/CocosGUI.h"
 #include "TestBattleConfigReader.h"
 #include "BattleConfig.h"

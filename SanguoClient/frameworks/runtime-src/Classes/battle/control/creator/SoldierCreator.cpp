@@ -64,8 +64,10 @@ int SoldierCreator::addSoldier(BattleConfig::Side side, BattleConfig::SoldierCon
         entity.assign<BattleComponent::MiniIcon>(icon);
 
         auto frame = _BATTLE_STAGE.getMap()->getChildByTag(MAP_FRAME);
+		frame->retain();
+		frame->removeFromParentAndCleanup(false);
         _BATTLE_STAGE.getMap()->addChild(frame);
-        
+		frame->release();
         const auto& battleFieldConfig = BattleConfig::getInstance()->getBattleFieldConfig();
         
         const std::string assetName = config.getAssetName(side == BattleConfig::Side::SIDE_LEFT ? battleFieldConfig.leftSoldierAssetStyle : battleFieldConfig.rightSoldierAssetStyle);
